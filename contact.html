@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Book Consultation | Fintrix Global</title>
+  <meta name="description" content="Talk to a corporate formation and tax specialist at Fintrix Global. Fast response times, physical offices in Wyoming USA and London UK, and direct phone/chat support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" type="image/jpeg" href="./logo.jpg">
+</head>
+<body>
+  <!-- Floating Rounded Pill Header (Matching Screenshot 1) -->
+  <header class="floating-pill-header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" aria-label="Fintrix Global Home">
+        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
+        <div class="brand-meta">
+          <span class="brand-name">Fintrix Global</span>
+        </div>
+      </a>
+
+      <!-- Desktop Multipage Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <a href="services.html" class="nav-link ">
+              Services <span class="dropdown-caret">▼</span>
+            </a>
+            <div class="dropdown-menu">
+              <a href="services.html#llc" class="dropdown-link">
+                <span class="dropdown-title">US LLC Formation</span>
+                <span class="dropdown-desc">Wyoming, Delaware, New Mexico & all 50 states</span>
+              </a>
+              <a href="services.html#ltd" class="dropdown-link">
+                <span class="dropdown-title">UK LTD Incorporation</span>
+                <span class="dropdown-desc">Companies House filing, Articles & PSC Register</span>
+              </a>
+              <a href="services.html#agent" class="dropdown-link">
+                <span class="dropdown-title">Registered Agent & Office</span>
+                <span class="dropdown-desc">Physical address privacy & digital mail vault</span>
+              </a>
+              <a href="services.html#tax" class="dropdown-link">
+                <span class="dropdown-title">Tax IDs & Annual Filings</span>
+                <span class="dropdown-desc">IRS EIN, ITIN, Form 5472 & UK Corporation Tax</span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="compliance.html" class="nav-link ">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link ">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link ">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link active">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="header-actions">
+        <button type="button" class="nav-login-link" id="headerLoginBtn">Log in</button>
+        <a href="contact.html" class="btn btn-primary pill-btn magnetic" id="headerTalkBtn">
+          <span>Talk to an Expert</span>
+          <svg class="btn-icon-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <!-- Mobile Toggle -->
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="120" height="36">
+        <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Navigation Menu">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-link ">Home</a>
+        <a href="services.html" class="mobile-link ">Services & Features</a>
+        <a href="compliance.html" class="mobile-link ">Corporate Compliance</a>
+        <a href="pricing.html" class="mobile-link ">Packages & Pricing</a>
+        <a href="about.html" class="mobile-link ">About Us & Team</a>
+        <a href="contact.html" class="mobile-link active">Contact & Consultation</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="contact.html" class="btn btn-primary w-full">Talk to an Expert →</a>
+        <button type="button" class="btn btn-outline w-full" id="mobilePortalBtn">Client Portal Demo</button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <p>Transparent Pricing • Separate Govt Fees • Dual US & UK Coverage</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="container">
+        <span class="subpage-badge">Direct Access • &lt; 4 Hour Response Time</span>
+        <h1 class="subpage-title">Talk to a Corporate Specialist</h1>
+        <p class="subpage-subtitle">
+          Have questions about Wyoming vs Delaware, foreign-owner IRS filings, or opening a Mercury/Wise bank account? Schedule a consultation or reach out directly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & Form Grid -->
+    <section class="container" style="padding: 50px 0 80px 0;">
+      <div class="contact-layout-grid">
+        <!-- Left: Office & Contact Info -->
+        <div class="contact-info-card" id="offices">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #0F2936; margin-bottom: 24px;">Global Corporate Offices</h3>
+
+          <!-- US Office -->
+          <div class="contact-office-item">
+            <h4 class="contact-office-title">
+              <span>🇺🇸 United States Office</span>
+            </h4>
+            <p class="contact-office-address">
+              Fintrix Global Inc.<br>
+              30 N Gould St, Ste R<br>
+              Sheridan, WY 82801, USA
+            </p>
+            <p style="font-size: 0.8125rem; color: #556B77;">Mon - Fri: 8:00 AM - 6:00 PM (MST)</p>
+          </div>
+
+          <!-- UK Office -->
+          <div class="contact-office-item">
+            <h4 class="contact-office-title">
+              <span>🇬🇧 United Kingdom Office</span>
+            </h4>
+            <p class="contact-office-address">
+              Fintrix Global UK Ltd.<br>
+              71-75 Shelton Street, Covent Garden<br>
+              London, WC2H 9JQ, United Kingdom
+            </p>
+            <p style="font-size: 0.8125rem; color: #556B77;">Mon - Fri: 9:00 AM - 5:30 PM (GMT)</p>
+          </div>
+
+          <!-- Direct Channels -->
+          <div style="margin-top: 24px;">
+            <h4 style="font-size: 1rem; font-weight: 700; color: #0F2936; margin-bottom: 10px;">Direct Communication</h4>
+            <p style="font-size: 0.875rem; color: #4A6572; margin-bottom: 6px;">📧 Email: <a href="mailto:support@fintrixglobal.com" style="color: #1F7091; font-weight: 600;">support@fintrixglobal.com</a></p>
+            <p style="font-size: 0.875rem; color: #4A6572;">💬 Live Support: Available 24/7 on WhatsApp & Client Portal</p>
+          </div>
+        </div>
+
+        <!-- Right: Inquiry / Consultation Form -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Schedule a 1:1 Consultation</h3>
+          <p style="font-size: 0.875rem; color: #556B77; margin-bottom: 24px;">Fill in your business details and an attorney or CPA will review your scenario within 4 hours.</p>
+
+          <form id="contactInquiryForm" onsubmit="alert('Thank you! A corporate specialist will review your details and contact you shortly.'); return false;">
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="contactFullName">Full Name *</label>
+                <input type="text" id="contactFullName" required placeholder="Alex Turner">
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Business Email *</label>
+                <input type="email" id="contactEmail" required placeholder="alex@venture.com">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="contactJurisdiction">Entity of Interest *</label>
+                <select id="contactJurisdiction" required>
+                  <option value="us-llc">U.S. LLC (Wyoming, Delaware, etc.)</option>
+                  <option value="uk-ltd">UK LTD (Companies House)</option>
+                  <option value="dual">Dual US LLC + UK LTD Bundle</option>
+                  <option value="compliance">Ongoing Compliance / Tax Filing</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="contactCountry">Country of Residence *</label>
+                <input type="text" id="contactCountry" required placeholder="e.g., Germany, India, UAE">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="contactMessage">How can we assist your business? *</label>
+              <textarea id="contactMessage" rows="4" required placeholder="Tell us about your venture, banking requirements, and target timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary pill-btn w-full" style="padding: 14px 28px; font-weight: 700;">
+              <span>Submit Consultation Request →</span>
+            </button>
+            <p style="font-size: 0.75rem; color: #6C818C; text-align: center; margin-top: 10px;">Strict client confidentiality • No obligation</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pre-Footer Founder Conversion Banner (Matching Screenshot 5) -->
+  <section class="container" style="margin-top: 60px;">
+    <div class="founder-cta-banner reveal">
+      <div class="founder-cta-content">
+        <h2 class="founder-cta-title">Someone Out There Needs Your Business.</h2>
+        <p class="founder-cta-subtitle">Get set up right, with experts handling all the details.</p>
+        <a href="contact.html" class="founder-cta-btn magnetic">
+          <span>Start My Business</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <p class="founder-cta-note">Starting at $297/year, plus state fees · No U.S. residency or SSN required</p>
+      </div>
+      <div class="founder-cta-image-col">
+        <img src="./assets/founder-banner.webp" alt="Smiling entrepreneur with laptop" class="founder-banner-img" width="400" height="320" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Monthly Newsletter Box -->
+    <div class="newsletter-card reveal" style="margin-bottom: 60px;">
+      <div class="newsletter-grid">
+        <div class="newsletter-info">
+          <div class="newsletter-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h3 class="newsletter-title">Join Fintrix Global's Monthly Newsletter</h3>
+            <p class="newsletter-desc">Founder guides, compliance deadlines, and cross-border tax updates once a month.</p>
+          </div>
+        </div>
+
+        <div class="newsletter-form-col">
+          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
+            <div class="input-with-button">
+              <input type="email" class="email-input" id="newsletterEmail" placeholder="Enter your email" required aria-label="Business Email Address">
+              <button type="submit" class="btn btn-primary pill-btn" id="subscribeBtn">Subscribe →</button>
+            </div>
+            <div class="newsletter-feedback" id="newsletterFeedback" aria-live="polite"></div>
+            <p class="privacy-note">By subscribing you agree with our <a href="about.html#privacy">Privacy Policy</a>.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Categorized Footer (Matching Screenshot 6) -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top-row reveal-stagger">
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-brand-link">
+            <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
+            <div class="brand-meta">
+              <span class="brand-name">Fintrix Global</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your business deserves your full attention. Give it more of your time while Fintrix Global handles everything from formation and registered agent to taxes & compliance, all in one place.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">ig</a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">x</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">in</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">yt</a>
+          </div>
+          <div class="footer-tp-badge" style="margin-top: 14px;">
+            <div class="tp-stars">
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+            </div>
+            <span style="font-size: 0.8125rem; font-weight: 600; color: #0F2936; margin-left: 6px;">4.4 / 5 • 2,000+ Reviews</span>
+          </div>
+        </div>
+
+        <!-- Col 1: Products & Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#llc">U.S. LLC Formation</a></li>
+            <li><a href="services.html#ltd">UK LTD Incorporation</a></li>
+            <li><a href="services.html#agent">Registered Agent Coverage</a></li>
+            <li><a href="services.html#tax">IRS EIN & Tax IDs</a></li>
+            <li><a href="services.html#agent">UK Registered Office</a></li>
+            <li><a href="services.html#banking">Business Bank Account Guidance</a></li>
+            <li><a href="services.html#vault">Document & Mail Vault</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fintrix Global</a></li>
+            <li><a href="about.html#team">Our Specialist Team</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+            <li><a href="contact.html">Book a Consultation</a></li>
+            <li><a href="contact.html#offices">US & UK Corporate Offices</a></li>
+            <li><a href="about.html#security">Trust & Data Security</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Compare -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Compare</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#comparison">US LLC vs UK LTD</a></li>
+            <li><a href="about.html#compare">Fintrix vs LegalZoom</a></li>
+            <li><a href="about.html#compare">Fintrix vs Doola</a></li>
+            <li><a href="about.html#compare">Fintrix vs ZenBusiness</a></li>
+            <li><a href="about.html#compare">Fintrix vs Stripe Atlas</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Learn & Jurisdictions -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Jurisdictions</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#llc">Wyoming for Non-US Founders</a></li>
+            <li><a href="services.html#llc">Delaware for Venture Tech</a></li>
+            <li><a href="services.html#llc">New Mexico Privacy LLC</a></li>
+            <li><a href="services.html#ltd">UK Companies House Rules</a></li>
+            <li><a href="compliance.html#form5472">Form 5472 Foreign Reporting</a></li>
+            <li><a href="compliance.html#calendar">Statutory Annual Deadlines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal Row & Disclaimer -->
+      <div class="footer-bottom-row">
+        <div class="footer-legal-copy">
+          <p>© 2026 Fintrix Global Inc. All rights reserved. | <a href="about.html#terms">Terms of Service</a> | <a href="about.html#privacy">Privacy Policy</a></p>
+        </div>
+        <div class="footer-compliance-pill">
+          <span class="compliance-dot"></span>
+          <span>Dual Jurisdiction U.S. & U.K. Regulated Compliance Provider</span>
+        </div>
+      </div>
+
+      <!-- Mandatory Legal Disclaimer from PDF Section 15 -->
+      <div class="footer-disclaimer-box">
+        <p><strong>Legal & Tax Services Disclaimer:</strong> Fintrix Global is a corporate service and technology provider assisting with business formations, registered agent services, and compliance filings. Fintrix Global is not an attorney, law firm, CPA firm, or chartered accounting practice, and does not provide formal legal advice or specialized statutory auditing services. Using Fintrix Global's digital platform or consulting team does not create an attorney-client or fiduciary CPA-client relationship. All company documents, operating templates, and statutory guides are prepared based on standard statutory templates and state guidelines. For complex cross-border taxation or specialized dispute counsel, founders are encouraged to consult certified independent legal or tax practitioners in their relevant jurisdiction.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: GSAP, ScrollTrigger, Lenis + script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

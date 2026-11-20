@@ -1,0 +1,11 @@
+# Competitor video & reference recordings
+*.webm
+screencapture-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*

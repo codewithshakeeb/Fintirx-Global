@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Services - U.S. LLC & UK LTD | Fintrix Global</title>
+  <meta name="description" content="End-to-end corporate services for U.S. LLCs and UK LTDs. Entity formation, Registered Agent representation, IRS EIN, UK HMRC VAT/Corp Tax, privacy mail vault and banking guidance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" type="image/jpeg" href="./logo.jpg">
+</head>
+<body>
+  <!-- Floating Rounded Pill Header (Matching Screenshot 1) -->
+  <header class="floating-pill-header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" aria-label="Fintrix Global Home">
+        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
+        <div class="brand-meta">
+          <span class="brand-name">Fintrix Global</span>
+        </div>
+      </a>
+
+      <!-- Desktop Multipage Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <a href="services.html" class="nav-link active">
+              Services <span class="dropdown-caret">▼</span>
+            </a>
+            <div class="dropdown-menu">
+              <a href="services.html#llc" class="dropdown-link">
+                <span class="dropdown-title">US LLC Formation</span>
+                <span class="dropdown-desc">Wyoming, Delaware, New Mexico & all 50 states</span>
+              </a>
+              <a href="services.html#ltd" class="dropdown-link">
+                <span class="dropdown-title">UK LTD Incorporation</span>
+                <span class="dropdown-desc">Companies House filing, Articles & PSC Register</span>
+              </a>
+              <a href="services.html#agent" class="dropdown-link">
+                <span class="dropdown-title">Registered Agent & Office</span>
+                <span class="dropdown-desc">Physical address privacy & digital mail vault</span>
+              </a>
+              <a href="services.html#tax" class="dropdown-link">
+                <span class="dropdown-title">Tax IDs & Annual Filings</span>
+                <span class="dropdown-desc">IRS EIN, ITIN, Form 5472 & UK Corporation Tax</span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="compliance.html" class="nav-link ">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link ">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link ">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link ">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="header-actions">
+        <button type="button" class="nav-login-link" id="headerLoginBtn">Log in</button>
+        <a href="contact.html" class="btn btn-primary pill-btn magnetic" id="headerTalkBtn">
+          <span>Talk to an Expert</span>
+          <svg class="btn-icon-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <!-- Mobile Toggle -->
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <div class="mobile-drawer-header">
+        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="120" height="36">
+        <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Navigation Menu">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="services.html" class="mobile-link active">Services & Features</a>
+        <a href="compliance.html" class="mobile-link">Corporate Compliance</a>
+        <a href="pricing.html" class="mobile-link">Packages & Pricing</a>
+        <a href="about.html" class="mobile-link">About Us & Team</a>
+        <a href="contact.html" class="mobile-link">Contact & Consultation</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="contact.html" class="btn btn-primary w-full">Talk to an Expert →</a>
+        <button type="button" class="btn btn-outline w-full" id="mobilePortalBtn">Client Portal Demo</button>
+      </div>
+      <div class="mobile-drawer-footer">
+        <p>Transparent Pricing • Separate Govt Fees • Dual US & UK Coverage</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- Subpage Hero -->
+    <section class="subpage-hero">
+      <div class="container">
+        <span class="subpage-badge">Comprehensive Corporate Infrastructure</span>
+        <h1 class="subpage-title">Dual-Jurisdiction U.S. & UK Business Services</h1>
+        <p class="subpage-subtitle">
+          From entity incorporation to ongoing statutory compliance, IRS tax registrations, registered agent coverage, and cross-border bank account guidance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Deep Dive Section -->
+    <section class="container" style="padding: 60px 0;">
+      <div class="packages-grid">
+        <!-- Service 1: US LLC Formation -->
+        <div class="package-card" id="llc">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">UNITED STATES</span>
+            <h3 class="package-tier-name">U.S. LLC Formation</h3>
+            <p class="package-target">Full legal formation in Wyoming, Delaware, New Mexico, Florida, or any of the 50 U.S. states.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>Comprehensive preliminary business name availability check</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Preparation and formal lodgment of Articles of Organization</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Customized Operating Agreement tailored to single or multi-member setup</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Initial organizational minutes & member ownership certificates</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Physical in-state Registered Agent with immediate representation</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2: UK LTD Incorporation -->
+        <div class="package-card" id="ltd">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">UNITED KINGDOM</span>
+            <h3 class="package-tier-name">UK LTD Incorporation</h3>
+            <p class="package-target">Official Private Limited Company incorporation directly registered with UK Companies House.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>Companies House real-time name clearance & reservation</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Memorandum & Articles of Association model submission</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Official Certificate of Incorporation issued with company registration number</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Establishment and filing of the PSC (Persons with Significant Control) Register</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Prestigious London Covent Garden Registered Office Address</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: Registered Agent & Office -->
+        <div class="package-card" id="agent">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">OFFICIAL PRESENCE</span>
+            <h3 class="package-tier-name">Registered Agent & Office</h3>
+            <p class="package-target">Protect your home address privacy with compliant statutory street representation in the US and UK.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>Physical commercial street address required on public registry records</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Continuous availability during business hours for official Service of Process</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Same-day digital mail scanning with instant portal notification</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Spam & marketing junk filtering so only critical legal mail is processed</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>International physical forwarding options for bank debit cards & original documents</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row of Services -->
+      <div class="packages-grid" style="margin-top: 30px;">
+        <!-- Service 4: Tax IDs & Filings -->
+        <div class="package-card" id="tax">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">TAX & REGULATORY</span>
+            <h3 class="package-tier-name">IRS EIN & UK Tax Filings</h3>
+            <p class="package-target">Federal and statutory tax IDs required for merchant gateways, hiring, and banking.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>IRS Employer Identification Number (EIN) processed via Form SS-4</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Non-resident EIN procurement without requiring a U.S. SSN or ITIN</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>UK HMRC Corporation Tax registration & Unique Taxpayer Reference (UTR)</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>UK VAT registration and PAYE payroll registration support</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Foreign-owned U.S. LLC Form 5472 & Pro Forma 1120 filing preparation</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 5: Banking Guidance -->
+        <div class="package-card" id="banking">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">GLOBAL FINANCIALS</span>
+            <h3 class="package-tier-name">Corporate Banking Guidance</h3>
+            <p class="package-target">Step-by-step documentation packaging for Tier-1 FinTech and commercial business accounts.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>Formal Banking Resolution certificate signed by managers or directors</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Curated introduction & application guidance for Mercury, Relay, and Wise US</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>UK business accounts: Wise Business, Tide, Revolut Business & Payoneer</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Stripe and PayPal Merchant account onboarding documentation assistance</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Cross-border proof of address and utility verification guidance</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 6: Corporate Amendments & Maintenance -->
+        <div class="package-card" id="changes">
+          <div class="package-header">
+            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">LIFECYCLE MANAGEMENT</span>
+            <h3 class="package-tier-name">Corporate Amendments</h3>
+            <p class="package-target">Keep your corporate record pristine as your co-founders, address, or business model evolves.</p>
+          </div>
+          <div class="package-body">
+            <ul class="package-features-list">
+              <li class="feat-included"><span class="feat-check">✓</span><span>Official Articles of Amendment filing with Secretary of State</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Companies House appointment, resignation & PSC shareholding updates</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Member & Manager transfers with updated internal Operating Agreement</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Certificates of Good Standing / Certificates of Fact procurement</span></li>
+              <li class="feat-included"><span class="feat-check">✓</span><span>Orderly formal voluntary dissolution and tax clearance services</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed U.S. LLC vs UK LTD Comparison Table -->
+    <section class="container" id="comparison" style="padding-bottom: 60px;">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">HEAD-TO-HEAD BREAKDOWN</span>
+        <h2 class="section-title">U.S. LLC vs. UK LTD: Which Structure Fits You?</h2>
+        <p class="section-subtitle">Based on Section 1 of our Core Business Services Guide.</p>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="comparison-matrix-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Feature / Attribute</th>
+              <th style="width: 37.5%; color: #1F7091;">🇺🇸 United States LLC</th>
+              <th style="width: 37.5%; color: #2995C3;">🇬🇧 United Kingdom LTD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Governing Authority</strong></td>
+              <td>Secretary of State (State-by-state, e.g., Wyoming, Delaware)</td>
+              <td>Companies House (Single centralized national registry)</td>
+            </tr>
+            <tr>
+              <td><strong>Liability Protection</strong></td>
+              <td>Full corporate veil protecting personal assets of members</td>
+              <td>Limited liability by shares protecting shareholders and directors</td>
+            </tr>
+            <tr>
+              <td><strong>Tax Classification</strong></td>
+              <td>Pass-through by default (Disregarded entity or Partnership); option for C-Corp</td>
+              <td>Subject to UK Corporation Tax (currently 19%–25%) on net profits</td>
+            </tr>
+            <tr>
+              <td><strong>Foreign Owner Reporting</strong></td>
+              <td>IRS Form 5472 + Pro Forma 1120 mandatory for 25%+ foreign owned</td>
+              <td>Annual Statutory Accounts & Company Tax Return (CT600) to HMRC</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Maintenance</strong></td>
+              <td>State Annual Report / Franchise Tax + Registered Agent renewal</td>
+              <td>Annual Confirmation Statement + Accounts + Registered Office</td>
+            </tr>
+            <tr>
+              <td><strong>Public Privacy</strong></td>
+              <td>High in Wyoming & New Mexico (members not published on state registry)</td>
+              <td>Low (Directors, PSC shareholders, and accounts published on public registry)</td>
+            </tr>
+            <tr>
+              <td><strong>Global Merchant Gateways</strong></td>
+              <td>Full access to US Stripe, PayPal, Mercury, Shopify Payments</td>
+              <td>Full access to UK/European Stripe, Wise, Tide, PayPal Europe</td>
+            </tr>
+            <tr>
+              <td><strong>Recommended For</strong></td>
+              <td>SaaS, digital creators, international consultants, e-commerce stores</td>
+              <td>European trade, UK market focus, founders wanting quick single-agency setup</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pre-Footer Founder Conversion Banner (Matching Screenshot 5) -->
+  <section class="container" style="margin-top: 60px;">
+    <div class="founder-cta-banner reveal">
+      <div class="founder-cta-content">
+        <h2 class="founder-cta-title">Someone Out There Needs Your Business.</h2>
+        <p class="founder-cta-subtitle">Get set up right, with experts handling all the details.</p>
+        <a href="contact.html" class="founder-cta-btn magnetic">
+          <span>Start My Business</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <p class="founder-cta-note">Starting at $297/year, plus state fees · No U.S. residency or SSN required</p>
+      </div>
+      <div class="founder-cta-image-col">
+        <img src="./assets/founder-banner.webp" alt="Smiling entrepreneur with laptop" class="founder-banner-img" width="400" height="320" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Monthly Newsletter Box -->
+    <div class="newsletter-card reveal" style="margin-bottom: 60px;">
+      <div class="newsletter-grid">
+        <div class="newsletter-info">
+          <div class="newsletter-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div>
+            <h3 class="newsletter-title">Join Fintrix Global's Monthly Newsletter</h3>
+            <p class="newsletter-desc">Founder guides, compliance deadlines, and cross-border tax updates once a month.</p>
+          </div>
+        </div>
+
+        <div class="newsletter-form-col">
+          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
+            <div class="input-with-button">
+              <input type="email" class="email-input" id="newsletterEmail" placeholder="Enter your email" required aria-label="Business Email Address">
+              <button type="submit" class="btn btn-primary pill-btn" id="subscribeBtn">Subscribe →</button>
+            </div>
+            <div class="newsletter-feedback" id="newsletterFeedback" aria-live="polite"></div>
+            <p class="privacy-note">By subscribing you agree with our <a href="about.html#privacy">Privacy Policy</a>.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Categorized Footer (Matching Screenshot 6) -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top-row reveal-stagger">
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="footer-brand-link">
+            <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
+            <div class="brand-meta">
+              <span class="brand-name">Fintrix Global</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your business deserves your full attention. Give it more of your time while Fintrix Global handles everything from formation and registered agent to taxes & compliance, all in one place.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">ig</a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">x</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">in</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">yt</a>
+          </div>
+          <div class="footer-tp-badge" style="margin-top: 14px;">
+            <div class="tp-stars">
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+              <span class="tp-star-box">★</span>
+            </div>
+            <span style="font-size: 0.8125rem; font-weight: 600; color: #0F2936; margin-left: 6px;">4.4 / 5 • 2,000+ Reviews</span>
+          </div>
+        </div>
+
+        <!-- Col 1: Products & Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#llc">U.S. LLC Formation</a></li>
+            <li><a href="services.html#ltd">UK LTD Incorporation</a></li>
+            <li><a href="services.html#agent">Registered Agent Coverage</a></li>
+            <li><a href="services.html#tax">IRS EIN & Tax IDs</a></li>
+            <li><a href="services.html#agent">UK Registered Office</a></li>
+            <li><a href="services.html#banking">Business Bank Account Guidance</a></li>
+            <li><a href="services.html#vault">Document & Mail Vault</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Company -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About Fintrix Global</a></li>
+            <li><a href="about.html#team">Our Specialist Team</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+            <li><a href="contact.html">Book a Consultation</a></li>
+            <li><a href="contact.html#offices">US & UK Corporate Offices</a></li>
+            <li><a href="about.html#security">Trust & Data Security</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Compare -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Compare</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#comparison">US LLC vs UK LTD</a></li>
+            <li><a href="about.html#compare">Fintrix vs LegalZoom</a></li>
+            <li><a href="about.html#compare">Fintrix vs Doola</a></li>
+            <li><a href="about.html#compare">Fintrix vs ZenBusiness</a></li>
+            <li><a href="about.html#compare">Fintrix vs Stripe Atlas</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Learn & Jurisdictions -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Jurisdictions</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#llc">Wyoming for Non-US Founders</a></li>
+            <li><a href="services.html#llc">Delaware for Venture Tech</a></li>
+            <li><a href="services.html#llc">New Mexico Privacy LLC</a></li>
+            <li><a href="services.html#ltd">UK Companies House Rules</a></li>
+            <li><a href="compliance.html#form5472">Form 5472 Foreign Reporting</a></li>
+            <li><a href="compliance.html#calendar">Statutory Annual Deadlines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal Row & Disclaimer -->
+      <div class="footer-bottom-row">
+        <div class="footer-legal-copy">
+          <p>© 2026 Fintrix Global Inc. All rights reserved. | <a href="about.html#terms">Terms of Service</a> | <a href="about.html#privacy">Privacy Policy</a></p>
+        </div>
+        <div class="footer-compliance-pill">
+          <span class="compliance-dot"></span>
+          <span>Dual Jurisdiction U.S. & U.K. Regulated Compliance Provider</span>
+        </div>
+      </div>
+
+      <!-- Mandatory Legal Disclaimer from PDF Section 15 -->
+      <div class="footer-disclaimer-box">
+        <p><strong>Legal & Tax Services Disclaimer:</strong> Fintrix Global is a corporate service and technology provider assisting with business formations, registered agent services, and compliance filings. Fintrix Global is not an attorney, law firm, CPA firm, or chartered accounting practice, and does not provide formal legal advice or specialized statutory auditing services. Using Fintrix Global's digital platform or consulting team does not create an attorney-client or fiduciary CPA-client relationship. All company documents, operating templates, and statutory guides are prepared based on standard statutory templates and state guidelines. For complex cross-border taxation or specialized dispute counsel, founders are encouraged to consult certified independent legal or tax practitioners in their relevant jurisdiction.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: GSAP, ScrollTrigger, Lenis + script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
