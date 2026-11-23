@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterForm();
   initModals();
   initDelegatedAnchorLinks();
-  initSaveHoursPricing();
   initVerticalReviews();
   initMotion();
 });
@@ -1290,81 +1289,6 @@ function initStackSectionMotion() {
 }
 
 
-/* ==========================================================================
-   13. Save Hours & Dollars Interactive Pricing (Screenshot 3)
-   ========================================================================== */
-function initSaveHoursPricing() {
-  const tierBtns = document.querySelectorAll('.sh-tier-btn');
-  const eyebrow = document.getElementById('shDetailEyebrow');
-  const priceVal = document.getElementById('shDetailPriceVal');
-  const list = document.getElementById('shDetailList');
-  const ctaBtn = document.getElementById('shCtaBtn');
-
-  if (!tierBtns.length) return;
-
-  const data = {
-    starter: {
-      eyebrow: 'STARTER FORMATION',
-      price: '$297',
-      sub: '/yr + state fees',
-      features: [
-        'Complete Articles of Organization / Companies House filing',
-        'Official EIN / UK Tax Registration',
-        'Registered Agent & physical address (1st year)',
-        'Standard Operating Agreement / Articles of Association',
-        'Secure Client Portal with digital document vault',
-      ],
-      btnText: 'Start your business with Starter →',
-    },
-    tax: {
-      eyebrow: 'TAX AND COMPLIANCE',
-      price: '$1,999',
-      sub: '/yr + state fees',
-      features: [
-        'Everything in Starter plan, plus:',
-        'EIN processed up to two weeks faster',
-        'Federal & state tax filing (including Form 5472 for foreign LLCs)',
-        '1:1 dedicated consultation with a licensed CPA',
-        'Corporate compliance calendar & automatic deadline reminders',
-        'DIY Bookkeeping & Invoicing Software access',
-      ],
-      btnText: 'Start your business with Tax & Compliance →',
-    },
-    box: {
-      eyebrow: 'BUSINESS-IN-A-BOX™',
-      price: '$2,999',
-      sub: '/yr + state fees',
-      features: [
-        'Everything in Tax & Compliance plan, plus:',
-        'Dedicated monthly human bookkeeper',
-        'Monthly reconciliation of bank & processor transactions',
-        'Tax returns prepared and filed from start to finish',
-        'Unlimited year-round CPA consultation calls',
-        'Priority expediting across all state and IRS filings',
-      ],
-      btnText: 'Start with Business-in-a-Box™ →',
-    },
-  };
-
-  tierBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      tierBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const tier = btn.getAttribute('data-sh-tier');
-      const plan = data[tier];
-      if (plan) {
-        if (eyebrow) eyebrow.textContent = plan.eyebrow;
-        if (priceVal) priceVal.innerHTML = plan.price + ' <span>' + plan.sub + '</span>';
-        if (ctaBtn) ctaBtn.innerHTML = '<span>' + plan.btnText + '</span>';
-        if (list) {
-          list.innerHTML = plan.features
-            .map((f) => '<li><span class="sh-chk">✓</span><span>' + f + '</span></li>')
-            .join('');
-        }
-      }
-    });
-  });
-}
 
 /* ==========================================================================
    14. Vertical Auto-Scrolling Reviews Track Duplication (Screenshot 4)
