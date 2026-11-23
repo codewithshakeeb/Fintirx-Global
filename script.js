@@ -317,11 +317,15 @@ function initTableFilters() {
 
   function smoothScrollToRow(row) {
     if (!row) return;
-    if (window.lenis) {
-      window.lenis.scrollTo(row, { offset: -120, duration: 0.9 });
-    } else {
-      const top = row.getBoundingClientRect().top + window.pageYOffset - 120;
-      window.scrollTo({ top, behavior: 'smooth' });
+    try {
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      if (window.lenis) {
+        window.lenis.scrollTo(row, { offset: -120, duration: 0.9 });
+      } else {
+        const top = row.getBoundingClientRect().top + window.pageYOffset - 120;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     }
     highlightRow(row);
   }
@@ -642,6 +646,24 @@ function initNewsletterForm() {
    10. Modals: Formation Order Wizard & Client Portal Demo
    ========================================================================== */
 function initModals() {
+  const headerLoginBtns = document.querySelectorAll('#headerLoginBtn, .nav-login-link');
+  headerLoginBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPortalModal();
+    });
+  });
+
+  const headerTalkBtns = document.querySelectorAll('#headerTalkBtn');
+  headerTalkBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const orderModal = document.getElementById('orderModal');
+      if (orderModal) {
+        e.preventDefault();
+        openOrderModal('consult');
+      }
+    });
+  });
   const startBusinessBtn = document.getElementById('startBusinessBtn');
   const heroStartBtn = document.getElementById('heroStartBtn');
   const bannerStartBtn = document.getElementById('bannerStartBtn');
@@ -1401,3 +1423,30 @@ function initVerticalReviews() {
     });
   });
 }
+
+
+/* Contact Form Submission Handler */
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactInquiryForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Submitting Request...</span>';
+      }
+      setTimeout(() => {
+        contactForm.innerHTML = `
+          <div class="contact-success-box" style="background: #EBF5FA; border: 1.5px solid #2995C3; border-radius: 16px; padding: 32px 24px; text-align: center; animation: fadeIn 0.4s ease;">
+            <div style="width: 48px; height: 48px; background: #1F7091; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 16px;">✓</div>
+            <h4 style="font-size: 1.35rem; font-weight: 800; color: #0F2936; margin-bottom: 10px;">Consultation Request Received!</h4>
+            <p style="font-size: 0.9375rem; color: #4A6572; line-height: 1.6; margin-bottom: 0;">
+              Thank you! Our senior formation attorney &amp; CPA desk has received your scenario. We will review your jurisdiction requirements and contact you via your business email within 4 hours.
+            </p>
+          </div>
+        `;
+      }, 500);
+    });
+  }
+});

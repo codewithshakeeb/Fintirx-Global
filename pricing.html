@@ -118,6 +118,22 @@
     <section class="section packages-section" id="packages" style="padding-top: 40px; padding-bottom: 40px;">
       <div class="container">
         <!-- 3 Tier Cards Grid -->
+        <!-- Jurisdiction Switcher Pills -->
+        <div class="pricing-jurisdiction-switcher reveal" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap;">
+          <span class="switcher-label" style="font-weight: 700; color: #0F2936; font-size: 0.9375rem;">Select Entity Scope:</span>
+          <div class="switcher-pill-group" role="radiogroup" aria-label="Select Entity Scope" style="display: flex; gap: 8px; flex-wrap: wrap; background: #EBF5FA; padding: 4px; border-radius: 9999px; border: 1px solid #D7E7F0;">
+            <button type="button" class="toggle-pill active" id="btnPlanUS" role="radio" aria-checked="true">
+              <span>🇺🇸 U.S. LLC Packages</span>
+            </button>
+            <button type="button" class="toggle-pill" id="btnPlanUK" role="radio" aria-checked="false">
+              <span>🇬🇧 UK LTD Packages</span>
+            </button>
+            <button type="button" class="toggle-pill" id="btnPlanDual" role="radio" aria-checked="false">
+              <span>🌐 Dual US + UK Bundle (Save 15%)</span>
+            </button>
+          </div>
+        </div>
+
         <div class="packages-grid reveal-stagger">
           <!-- Starter Tier -->
           <div class="package-card" id="cardStarter">
@@ -126,10 +142,11 @@
               <p class="package-target">Essential formation and tax ID for lean founders and solo creators.</p>
               <div class="package-price-wrap">
                 <span class="currency">$</span>
-                <span class="price-val">199</span>
+                <span class="price-val" id="priceStarter">199</span>
                 <span class="price-sub">one-time</span>
               </div>
-              <div class="govt-fee-note">+ applicable state / Companies House fee</div>
+              <div class="package-scope-badge" id="scopeStarter">🇺🇸 U.S. LLC Scope</div>
+              <div class="govt-fee-note" id="feeStarter">+ state filing fees (Wyoming $102, Delaware $140)</div>
             </div>
 
             <div class="package-body">
@@ -144,7 +161,7 @@
             </div>
 
             <div class="package-footer">
-              <a href="contact.html?plan=starter" class="btn btn-outline w-full">Choose Starter</a>
+              <button type="button" class="btn btn-outline w-full" onclick="selectPackage('Starter', 199)">Choose Starter</button>
               <span class="card-guarantee-text">No hidden recurring lock-ins</span>
             </div>
           </div>
@@ -157,10 +174,11 @@
               <p class="package-target">Full privacy, commercial address, and managed annual reporting.</p>
               <div class="package-price-wrap">
                 <span class="currency">$</span>
-                <span class="price-val">499</span>
+                <span class="price-val" id="priceStandard">499</span>
                 <span class="price-sub">/year</span>
               </div>
-              <div class="govt-fee-note">+ state filing fees billed at cost</div>
+              <div class="package-scope-badge" id="scopeStandard">🇺🇸 U.S. LLC Scope</div>
+              <div class="govt-fee-note" id="feeStandard">+ state filing fees billed at cost</div>
             </div>
 
             <div class="package-body">
@@ -178,7 +196,7 @@
             </div>
 
             <div class="package-footer">
-              <a href="contact.html?plan=standard" class="btn btn-primary w-full magnetic">Choose Standard →</a>
+              <button type="button" class="btn btn-primary w-full pill-btn magnetic" onclick="selectPackage('Standard', 499)">Choose Standard →</button>
               <span class="card-guarantee-text">100% Formation Money-Back Guarantee</span>
             </div>
           </div>
@@ -190,10 +208,11 @@
               <p class="package-target">All-inclusive VIP governance, banking readiness, and unlimited amendments.</p>
               <div class="package-price-wrap">
                 <span class="currency">$</span>
-                <span class="price-val">999</span>
+                <span class="price-val" id="priceComplete">999</span>
                 <span class="price-sub">/year</span>
               </div>
-              <div class="govt-fee-note">+ state filing fees billed at cost</div>
+              <div class="package-scope-badge" id="scopeComplete">🇺🇸 U.S. LLC Scope</div>
+              <div class="govt-fee-note" id="feeComplete">+ state filing fees billed at cost</div>
             </div>
 
             <div class="package-body">
@@ -210,7 +229,7 @@
             </div>
 
             <div class="package-footer">
-              <a href="contact.html?plan=complete" class="btn btn-outline w-full">Choose Complete</a>
+              <button type="button" class="btn btn-outline w-full" onclick="selectPackage('Complete', 999)">Choose Complete</button>
               <span class="card-guarantee-text">Dedicated Specialist Support</span>
             </div>
           </div>
@@ -440,5 +459,270 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
   <script src="./script.js"></script>
+<!-- ==========================================================================
+       FORMATION ORDER WIZARD MODAL (Multi-step Interactive Intake)
+       ========================================================================== -->
+  <div class="modal-overlay" id="orderModal" hidden>
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+      <div class="modal-header">
+        <div>
+          <span class="modal-eyebrow">FINTRIX FORMATION WIZARD</span>
+          <h3 class="modal-title" id="orderModalTitle">Start Your Company</h3>
+        </div>
+        <button type="button" class="modal-close" id="orderModalClose" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Wizard Steps Indicator -->
+        <div class="wizard-steps-indicator">
+          <div class="wizard-step active" id="wStep1">
+            <span class="step-num">1</span>
+            <span class="step-label">Select Package</span>
+          </div>
+          <div class="wizard-step" id="wStep2">
+            <span class="step-num">2</span>
+            <span class="step-label">Entity Details</span>
+          </div>
+          <div class="wizard-step" id="wStep3">
+            <span class="step-num">3</span>
+            <span class="step-label">Review &amp; Submit</span>
+          </div>
+        </div>
+
+        <form id="orderWizardForm" onsubmit="return false;">
+          <!-- Pane 1: Package Selection -->
+          <div class="modal-pane active" id="pane1">
+            <p style="font-size: 0.9375rem; color: #4A6572; margin-bottom: 18px;">
+              Choose the package that fits your operational needs. All packages include statutory name reservation, Articles of Organization / Incorporation, and official tax registration.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <label class="pkg-radio-card">
+                <input type="radio" name="wizardPkg" value="Starter" data-price="199">
+                <div class="pkg-radio-details">
+                  <div class="pkg-radio-title">
+                    <strong>Starter Package</strong>
+                    <span class="pkg-radio-price">$199 one-time</span>
+                  </div>
+                  <p>Complete official filing, EIN / Tax ID, 1st year registered agent, and client document vault.</p>
+                </div>
+              </label>
+
+              <label class="pkg-radio-card selected">
+                <input type="radio" name="wizardPkg" value="Standard" data-price="499" checked>
+                <div class="pkg-radio-details">
+                  <div class="pkg-radio-title">
+                    <strong>Standard Package (Most Popular)</strong>
+                    <span class="pkg-radio-price">$499 /year</span>
+                  </div>
+                  <p>Starter features + unique business address, mail scanning/forwarding, and managed annual reporting.</p>
+                </div>
+              </label>
+
+              <label class="pkg-radio-card">
+                <input type="radio" name="wizardPkg" value="Complete" data-price="999">
+                <div class="pkg-radio-details">
+                  <div class="pkg-radio-title">
+                    <strong>Complete Package (All-Inclusive VIP)</strong>
+                    <span class="pkg-radio-price">$999 /year</span>
+                  </div>
+                  <p>Standard features + banking resolution packet for Mercury/Relay, unlimited corporate amendments, and dedicated CPA desk.</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="modal-pane-nav">
+              <span style="font-size: 0.8125rem; color: #7E97A6;">Step 1 of 3</span>
+              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(2)">Next: Entity Details &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Pane 2: Entity Details -->
+          <div class="modal-pane" id="pane2" hidden>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <label for="proposedName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
+                  Proposed Company Name *
+                </label>
+                <input type="text" id="proposedName" class="form-input" placeholder="e.g. Acme Global Innovations" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
+              </div>
+
+              <div>
+                <label for="targetJurisdiction" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
+                  Target Jurisdiction *
+                </label>
+                <select id="targetJurisdiction" class="form-input" style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
+                  <option value="wyoming">U.S. LLC - Wyoming (Top privacy & low fees)</option>
+                  <option value="delaware">U.S. LLC - Delaware (Venture capital standard)</option>
+                  <option value="newmexico">U.S. LLC - New Mexico (Zero annual state fees)</option>
+                  <option value="florida">U.S. LLC - Florida (Commercial hub)</option>
+                  <option value="uk-ltd">UK LTD - England &amp; Wales (Companies House)</option>
+                  <option value="dual-bundle">Dual US LLC + UK LTD Bundle (Save 15%)</option>
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                  <label for="founderName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
+                    Founder / Contact Name *
+                  </label>
+                  <input type="text" id="founderName" class="form-input" placeholder="Full legal name" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
+                </div>
+                <div>
+                  <label for="founderEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
+                    Business Email *
+                  </label>
+                  <input type="email" id="founderEmail" class="form-input" placeholder="name@company.com" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
+                </div>
+              </div>
+
+              <div>
+                <label for="businessActivity" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
+                  Primary Business Activity *
+                </label>
+                <input type="text" id="businessActivity" class="form-input" placeholder="e.g. SaaS, E-Commerce, Consulting, Digital Agency" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
+              </div>
+            </div>
+
+            <div class="modal-pane-nav">
+              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(1)">&larr; Back</button>
+              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(3)">Next: Review &amp; Dispatch &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Pane 3: Review & Summary -->
+          <div class="modal-pane" id="pane3" hidden>
+            <div class="fee-summary-box">
+              <div class="fee-line">
+                <span>Selected Package:</span>
+                <strong id="summaryTierName">Standard Package</strong>
+              </div>
+              <div class="fee-line">
+                <span>Service Fee:</span>
+                <strong id="summaryServiceFee">$499.00</strong>
+              </div>
+              <div class="fee-line">
+                <span>Statutory Government Fees:</span>
+                <span class="badge-govt-tag">Billed separately at actual state/registry cost</span>
+              </div>
+              <div class="fee-line" style="border-top: 1px solid #D7E7F0; padding-top: 8px; margin-top: 4px;">
+                <span>Formation Guarantee:</span>
+                <span style="color: #059669; font-weight: 700;">100% Money-Back Guarantee</span>
+              </div>
+            </div>
+
+            <p style="font-size: 0.8125rem; color: #64748B; margin-top: 14px; line-height: 1.5;">
+              By clicking "Submit &amp; Open Client Portal", our formation desk conducts an instant name check and prepares your filing queue. Third-party government fees are billed separately with complete receipt transparency.
+            </p>
+
+            <div class="modal-pane-nav">
+              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(2)">&larr; Back</button>
+              <button type="button" class="btn btn-primary pill-btn magnetic" onclick="submitFormationOrder()">Submit &amp; Open Client Portal &rarr;</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Success State -->
+        <div class="wizard-success-state" id="wizardSuccess" hidden>
+          <div class="success-icon-wrap">✓</div>
+          <h4 class="success-title">Order Received! Welcome to Fintrix Global</h4>
+          <p class="success-desc">
+            Your incorporation queue has been opened. Our licensed compliance specialists are performing preliminary registry clearance and will dispatch your confirmation docket within 24 hours.
+          </p>
+          <button type="button" class="btn btn-primary pill-btn" onclick="closeOrderModal()">View Application Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CLIENT PORTAL DEMO MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="portalModal" hidden>
+    <div class="modal-container modal-lg" role="dialog" aria-modal="true" aria-labelledby="portalModalTitle">
+      <div class="modal-header">
+        <div class="portal-brand-head">
+          <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" style="max-height: 32px; width: auto;">
+          <h3 class="modal-title" id="portalModalTitle" style="font-size: 1.125rem;">Encrypted Client Portal Demo</h3>
+        </div>
+        <button type="button" class="modal-close" id="portalModalClose" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body portal-modal-body">
+        <div class="portal-demo-layout">
+          <!-- Sidebar -->
+          <div class="portal-sidebar">
+            <div class="user-profile-tile">
+              <div class="u-avatar">AF</div>
+              <div class="u-text">
+                <strong>Apex Frontier LLC</strong>
+                <small>WY SOS #2026-9481</small>
+              </div>
+            </div>
+
+            <nav class="portal-menu">
+              <a href="javascript:void(0)" class="p-nav-link active">📊 Dashboard &amp; Status</a>
+              <a href="javascript:void(0)" class="p-nav-link">📁 Document Vault (4)</a>
+              <a href="javascript:void(0)" class="p-nav-link">📬 Digital Mail Room (1 New)</a>
+              <a href="javascript:void(0)" class="p-nav-link">📅 Compliance Calendar</a>
+              <a href="javascript:void(0)" class="p-nav-link">🏦 Banking Resolution Desk</a>
+            </nav>
+
+            <div class="portal-sidebar-footer">
+              <span class="status-indicator-green"></span>
+              <span>Encrypted Vault Online</span>
+            </div>
+          </div>
+
+          <!-- Main Area -->
+          <div class="portal-main-area">
+            <div class="portal-top-banner">
+              <div>
+                <h4 style="color: #0F2936; font-weight: 800;">Entity Status: Active &amp; Good Standing</h4>
+                <p>Wyoming LLC Filing confirmed • Form 147C EIN Letter active • Next filing: Annual Report 2027</p>
+              </div>
+              <span class="status-pulse-badge" style="background: #EBF5FA; color: #1F7091; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.75rem;">
+                ✓ Verified
+              </span>
+            </div>
+
+            <div class="portal-section-box">
+              <h5 style="font-size: 0.875rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Stored Vault Documents (Bank-Grade AES-256)</h5>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
+                  <div>
+                    <strong style="font-size: 0.8125rem; color: #0F2936;">Certificate_of_Organization_Certified.pdf</strong>
+                    <div style="font-size: 0.6875rem; color: #64748B;">Wyoming Secretary of State • Official Seal</div>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
+                  <div>
+                    <strong style="font-size: 0.8125rem; color: #0F2936;">IRS_Form_147C_EIN_Confirmation.pdf</strong>
+                    <div style="font-size: 0.6875rem; color: #64748B;">Internal Revenue Service • Verified Tax ID</div>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
+                  <div>
+                    <strong style="font-size: 0.8125rem; color: #0F2936;">Operating_Agreement_Multi_Member.pdf</strong>
+                    <div style="font-size: 0.6875rem; color: #64748B;">Executed Statutory Agreement • Banking Clause Included</div>
+                  </div>
+                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: right;">
+              <button type="button" class="btn btn-outline pill-btn" onclick="closePortalModal()">Exit Live Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 </html>
