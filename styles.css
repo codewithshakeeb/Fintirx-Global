@@ -6210,3 +6210,22 @@ body.stack-active .floating-pill-header {
 #comparisonTable tbody tr {
   transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
 }
+
+
+/* Active selected card via tab click - brings card immediately to front */
+.stack-card.card-selected-active {
+  z-index: 60 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  box-shadow: 0 24px 56px rgba(31, 112, 145, 0.18), 0 6px 18px rgba(15, 41, 54, 0.08) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Enhanced Tab Button Active State */
+.stack-tab-btn.active {
+  color: var(--color-primary-dark) !important;
+  font-weight: 700 !important;
+  background-color: rgba(41, 149, 195, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(31, 112, 145, 0.1) !important;
+}

@@ -90,68 +90,158 @@ function initMobileDrawer() {
 }
 
 /* ==========================================================================
-   3. Single Delegated Anchor Links & Tab Click Handler
+   3. Single Delegated Anchor Links & Robust Stack Tab Card Switcher
    ========================================================================== */
+
+// Robust Card Selection: Instantly shows the card and scrolls smoothly both forward and backward
+window.selectStackCard = function(cardId) {
+  const cards = Array.from(document.querySelectorAll('.stack-card'));
+  const allTabBtns = document.querySelectorAll('.stack-tab-btn');
+  const targetCard = document.getElementById(cardId);
+  const targetBtn = document.querySelector(`.stack-tab-btn[data-target-card="${cardId}"]`);
+
+  if (!targetCard || !targetBtn) return;
+
+  const cardIndex = cards.indexOf(targetCard);
+  if (cardIndex < 0) return;
+
+  // 1. Immediately set active tab visually
+  allTabBtns.forEach((b) => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  targetBtn.classList.add('active');
+  targetBtn.setAttribute('aria-selected', 'true');
+
+  // Auto-scroll active tab into view horizontally on mobile
+  if (window.innerWidth < 768) {
+    targetBtn.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+  }
+
+  // 2. Lock ScrollTrigger activeTab overrides during animated scroll
+  window.isTabClickScrolling = true;
+  if (window.tabScrollTimer) clearTimeout(window.tabScrollTimer);
+  window.tabScrollTimer = setTimeout(() => {
+    window.isTabClickScrolling = false;
+  }, 1200);
+
+  // 3. Immediately bring target card to top with high z-index and clear visibility
+  cards.forEach((c, idx) => {
+    c.classList.remove('card-selected-active');
+    if (idx === cardIndex) {
+      c.classList.add('card-selected-active');
+    }
+  });
+
+  // 4. Calculate exact scroll position where this card is active
+  const targetY = getCardTargetScrollY(targetCard);
+
+  // 5. Smoothly scroll to the target card
+  if (window.lenis) {
+    window.lenis.scrollTo(targetY, {
+      duration: 0.9,
+      onComplete: () => {
+        window.isTabClickScrolling = false;
+      }
+    });
+  } else {
+    window.scrollTo({
+      top: targetY,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+    });
+    setTimeout(() => {
+      window.isTabClickScrolling = false;
+    }, 900);
+  }
+};
+
 function getCardTargetScrollY(targetCard) {
   if (!targetCard) return 0;
-  const cardId = targetCard.id;
 
-  // 1. Try to get ScrollTrigger start position (exact numeric document scroll point)
+  const cards = Array.from(document.querySelectorAll('.stack-card'));
+  const cardIndex = cards.indexOf(targetCard);
+  const section = document.getElementById('services');
+  if (!section || cardIndex < 0) return 0;
+
+  // Calculate natural document offset of the Services section
+  let sectionTop = 0;
+  let sCurr = section;
+  while (sCurr) {
+    sectionTop += sCurr.offsetTop || 0;
+    sCurr = sCurr.offsetParent;
+  }
+
+  // For Card 0 (Form a Company):
+  // Scroll so section header and tab bar are pinned at top of viewport
+  if (cardIndex === 0) {
+    return Math.max(0, sectionTop + 10);
+  }
+
+  // On desktop / tablet (cards are stacked deck):
+  // Check if ScrollTrigger deck-scrub is available for exact pin position
   if (window.ScrollTrigger) {
-    const st = ScrollTrigger.getById('deck-tab-' + cardId);
-    if (st && typeof st.start === 'number' && st.start > 0) {
-      return st.start + 10;
+    const scrubSt = ScrollTrigger.getById('deck-scrub-' + (cardIndex - 1));
+    if (scrubSt && typeof scrubSt.end === 'number' && scrubSt.end > 0) {
+      return scrubSt.end + 20;
     }
   }
 
-  // 2. High-precision geometric fallback based on section top & card index
-  const section = document.getElementById('services');
-  const cards = Array.from(document.querySelectorAll('.stack-card'));
-  const cardIndex = cards.indexOf(targetCard);
-  if (section && cardIndex >= 0) {
-    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-    return sectionTop + 140 + (cardIndex * 620);
-  }
-
-  return targetCard.getBoundingClientRect().top + window.pageYOffset - 90;
+  // High-precision geometric fallback based on section top & card index
+  const isMobile = window.innerWidth < 768;
+  const cardStep = isMobile ? 540 : 600;
+  return sectionTop + 40 + (cardIndex * cardStep);
 }
 
 function initDelegatedAnchorLinks() {
-  document.addEventListener('click', (e) => {
-    const anchor = e.target.closest('a[href^="#"]:not([href="#"]), .stack-tab-btn');
-    if (!anchor) return;
-
-    // Handle stack tab button specifically so backward & forward scrolling both work flawlessly
-    if (anchor.classList.contains('stack-tab-btn')) {
-      const cardId = anchor.getAttribute('data-target-card');
-      if (!cardId) return;
-      const targetCard = document.getElementById(cardId);
-      if (!targetCard) return;
-
-      e.preventDefault();
-
-      // Immediately activate tab visually
-      const allTabBtns = document.querySelectorAll('.stack-tab-btn');
-      allTabBtns.forEach((b) => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
+  // Clear card-selected-active on manual wheel/touch scroll so natural scrubbing resumes
+  window.addEventListener('wheel', () => {
+    if (!window.isTabClickScrolling) {
+      document.querySelectorAll('.stack-card.card-selected-active').forEach(c => {
+        c.classList.remove('card-selected-active');
       });
-      anchor.classList.add('active');
-      anchor.setAttribute('aria-selected', 'true');
+    }
+  }, { passive: true });
 
-      // Scroll to numeric coordinate (works backwards and forwards without sticky bounding rect distortion!)
-      const targetY = getCardTargetScrollY(targetCard);
+  window.addEventListener('touchmove', () => {
+    if (!window.isTabClickScrolling) {
+      document.querySelectorAll('.stack-card.card-selected-active').forEach(c => {
+        c.classList.remove('card-selected-active');
+      });
+    }
+  }, { passive: true });
 
-      if (window.lenis) {
-        window.lenis.scrollTo(targetY, { duration: 1.0 });
-      } else {
-        window.scrollTo({
-          top: targetY,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-      }
+  // Direct click listeners on each tab button
+  const tabBtns = document.querySelectorAll('.stack-tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const cardId = btn.getAttribute('data-target-card');
+      if (cardId) selectStackCard(cardId);
+    });
+  });
+
+  // Direct click listener on tab bar CTA button
+  const stackBarCta = document.getElementById('stackBarCtaBtn');
+  if (stackBarCta) {
+    stackBarCta.addEventListener('click', (e) => {
+      e.preventDefault();
+      openOrderModal('Standard');
+    });
+  }
+
+  // Delegated click listener on document for general anchor links
+  document.addEventListener('click', (e) => {
+    const tabBtn = e.target.closest('.stack-tab-btn');
+    if (tabBtn) {
+      e.preventDefault();
+      const cardId = tabBtn.getAttribute('data-target-card');
+      if (cardId) selectStackCard(cardId);
       return;
     }
+
+    const anchor = e.target.closest('a[href^="#"]:not([href="#"])');
+    if (!anchor) return;
 
     let targetSelector = anchor.getAttribute('href');
     if (!targetSelector || targetSelector === '#' || targetSelector === '#null') return;
@@ -176,15 +266,7 @@ function initDelegatedAnchorLinks() {
     const headerOffset = isStackSection ? 70 : (headerEl ? headerEl.offsetHeight : 76);
 
     if (targetEl.classList.contains('stack-card')) {
-      const targetY = getCardTargetScrollY(targetEl);
-      if (window.lenis) {
-        window.lenis.scrollTo(targetY, { duration: 1.0 });
-      } else {
-        window.scrollTo({
-          top: targetY,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-      }
+      selectStackCard(targetEl.id);
     } else {
       if (window.lenis) {
         window.lenis.scrollTo(targetEl, {
@@ -1308,6 +1390,7 @@ function initStackSectionMotion() {
   // Set active tab visually
   function activateTab(btn, scrollIntoView = false) {
     if (!btn) return;
+    if (window.isTabClickScrolling) return; // Prevent intermediate triggers from overwriting the clicked tab
     tabBtns.forEach((b) => {
       b.classList.remove('active');
       b.setAttribute('aria-selected', 'false');
