@@ -352,8 +352,8 @@ body.stack-active .site-header {
 }
 
 .brand-logo {
-  max-height: 44px;
-  height: 40px;
+  max-height: 40px;
+  height: 38px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -1586,11 +1586,29 @@ body.stack-active .site-header {
   text-align: center;
 }
 
+/* Section Anchor Scroll Padding to Prevent Sticky Header Collision */
+section[id], 
+[id^="stages"], 
+[id^="process"], 
+[id^="services"], 
+[id^="comparison"], 
+[id^="packages"], 
+[id^="faq"], 
+[id^="contact"], 
+[id^="about"] {
+  scroll-margin-top: 100px;
+}
+
 /* ==========================================================================
    Section 4: 5-Step Process
    ========================================================================== */
 .process-section {
+  padding: 84px 0;
   background-color: var(--color-bg);
+}
+
+.process-section .section-header {
+  margin-bottom: 52px;
 }
 
 .process-layout {
@@ -1610,21 +1628,25 @@ body.stack-active .site-header {
   display: flex;
   gap: 20px;
   padding: 24px;
-  background-color: var(--color-surface-card);
-  border: 1px solid var(--color-border);
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-normal);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  position: relative;
 }
 
-.process-step-item:hover, .process-step-item.active {
+.process-step-item:hover {
   border-color: var(--color-primary-light);
   background-color: #F8FBFE;
-  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
 }
 
 .process-step-item.active {
-  border-left: 4px solid var(--color-primary-dark);
+  border: 1.5px solid var(--color-primary-dark);
+  border-left: 5px solid var(--color-primary-dark);
+  background-color: #F4F9FC;
+  box-shadow: 0 8px 24px rgba(31, 112, 145, 0.12);
 }
 
 .step-badge {
@@ -1641,12 +1663,14 @@ body.stack-active .site-header {
   justify-content: center;
   flex-shrink: 0;
   border: 1px solid var(--color-border);
+  transition: all 0.25s ease;
 }
 
 .process-step-item.active .step-badge {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
   color: #FFFFFF;
   border-color: transparent;
+  box-shadow: 0 4px 14px rgba(31, 112, 145, 0.28);
 }
 
 .step-content {
@@ -1664,6 +1688,20 @@ body.stack-active .site-header {
   font-size: 0.9375rem;
   color: var(--color-ink-secondary);
   line-height: 1.5;
+}
+
+.step-timing-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background-color: #EBF5FA;
+  border: 1px solid var(--color-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
 }
 
 /* Info required box inside step 2 */
@@ -1794,10 +1832,23 @@ body.stack-active .site-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
   background-color: var(--color-surface-subtle);
   border: 1px solid var(--color-border-subtle);
+  transition: all 0.25s ease;
+}
+
+.v-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .v-check-item.done {
@@ -1806,13 +1857,32 @@ body.stack-active .site-header {
 }
 
 .v-check-item.done .v-icon {
-  color: #059669;
-  font-weight: bold;
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+  font-weight: 800;
 }
 
 .v-check-item.current {
   border-color: var(--color-primary-light);
   background-color: #EBF5FA;
+  box-shadow: 0 2px 8px rgba(41, 149, 195, 0.12);
+}
+
+.v-check-item.current .v-icon {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.v-check-item.pending {
+  opacity: 0.7;
+}
+
+.v-check-item.pending .v-icon {
+  background-color: #F1F5F9;
+  color: #64748B;
+  border: 1px solid #E2E8F0;
 }
 
 .spin-dot {
@@ -5673,9 +5743,21 @@ body.stack-active .floating-pill-header {
   color: var(--color-primary-dark);
 }
 
-.pill-btn {
+#headerTalkBtn, .pill-btn {
   border-radius: var(--radius-full) !important;
   padding: 10px 22px !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-shrink: 0 !important;
+}
+
+.floating-pill-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================

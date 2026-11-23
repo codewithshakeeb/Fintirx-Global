@@ -257,24 +257,63 @@ function initDelegatedAnchorLinks() {
    ========================================================================== */
 function initProcessStepInteractivity() {
   const stepItems = document.querySelectorAll('.process-step-item');
-  const visualCompanyName = document.getElementById('visualCompanyName');
+  const checklistItems = document.querySelectorAll('#processVisualChecklist .v-check-item');
+  const livePill = document.getElementById('visualLiveStatusPill');
+  const companyTitle = document.getElementById('visualCompanyName');
 
-  const stepTitles = {
-    '1': 'Frontier Holdings LLC',
-    '2': 'NexaTrade Global LLC',
-    '3': 'Apex Velocity LTD',
-    '4': 'Stratos Digital Systems LLC',
-    '5': 'Global Horizon Enterprises LLC'
+  const stepMeta = {
+    '1': {
+      pill: 'Phase 1: Consultation Active',
+      company: 'Global Horizons Enterprise LLC / UK LTD'
+    },
+    '2': {
+      pill: 'Phase 2: Intake & ID Verified',
+      company: 'Global Horizons Enterprise LLC / UK LTD'
+    },
+    '3': {
+      pill: 'Phase 3: State Filing Expedited',
+      company: 'Global Horizons Enterprise LLC / UK LTD'
+    },
+    '4': {
+      pill: 'Phase 4: EIN & Vault Delivery',
+      company: 'Global Horizons Enterprise LLC / UK LTD'
+    },
+    '5': {
+      pill: 'Phase 5: Active & Compliant',
+      company: 'Global Horizons Enterprise LLC / UK LTD'
+    }
   };
 
   stepItems.forEach(item => {
     item.addEventListener('click', () => {
+      const stepNum = parseInt(item.getAttribute('data-step'), 10);
       stepItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
-      const stepNum = item.getAttribute('data-step');
-      if (visualCompanyName && stepTitles[stepNum]) {
-        visualCompanyName.textContent = stepTitles[stepNum];
+
+      if (livePill && stepMeta[stepNum]) {
+        livePill.textContent = stepMeta[stepNum].pill;
       }
+      if (companyTitle && stepMeta[stepNum]) {
+        companyTitle.textContent = stepMeta[stepNum].company;
+      }
+
+      // Dynamically update checklist milestone states
+      checklistItems.forEach((checkItem, idx) => {
+        const itemStep = idx + 1;
+        checkItem.classList.remove('done', 'current', 'pending');
+        const iconEl = checkItem.querySelector('.v-icon');
+
+        if (itemStep < stepNum) {
+          checkItem.classList.add('done');
+          if (iconEl) iconEl.innerHTML = '✓';
+        } else if (itemStep === stepNum) {
+          checkItem.classList.add('current');
+          if (iconEl) iconEl.innerHTML = '<span class="spin-dot"></span>';
+        } else {
+          checkItem.classList.add('pending');
+          if (iconEl) iconEl.textContent = itemStep;
+        }
+      });
     });
   });
 }
