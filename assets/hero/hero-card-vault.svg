@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 500" width="380" height="500">
+  <defs>
+    <filter id="shadowVault" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0f2936" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1f7091" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="10" y="10" width="360" height="475" rx="24" fill="#FFFFFF" stroke="#D7E7F0" stroke-width="1.5" filter="url(#shadowVault)"/>
+
+  <!-- Category Pill -->
+  <rect x="32" y="36" width="224" height="26" rx="13" fill="#EBF5FA"/>
+  <text x="44" y="53" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="10" font-weight="800" fill="#1F7091" letter-spacing="0.08em">DIGITAL MAIL &amp; DOCUMENT VAULT</text>
+
+  <!-- Vault Items Stack -->
+  <g transform="translate(32, 85)">
+    <!-- Item 1: Official Notice -->
+    <g transform="translate(0, 0)">
+      <rect width="316" height="76" rx="14" fill="#F8FBFE" stroke="#E6EFF5" stroke-width="1.5"/>
+      <!-- Mail Icon Box -->
+      <rect x="14" y="18" width="40" height="40" rx="10" fill="#E0F2FE"/>
+      <g transform="translate(24, 28)" stroke="#0284C7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </g>
+      <text x="66" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0F2936">Secretary of State Notice</text>
+      <text x="66" y="54" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#4A6572">Scanned today • Wyoming SOS</text>
+      <rect x="238" y="24" width="66" height="22" rx="6" fill="#DBEAFE"/>
+      <text x="246" y="39" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#1D4ED8">New Scan</text>
+    </g>
+
+    <!-- Item 2: Certificate of Formation -->
+    <g transform="translate(0, 96)">
+      <rect width="316" height="76" rx="14" fill="#F8FBFE" stroke="#E6EFF5" stroke-width="1.5"/>
+      <!-- Doc Icon Box -->
+      <rect x="14" y="18" width="40" height="40" rx="10" fill="#F0FDF4"/>
+      <g transform="translate(24, 28)" stroke="#16A34A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </g>
+      <text x="66" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0F2936">Certificate_of_Formation.pdf</text>
+      <text x="66" y="54" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#4A6572">Signed &amp; sealed • Stored encrypted</text>
+      <rect x="268" y="24" width="36" height="22" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="276" y="39" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#475569">PDF</text>
+    </g>
+
+    <!-- Item 3: Operating Agreement -->
+    <g transform="translate(0, 192)">
+      <rect width="316" height="76" rx="14" fill="#F8FBFE" stroke="#E6EFF5" stroke-width="1.5"/>
+      <!-- Agreement Icon Box -->
+      <rect x="14" y="18" width="40" height="40" rx="10" fill="#F5F3FF"/>
+      <g transform="translate(24, 28)" stroke="#7C3AED" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+      </g>
+      <text x="66" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#0F2936">Operating Agreement (Custom)</text>
+      <text x="66" y="54" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#4A6572">Multi-member protection draft</text>
+      <rect x="268" y="24" width="36" height="22" rx="6" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+      <text x="276" y="39" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#475569">PDF</text>
+    </g>
+  </g>
+
+  <!-- Divider & Footer -->
+  <line x1="32" y1="435" x2="348" y2="435" stroke="#E6EFF5" stroke-width="1.5"/>
+  <text x="32" y="458" font-family="'Inter', system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#1F7091">Bank &amp; Payment Platform Ready</text>
+  <circle cx="340" cy="454" r="4" fill="#10B981"/>
+</svg>
