@@ -9,7 +9,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileDrawer();
-  initHeroShowcaseToggle();
   initProcessStepInteractivity();
   initTableFilters();
   initPricingSwitcher();
@@ -22,54 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initVerticalReviews();
   initMotion();
 });
-
-/* ==========================================================================
-   0. Hero Showcase View Switcher (3-Card Grid vs 3D Tilted Cards)
-   ========================================================================== */
-function initHeroShowcaseToggle() {
-  const switchBtns = document.querySelectorAll('.view-switch-btn');
-  const gridShowcase = document.getElementById('heroGridShowcase');
-  const tiltedShowcase = document.getElementById('heroTiltedShowcase');
-
-  if (!switchBtns.length || !gridShowcase || !tiltedShowcase) return;
-
-  switchBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const targetView = btn.getAttribute('data-view');
-      switchBtns.forEach((b) => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      if (targetView === 'tilted') {
-        gridShowcase.style.display = 'none';
-        tiltedShowcase.style.display = 'grid';
-        if (window.gsap) {
-          gsap.fromTo(
-            tiltedShowcase.children,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', clearProps: 'opacity,y' }
-          );
-        }
-      } else {
-        tiltedShowcase.style.display = 'none';
-        gridShowcase.style.display = 'grid';
-        if (window.gsap) {
-          gsap.fromTo(
-            gridShowcase.children,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', clearProps: 'opacity,y' }
-          );
-        }
-      }
-      if (window.ScrollTrigger) {
-        ScrollTrigger.refresh();
-      }
-    });
-  });
-}
 
 /* ==========================================================================
    1. Sticky Header State (Non-interfering Base)
