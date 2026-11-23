@@ -185,8 +185,20 @@
           <span>Starting at $199 + transparent state fees • No U.S. or UK residency or SSN required • Third-party government fees billed separately at cost</span>
         </div>
 
+        <!-- Hero Visual Showcase View Switcher -->
+        <div class="hero-view-switcher hero-fade-item" role="tablist" aria-label="Hero Showcase View Mode">
+          <button type="button" class="view-switch-btn active" id="heroViewGridBtn" data-view="grid" role="tab" aria-selected="true" aria-controls="heroGridShowcase">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            <span>Platform Dashboard</span>
+          </button>
+          <button type="button" class="view-switch-btn" id="heroViewTiltedBtn" data-view="tilted" role="tab" aria-selected="false" aria-controls="heroTiltedShowcase">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span>3D Visual Cards</span>
+          </button>
+        </div>
+
         <!-- 3 Interactive UI Preview Cards (Formation Tracker, Compliance & Filings, Mail Vault) -->
-        <div class="hero-cards-grid">
+        <div class="hero-cards-grid" id="heroGridShowcase" role="tabpanel" aria-labelledby="heroViewGridBtn">
           <!-- Card 1: Tax & Federal Filings -->
           <div class="hero-preview-card card-tax parallax" data-parallax-factor="0.04">
             <div class="card-pill">TAX & FEDERAL FILINGS</div>
@@ -307,6 +319,123 @@
             </div>
             <div class="card-footer-notice">
               <span>Bank & Payment Platform Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tilted 3D Mini-Cards Showcase (Formation Tracker, Tax Filings, Bookkeeping) -->
+        <div class="hero-tilted-showcase" id="heroTiltedShowcase" style="display: none;" role="tabpanel" aria-labelledby="heroViewTiltedBtn">
+          <!-- Tilted Card 1: Tax Filings -->
+          <div class="tilted-card tilted-tax">
+            <span class="tilted-eyebrow">TAX FILINGS</span>
+            <div class="tilted-tax-body">
+              <div class="tilted-file-box">
+                <svg class="tilted-file-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                <span>Form 5472.pdf</span>
+              </div>
+              <div class="tilted-radial-gauge">
+                <svg viewBox="0 0 100 100" class="tilted-svg-gauge">
+                  <circle class="tilted-gauge-bg" cx="50" cy="50" r="40" />
+                  <circle class="tilted-gauge-fill" cx="50" cy="50" r="40" stroke-dasharray="184 251" />
+                </svg>
+                <div class="tilted-gauge-content">
+                  <strong class="tilted-pct">73%</strong>
+                  <span class="tilted-sub">Uploading</span>
+                </div>
+              </div>
+              <div class="tilted-due-date">Due date: <strong>April 15</strong></div>
+            </div>
+          </div>
+
+          <!-- Tilted Card 2: Formation Tracker (Centerpiece) -->
+          <div class="tilted-card tilted-tracker">
+            <span class="tilted-eyebrow">FORMATION TRACKER</span>
+            <div class="tilted-tracker-body">
+              <div class="tilted-tracker-list">
+                <div class="tilted-list-item done">
+                  <span class="tilted-check">✓</span>
+                  <span>Account Setup</span>
+                </div>
+                <div class="tilted-list-item active">
+                  <span class="tilted-spinner">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line></svg>
+                  </span>
+                  <strong>LLC Filing</strong>
+                </div>
+                <div class="tilted-list-item queued">
+                  <span class="tilted-dot"></span>
+                  <span>Registered Agent</span>
+                </div>
+                <div class="tilted-list-item queued">
+                  <span class="tilted-dot"></span>
+                  <span>EIN Processing</span>
+                </div>
+                <div class="tilted-list-item queued">
+                  <span class="tilted-dot"></span>
+                  <span>U.S. Bank Account Application</span>
+                </div>
+              </div>
+              <div class="tilted-tracker-badge">
+                <div class="tilted-badge-ring">
+                  <svg viewBox="0 0 100 100" class="tilted-badge-svg">
+                    <circle class="t-ring-bg" cx="50" cy="50" r="40" />
+                    <circle class="t-ring-fill" cx="50" cy="50" r="40" stroke-dasharray="160 251" />
+                  </svg>
+                  <div class="tilted-badge-inner">
+                    <span class="t-badge-bold">LLC Filing</span>
+                    <span class="t-badge-sub">In Progress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tilted Card 3: Bookkeeping -->
+          <div class="tilted-card tilted-books">
+            <span class="tilted-eyebrow">BOOKKEEPING</span>
+            <div class="tilted-books-body">
+              <div class="tilted-chart-box">
+                <svg class="tilted-trendline" viewBox="0 0 220 50" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="trendGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#2995C3" />
+                      <stop offset="100%" stop-color="#1F7091" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M 5,38 Q 40,36 75,24 T 145,16 T 215,8" fill="none" stroke="url(#trendGradient)" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="215" cy="8" r="4" fill="#FFFFFF" stroke="#1F7091" stroke-width="2.5" />
+                </svg>
+              </div>
+              <div class="tilted-tx-list">
+                <div class="tilted-tx-item income">
+                  <div class="tx-left">
+                    <span class="tx-arrow">↗</span>
+                    <span class="tx-name">Amazon</span>
+                  </div>
+                  <strong class="tx-amount">+$2,158</strong>
+                </div>
+                <div class="tilted-tx-item expense">
+                  <div class="tx-left">
+                    <span class="tx-arrow down">↘</span>
+                    <span class="tx-name">Meta Ads</span>
+                  </div>
+                  <strong class="tx-amount">-$1,670</strong>
+                </div>
+                <div class="tilted-tx-item income">
+                  <div class="tx-left">
+                    <span class="tx-arrow">↗</span>
+                    <span class="tx-name">Shopify</span>
+                  </div>
+                  <strong class="tx-amount">+$750</strong>
+                </div>
+                <div class="tilted-tx-item income">
+                  <div class="tx-left">
+                    <span class="tx-arrow">↗</span>
+                    <span class="tx-name">Shopify</span>
+                  </div>
+                  <strong class="tx-amount">+$5,000</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2103,7 +2232,7 @@
                   </div>
                   <p class="vr-quote">"I opened a US entity with Fintrix. It was very straightforward and quick! They also remind you when to submit Form 5472 to the IRS so you never get penalized."</p>
                   <div class="vr-author">
-                    <div class="vr-avatar c-yellow">AF</div>
+                    <div class="vr-avatar c-blue">AF</div>
                     <div>
                       <div class="vr-name">Anton Fateev</div>
                       <span class="vr-country">🇹🇭 TH Thailand</span>
@@ -2181,7 +2310,7 @@
                   </div>
                   <p class="vr-quote">"The dual US + UK bundle gave us the legal credibility needed to pitch global enterprise clients in London and New York simultaneously."</p>
                   <div class="vr-author">
-                    <div class="vr-avatar c-yellow">CL</div>
+                    <div class="vr-avatar c-blue">CL</div>
                     <div>
                       <div class="vr-name">Claire Laurent</div>
                       <span class="vr-country">🇨🇦 CA Canada</span>

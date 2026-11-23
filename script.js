@@ -9,6 +9,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileDrawer();
+  initHeroShowcaseToggle();
   initProcessStepInteractivity();
   initTableFilters();
   initPricingSwitcher();
@@ -21,6 +22,54 @@ document.addEventListener('DOMContentLoaded', () => {
   initVerticalReviews();
   initMotion();
 });
+
+/* ==========================================================================
+   0. Hero Showcase View Switcher (3-Card Grid vs 3D Tilted Cards)
+   ========================================================================== */
+function initHeroShowcaseToggle() {
+  const switchBtns = document.querySelectorAll('.view-switch-btn');
+  const gridShowcase = document.getElementById('heroGridShowcase');
+  const tiltedShowcase = document.getElementById('heroTiltedShowcase');
+
+  if (!switchBtns.length || !gridShowcase || !tiltedShowcase) return;
+
+  switchBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetView = btn.getAttribute('data-view');
+      switchBtns.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      if (targetView === 'tilted') {
+        gridShowcase.style.display = 'none';
+        tiltedShowcase.style.display = 'grid';
+        if (window.gsap) {
+          gsap.fromTo(
+            tiltedShowcase.children,
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', clearProps: 'opacity,y' }
+          );
+        }
+      } else {
+        tiltedShowcase.style.display = 'none';
+        gridShowcase.style.display = 'grid';
+        if (window.gsap) {
+          gsap.fromTo(
+            gridShowcase.children,
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out', clearProps: 'opacity,y' }
+          );
+        }
+      }
+      if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    });
+  });
+}
 
 /* ==========================================================================
    1. Sticky Header State (Non-interfering Base)
@@ -802,6 +851,20 @@ function initMotion() {
   }
   if (cardMail) {
     gsap.to(cardMail, { y: '-=7', duration: 3.0, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.8 });
+  }
+
+  // Tilted cards gentle float
+  const tiltedTracker = document.querySelector('.tilted-tracker');
+  const tiltedTax = document.querySelector('.tilted-tax');
+  const tiltedBooks = document.querySelector('.tilted-books');
+  if (tiltedTracker) {
+    gsap.to(tiltedTracker, { y: '-=8', duration: 3.4, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+  }
+  if (tiltedTax) {
+    gsap.to(tiltedTax, { y: '-=6', duration: 2.9, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.3 });
+  }
+  if (tiltedBooks) {
+    gsap.to(tiltedBooks, { y: '-=7', duration: 3.1, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.6 });
   }
 
   const isDesktop = window.matchMedia('(min-width: 992px) and (hover: hover)').matches;

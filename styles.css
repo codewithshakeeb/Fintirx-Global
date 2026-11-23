@@ -81,6 +81,8 @@ html {
   scroll-behavior: auto !important;
   scroll-padding-top: 84px;
   -webkit-text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Lenis Base Scroller Rules */
@@ -350,6 +352,7 @@ body.stack-active .site-header {
 }
 
 .brand-logo {
+  max-height: 44px;
   height: 40px;
   width: auto;
   object-fit: contain;
@@ -670,6 +673,44 @@ body.stack-active .site-header {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); }
 }
 
+/* Hero Visual Showcase View Switcher */
+.hero-view-switcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: #F4F9FC;
+  border: 1.5px solid var(--color-border);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-xs);
+}
+
+.view-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-switch-btn:hover {
+  color: var(--color-primary-dark);
+}
+
+.view-switch-btn.active {
+  background-color: var(--color-primary-dark);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(31, 112, 145, 0.25);
+}
+
 /* 3 Hero Preview Cards Grid (Competitor Replication) */
 .hero-cards-grid {
   display: grid;
@@ -700,8 +741,9 @@ body.stack-active .site-header {
 
 .card-highlight {
   border: 2px solid var(--color-primary-light);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFE 100%);
-  box-shadow: var(--shadow-lg);
+  background: #FFFFFF;
+  box-shadow: 0 16px 40px -8px rgba(41, 149, 195, 0.18), 0 4px 16px rgba(15, 41, 54, 0.06);
+  transform: translateY(-6px);
 }
 
 .card-pill {
@@ -864,9 +906,9 @@ body.stack-active .site-header {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #FEF3C7;
-  color: #B45309;
-  border: 1px solid #FDE68A;
+  background-color: #EBF5FA;
+  color: var(--color-primary-dark);
+  border: 1px solid #D7E7F0;
   padding: 4px 10px;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
@@ -876,12 +918,12 @@ body.stack-active .site-header {
 .pulse-indicator {
   width: 6px;
   height: 6px;
-  background-color: #D97706;
+  background-color: var(--color-primary-light);
   border-radius: 50%;
-  animation: pulse-orange 1.8s infinite;
+  animation: pulse-blue 1.8s infinite;
 }
 
-@keyframes pulse-orange {
+@keyframes pulse-blue {
   0% { transform: scale(0.95); opacity: 0.8; }
   50% { transform: scale(1.3); opacity: 1; }
   100% { transform: scale(0.95); opacity: 0.8; }
@@ -914,20 +956,20 @@ body.stack-active .site-header {
 }
 
 .tracker-step.done .step-bullet {
-  background-color: #CCFBF1;
-  color: var(--color-success);
-  border: 1px solid #99F6E4;
+  background-color: #10B981;
+  color: #FFFFFF;
+  border: 1px solid #059669;
 }
 
 .tracker-step.in-progress .step-bullet {
-  background-color: var(--color-surface-tint);
+  background-color: #EBF5FA;
   color: var(--color-primary-dark);
-  border: 1px solid var(--color-primary-light);
+  border: 1.5px solid var(--color-primary-light);
 }
 
 .tracker-step.queued .step-bullet {
-  background-color: #F1F5F9;
-  color: var(--color-ink-muted);
+  background-color: #F8FAFC;
+  color: #64748B;
   border: 1px solid #E2E8F0;
 }
 
@@ -1030,6 +1072,344 @@ body.stack-active .site-header {
   padding: 2px 6px;
   border-radius: 4px;
   border: 1px solid #E2E8F0;
+}
+
+/* ==========================================================================
+   Hero 3D Tilted Mini-Cards Showcase (Images 2, 3, 4 replication)
+   ========================================================================== */
+.hero-tilted-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 1160px;
+  margin-bottom: 64px;
+  perspective: 1200px;
+  text-align: left;
+}
+
+.tilted-card {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 48px -12px rgba(15, 41, 54, 0.12), 0 6px 18px rgba(31, 112, 145, 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.tilted-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 28px 60px -12px rgba(31, 112, 145, 0.22);
+}
+
+.tilted-tax {
+  transform: rotate(-3.5deg) translateY(12px);
+}
+
+.tilted-tracker {
+  transform: translateY(-8px);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 26px 56px -10px rgba(41, 149, 195, 0.2), 0 8px 20px rgba(15, 41, 54, 0.08);
+}
+
+.tilted-books {
+  transform: rotate(3.5deg) translateY(12px);
+}
+
+.tilted-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: block;
+}
+
+/* Tilted Card 1: Tax Filings */
+.tilted-tax-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.tilted-file-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background-color: #F8FBFE;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-ink-primary);
+  width: 100%;
+}
+
+.tilted-file-icon {
+  color: var(--color-primary-dark);
+}
+
+.tilted-radial-gauge {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.tilted-svg-gauge {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.tilted-gauge-bg {
+  fill: none;
+  stroke: #EBF3F8;
+  stroke-width: 8;
+}
+
+.tilted-gauge-fill {
+  fill: none;
+  stroke: var(--color-primary-light);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.tilted-gauge-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.tilted-pct {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-ink-primary);
+  line-height: 1;
+  display: block;
+}
+
+.tilted-sub {
+  font-size: 0.75rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.tilted-due-date {
+  font-size: 0.8125rem;
+  color: var(--color-ink-secondary);
+  margin-top: auto;
+}
+
+.tilted-due-date strong {
+  color: var(--color-ink-primary);
+}
+
+/* Tilted Card 2: Formation Tracker */
+.tilted-tracker-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.tilted-tracker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tilted-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--color-ink-secondary);
+}
+
+.tilted-list-item.done {
+  color: var(--color-ink-primary);
+}
+
+.tilted-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #DCFCE7;
+  color: #15803D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 800;
+}
+
+.tilted-list-item.active {
+  color: var(--color-primary-dark);
+}
+
+.tilted-list-item.active strong {
+  font-weight: 800;
+  color: var(--color-ink-primary);
+}
+
+.tilted-spinner {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 3s linear infinite;
+}
+
+.tilted-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #CBD5E1;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.tilted-tracker-badge {
+  flex-shrink: 0;
+}
+
+.tilted-badge-ring {
+  position: relative;
+  width: 116px;
+  height: 116px;
+}
+
+.tilted-badge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.t-ring-bg {
+  fill: none;
+  stroke: #F1F5F9;
+  stroke-width: 6;
+}
+
+.t-ring-fill {
+  fill: none;
+  stroke: var(--color-primary-light);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.tilted-badge-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EBF5FA 0%, #F4F9FC 100%);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+}
+
+.t-badge-bold {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--color-ink-primary);
+  line-height: 1.1;
+}
+
+.t-badge-sub {
+  font-size: 0.6875rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Tilted Card 3: Bookkeeping */
+.tilted-books-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.tilted-chart-box {
+  width: 100%;
+  height: 54px;
+  padding: 4px 0;
+}
+
+.tilted-trendline {
+  width: 100%;
+  height: 100%;
+}
+
+.tilted-tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tilted-tx-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #F8FBFE;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.tx-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tx-arrow {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #10B981;
+}
+
+.tx-arrow.down {
+  color: #EF4444;
+}
+
+.tx-name {
+  font-weight: 600;
+  color: var(--color-ink-primary);
+}
+
+.tilted-tx-item.income .tx-amount {
+  color: #059669;
+  font-weight: 700;
+}
+
+.tilted-tx-item.expense .tx-amount {
+  color: #DC2626;
+  font-weight: 700;
 }
 
 /* Hero Trust Strip */
@@ -1838,7 +2218,7 @@ body.stack-active .site-header {
 
 .t-badge.paid { background-color: #D1FAE5; color: #047857; }
 .t-badge.verified { background-color: #E0E7FF; color: #4338CA; }
-.t-badge.upcoming { background-color: #FEF3C7; color: #B45309; }
+.t-badge.upcoming { background-color: #EBF5FA; color: #1F7091; border: 1px solid #D7E7F0; }
 
 .amendment-tracker {
   display: flex;
@@ -1911,7 +2291,7 @@ body.stack-active .site-header {
 }
 
 .chip-done { background-color: #D1FAE5; color: #065F46; }
-.chip-pending { background-color: #FEF3C7; color: #92400E; }
+.chip-pending { background-color: #EBF5FA; color: #1F7091; border: 1px solid #D7E7F0; }
 
 .portal-stat-grid {
   display: grid;
@@ -2139,8 +2519,8 @@ body.stack-active .site-header {
   display: flex;
   align-items: center;
   gap: 40px;
-  background: linear-gradient(135deg, #FEFCE8 0%, #FFFBEB 100%);
-  border: 2px solid #FDE68A;
+  background: linear-gradient(135deg, #F4F9FC 0%, #EBF5FA 100%);
+  border: 2px solid #D7E7F0;
   border-radius: var(--radius-xl);
   padding: 40px 48px;
   box-shadow: var(--shadow-sm);
@@ -2150,9 +2530,9 @@ body.stack-active .site-header {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 3px dashed #D97706;
-  background-color: #FEF3C7;
-  color: #B45309;
+  border: 3px dashed var(--color-primary-light);
+  background-color: #FFFFFF;
+  color: var(--color-primary-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2160,10 +2540,11 @@ body.stack-active .site-header {
   text-align: center;
   flex-shrink: 0;
   padding: 10px;
+  box-shadow: 0 4px 16px rgba(41, 149, 195, 0.12);
 }
 
 .money-back-seal svg {
-  color: #D97706;
+  color: var(--color-primary-light);
   margin-bottom: 2px;
 }
 
@@ -2187,13 +2568,13 @@ body.stack-active .site-header {
 .guarantee-title {
   font-size: 1.75rem;
   font-weight: 800;
-  color: #92400E;
+  color: var(--color-ink-primary);
   margin-bottom: 8px;
 }
 
 .guarantee-body {
   font-size: 1rem;
-  color: #78350F;
+  color: var(--color-ink-secondary);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -2209,11 +2590,11 @@ body.stack-active .site-header {
   align-items: center;
   gap: 6px;
   font-size: 0.875rem;
-  color: #78350F;
+  color: var(--color-ink-primary);
 }
 
 .pillar-check {
-  color: #D97706;
+  color: var(--color-primary-dark);
   font-weight: 800;
 }
 
@@ -3817,6 +4198,13 @@ body.stack-active .site-header {
     grid-template-columns: 1fr;
     max-width: 560px;
   }
+  .hero-tilted-showcase {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+  .tilted-tax, .tilted-tracker, .tilted-books {
+    transform: none !important;
+  }
   .stages-grid {
     grid-template-columns: 1fr;
   }
@@ -3900,6 +4288,27 @@ body.stack-active .site-header {
   }
   .hero-subtitle {
     font-size: 1.0625rem;
+  }
+  .hero-view-switcher {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .view-switch-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  .hero-tilted-showcase {
+    gap: 20px;
+    padding: 0 4px;
+    max-width: 100%;
+  }
+  .tilted-card {
+    padding: 24px 20px;
+    border-radius: 20px;
   }
   .hero-cta-group {
     flex-direction: column;
@@ -4534,8 +4943,9 @@ header.header-compact .header-logo-img {
 }
 
 .mockup-status-pill.in-progress {
-  background: #FEF3C7;
-  color: #B45309;
+  background: #EBF5FA;
+  color: var(--color-primary-dark);
+  border: 1px solid #D7E7F0;
 }
 
 .mockup-status-pill.active-pill {
@@ -4825,10 +5235,11 @@ header.header-compact .header-logo-img {
 .chip-progress {
   font-size: 0.6875rem;
   font-weight: 600;
-  background: #FEF3C7;
-  color: #B45309;
+  background: #EBF5FA;
+  color: var(--color-primary-dark);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
+  border: 1px solid #D7E7F0;
 }
 
 .chip-due {
@@ -5357,14 +5768,15 @@ body.stack-active .floating-pill-header {
 }
 
 .save-hours-card {
-  background-color: #FAF4EB;
+  background-color: #FFFFFF;
+  border: 1.5px solid #D7E7F0;
   border-radius: 24px;
   padding: 36px;
   color: #0F2936;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 36px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
   margin-bottom: 24px;
 }
 
@@ -5395,8 +5807,8 @@ body.stack-active .floating-pill-header {
 }
 
 .sh-tier-btn.active {
-  border-color: #0F2936;
-  background-color: #F8E7A0;
+  border-color: var(--color-primary-dark);
+  background-color: #EBF5FA;
 }
 
 .sh-popular-badge {
@@ -5741,8 +6153,8 @@ body.stack-active .floating-pill-header {
 }
 
 .vr-avatar.c-yellow {
-  background-color: #FFF3CD;
-  color: #856404;
+  background-color: #EBF5FA;
+  color: #1F7091;
 }
 
 .vr-avatar.c-purple {
