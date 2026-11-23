@@ -203,79 +203,128 @@ function initDelegatedAnchorLinks() {
 }
 
 /* ==========================================================================
-   4. 5-Step Process Interactivity
+   4. 5-Step Process Interactivity (Fulfill Animation & Progress Tracker)
    ========================================================================== */
 function initProcessStepInteractivity() {
   const stepItems = document.querySelectorAll('.process-step-item');
   const checklistItems = document.querySelectorAll('#processVisualChecklist .v-check-item');
   const livePill = document.getElementById('visualLiveStatusPill');
   const companyTitle = document.getElementById('visualCompanyName');
+  const timelineFill = document.getElementById('processTimelineFill');
 
   const stepMeta = {
     '1': {
-      pill: 'Phase 1: Consultation Active',
-      company: 'Global Horizons Enterprise LLC / UK LTD'
+      pill: 'Phase 1: Consultation Active • 20% Complete',
+      company: 'Apex Frontier LLC / Global UK LTD'
     },
     '2': {
-      pill: 'Phase 2: Intake & ID Verified',
-      company: 'Global Horizons Enterprise LLC / UK LTD'
+      pill: 'Phase 2: Intake & ID Verified • 40% Complete',
+      company: 'Apex Frontier LLC (Intake Cleared)'
     },
     '3': {
-      pill: 'Phase 3: State Filing Expedited',
-      company: 'Global Horizons Enterprise LLC / UK LTD'
+      pill: 'Phase 3: State Filing Expedited • 60% Complete',
+      company: 'Apex Frontier LLC (State Docket Active)'
     },
     '4': {
-      pill: 'Phase 4: EIN & Vault Delivery',
-      company: 'Global Horizons Enterprise LLC / UK LTD'
+      pill: 'Phase 4: EIN & Vault Delivery • 80% Complete',
+      company: 'Apex Frontier LLC (Form 147C Issued)'
     },
     '5': {
-      pill: 'Phase 5: Active & Compliant',
-      company: 'Global Horizons Enterprise LLC / UK LTD'
+      pill: 'Phase 5: Active & Compliant • 100% Complete',
+      company: 'Apex Frontier LLC (Active & Good Standing)'
     }
+  };
+
+  window.setProcessStep = function(stepNum) {
+    const sNum = parseInt(stepNum, 10) || 1;
+    stepItems.forEach(i => {
+      const s = parseInt(i.getAttribute('data-step'), 10);
+      if (s === sNum) {
+        i.classList.add('active');
+      } else {
+        i.classList.remove('active');
+      }
+    });
+
+    if (timelineFill) {
+      timelineFill.style.height = (sNum / 5 * 100) + '%';
+    }
+
+    if (livePill && stepMeta[sNum]) {
+      livePill.textContent = stepMeta[sNum].pill;
+    }
+    if (companyTitle && stepMeta[sNum]) {
+      companyTitle.textContent = stepMeta[sNum].company;
+    }
+
+    checklistItems.forEach((checkItem, idx) => {
+      const itemStep = idx + 1;
+      checkItem.classList.remove('done', 'current', 'pending', 'fulfilled');
+      const iconEl = checkItem.querySelector('.v-icon');
+      const textHead = checkItem.querySelector('.v-text');
+      let fulfillBadge = checkItem.querySelector('.v-fulfill-pill');
+
+      if (itemStep <= sNum) {
+        checkItem.classList.add('fulfilled', 'done');
+        if (iconEl) iconEl.innerHTML = '✓';
+        if (!fulfillBadge && textHead) {
+          fulfillBadge = document.createElement('span');
+          fulfillBadge.className = 'v-fulfill-pill';
+          fulfillBadge.textContent = 'Fulfilled';
+          const titleSpan = textHead.querySelector('span');
+          if (titleSpan) {
+            titleSpan.after(fulfillBadge);
+          } else {
+            textHead.appendChild(fulfillBadge);
+          }
+        }
+      } else {
+        checkItem.classList.add('pending');
+        if (iconEl) iconEl.textContent = itemStep;
+        if (fulfillBadge) fulfillBadge.remove();
+      }
+    });
   };
 
   stepItems.forEach(item => {
     item.addEventListener('click', () => {
       const stepNum = parseInt(item.getAttribute('data-step'), 10);
-      stepItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      if (livePill && stepMeta[stepNum]) {
-        livePill.textContent = stepMeta[stepNum].pill;
-      }
-      if (companyTitle && stepMeta[stepNum]) {
-        companyTitle.textContent = stepMeta[stepNum].company;
-      }
-
-      // Dynamically update checklist milestone states
-      checklistItems.forEach((checkItem, idx) => {
-        const itemStep = idx + 1;
-        checkItem.classList.remove('done', 'current', 'pending');
-        const iconEl = checkItem.querySelector('.v-icon');
-
-        if (itemStep < stepNum) {
-          checkItem.classList.add('done');
-          if (iconEl) iconEl.innerHTML = '✓';
-        } else if (itemStep === stepNum) {
-          checkItem.classList.add('current');
-          if (iconEl) iconEl.innerHTML = '<span class="spin-dot"></span>';
-        } else {
-          checkItem.classList.add('pending');
-          if (iconEl) iconEl.textContent = itemStep;
-        }
-      });
+      window.setProcessStep(stepNum);
     });
   });
+
+  // Initialize with step 1
+  window.setProcessStep(1);
 }
 
 /* ==========================================================================
-   5. Comparison Table Row Filters
+   5. Comparison Table Row Filters & Smooth-Scroll Progression
    ========================================================================== */
 function initTableFilters() {
   const filterPills = document.querySelectorAll('.table-filter-controls .filter-pill');
   const tableRows = document.querySelectorAll('#comparisonTable tbody tr');
 
   if (!filterPills.length || !tableRows.length) return;
+
+  function highlightRow(row) {
+    if (!row) return;
+    tableRows.forEach(r => r.classList.remove('highlight-focused', 'row-active'));
+    row.classList.add('highlight-focused', 'row-active');
+    setTimeout(() => {
+      row.classList.remove('highlight-focused');
+    }, 2400);
+  }
+
+  function smoothScrollToRow(row) {
+    if (!row) return;
+    if (window.lenis) {
+      window.lenis.scrollTo(row, { offset: -120, duration: 0.9 });
+    } else {
+      const top = row.getBoundingClientRect().top + window.pageYOffset - 120;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    highlightRow(row);
+  }
 
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -292,8 +341,41 @@ function initTableFilters() {
           row.style.display = 'none';
         }
       });
+
+      // Specific navigation based on button clicked
+      if (filter === 'compliance') {
+        const targetRow = document.getElementById('compare-row-9') || document.querySelector('tr[data-cat="compliance"]:last-child');
+        smoothScrollToRow(targetRow);
+      } else if (filter === 'all') {
+        const targetRow = document.getElementById('compare-row-1');
+        smoothScrollToRow(targetRow);
+      } else if (filter === 'formation') {
+        const targetRow = document.getElementById('compare-row-1');
+        smoothScrollToRow(targetRow);
+      }
     });
   });
+
+  // Step-by-step row scroll progression:
+  // As user scrolls down the table, step through rows one by one top-to-bottom with .row-active,
+  // and in reverse when scrolling back up.
+  if (window.ScrollTrigger) {
+    tableRows.forEach((row) => {
+      ScrollTrigger.create({
+        trigger: row,
+        start: 'top 65%',
+        end: 'bottom 35%',
+        onEnter: () => {
+          tableRows.forEach(r => r.classList.remove('row-active'));
+          row.classList.add('row-active');
+        },
+        onEnterBack: () => {
+          tableRows.forEach(r => r.classList.remove('row-active'));
+          row.classList.add('row-active');
+        },
+      });
+    });
+  }
 
   const consultBtn = document.getElementById('compareConsultBtn');
   if (consultBtn) {
@@ -304,7 +386,7 @@ function initTableFilters() {
 }
 
 /* ==========================================================================
-   6. Jurisdiction & Pricing Switcher
+   6. Jurisdiction & Pricing Switcher (Entity Scope & Live Fees)
    ========================================================================== */
 function initPricingSwitcher() {
   const btnUS = document.getElementById('btnPlanUS');
@@ -314,6 +396,14 @@ function initPricingSwitcher() {
   const priceStarter = document.getElementById('priceStarter');
   const priceStandard = document.getElementById('priceStandard');
   const priceComplete = document.getElementById('priceComplete');
+
+  const scopeStarter = document.getElementById('scopeStarter');
+  const scopeStandard = document.getElementById('scopeStandard');
+  const scopeComplete = document.getElementById('scopeComplete');
+
+  const feeStarter = document.getElementById('feeStarter');
+  const feeStandard = document.getElementById('feeStandard');
+  const feeComplete = document.getElementById('feeComplete');
 
   if (!btnUS || !btnUK || !btnDual) return;
 
@@ -331,6 +421,14 @@ function initPricingSwitcher() {
     if (priceStarter) priceStarter.textContent = '199';
     if (priceStandard) priceStandard.textContent = '499';
     if (priceComplete) priceComplete.textContent = '999';
+
+    if (scopeStarter) scopeStarter.textContent = '🇺🇸 U.S. LLC Scope';
+    if (scopeStandard) scopeStandard.textContent = '🇺🇸 U.S. LLC Scope';
+    if (scopeComplete) scopeComplete.textContent = '🇺🇸 U.S. LLC Scope';
+
+    if (feeStarter) feeStarter.textContent = '+ state filing fees (Wyoming $102, Delaware $140)';
+    if (feeStandard) feeStandard.textContent = '+ state filing fees billed at cost';
+    if (feeComplete) feeComplete.textContent = '+ state filing fees billed at cost';
   });
 
   btnUK.addEventListener('click', () => {
@@ -340,6 +438,14 @@ function initPricingSwitcher() {
     if (priceStarter) priceStarter.textContent = '189';
     if (priceStandard) priceStandard.textContent = '489';
     if (priceComplete) priceComplete.textContent = '899';
+
+    if (scopeStarter) scopeStarter.textContent = '🇬🇧 UK LTD Scope';
+    if (scopeStandard) scopeStandard.textContent = '🇬🇧 UK LTD Scope';
+    if (scopeComplete) scopeComplete.textContent = '🇬🇧 UK LTD Scope';
+
+    if (feeStarter) feeStarter.textContent = '+ Companies House fee (£50)';
+    if (feeStandard) feeStandard.textContent = '+ Companies House fee (£50)';
+    if (feeComplete) feeComplete.textContent = '+ Companies House fee (£50)';
   });
 
   btnDual.addEventListener('click', () => {
@@ -349,6 +455,14 @@ function initPricingSwitcher() {
     if (priceStarter) priceStarter.textContent = '330';
     if (priceStandard) priceStandard.textContent = '840';
     if (priceComplete) priceComplete.textContent = '1,610';
+
+    if (scopeStarter) scopeStarter.textContent = '🌐 Dual US + UK Scope';
+    if (scopeStandard) scopeStandard.textContent = '🌐 Dual US + UK Scope';
+    if (scopeComplete) scopeComplete.textContent = '🌐 Dual US + UK Scope';
+
+    if (feeStarter) feeStarter.textContent = '+ state & Companies House filing fees';
+    if (feeStandard) feeStandard.textContent = '+ state & Companies House filing fees';
+    if (feeComplete) feeComplete.textContent = '+ state & Companies House filing fees';
   });
 }
 
@@ -735,7 +849,7 @@ function initMotion() {
   ScrollTrigger.create({
     id: 'st-stack-active',
     trigger: '#services',
-    start: 'top top+=1',
+    start: 'top 80px',
     end: 'bottom 30%',
     onEnter: () => document.body.classList.add('stack-active'),
     onLeave: () => document.body.classList.remove('stack-active'),
@@ -1008,26 +1122,8 @@ function initMotion() {
   }
 
   function updateProcessStep(stepNum) {
-    stepItems.forEach((item) => {
-      if (item.getAttribute('data-step') === stepNum) {
-        item.classList.add('active', 'is-current');
-      } else {
-        item.classList.remove('is-current');
-      }
-    });
-
-    const data = stepStatusData[stepNum];
-    if (data) {
-      if (visualCompanyName) visualCompanyName.textContent = data.name;
-      if (visualStatusBadge) visualStatusBadge.textContent = data.badge;
-      if (visualProgressFill) {
-        gsap.to(visualProgressFill, {
-          width: data.progress,
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-      }
-      if (visualStatusSubtitle) visualStatusSubtitle.textContent = data.subtitle;
+    if (window.setProcessStep) {
+      window.setProcessStep(stepNum);
     }
   }
 
