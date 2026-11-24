@@ -1163,16 +1163,17 @@ function initMotion() {
   // 8. Generic Section Reveals (.reveal & .reveal-stagger)
   const revealElements = document.querySelectorAll('.reveal');
   revealElements.forEach((el) => {
+    el.style.opacity = '1';
+    el.style.visibility = 'visible';
     gsap.from(el, {
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 92%',
         once: true,
       },
-      y: 40,
-      opacity: 0,
-      duration: 0.9,
-      ease: 'power3.out',
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
     });
   });
 

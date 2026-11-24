@@ -2248,11 +2248,13 @@ section[id],
    Section 7: Service Guarantee Banner
    ========================================================================== */
 .guarantee-section {
-  padding: 32px 0;
+  padding: 48px 0;
   background-color: var(--color-bg);
 }
 
 .guarantee-banner-card {
+  opacity: 1 !important;
+  visibility: visible !important;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -2261,6 +2263,7 @@ section[id],
   border-radius: var(--radius-xl);
   padding: 40px 48px;
   box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
 }
 
 .money-back-seal {
@@ -5482,8 +5485,8 @@ body.has-services-stack.stack-active .floating-pill-header {
 
 .vertical-reviews-grid {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 48px;
+  grid-template-columns: 420px 1fr;
+  gap: 52px;
   align-items: center;
 }
 
@@ -5536,28 +5539,24 @@ body.has-services-stack.stack-active .floating-pill-header {
 
 .vr-columns-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
   height: 100%;
 }
 
 .vr-track {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
   will-change: transform;
 }
 
 .vr-track-1 {
-  animation: scrollVertUp 34s linear infinite;
+  animation: scrollVertUp 36s linear infinite;
 }
 
 .vr-track-2 {
-  animation: scrollVertUp 42s linear infinite;
-}
-
-.vr-track-3 {
-  animation: scrollVertUp 38s linear infinite;
+  animation: scrollVertUp 44s linear infinite;
 }
 
 .vertical-reviews-right:hover .vr-track {
@@ -6024,12 +6023,11 @@ body.has-services-stack.stack-active .floating-pill-header {
 @media (max-width: 991px) {
   .vertical-reviews-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
   .vr-columns-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .vr-col-3 {
-    display: none;
+    gap: 16px;
   }
   .founder-cta-banner {
     grid-template-columns: 1fr;
@@ -6330,4 +6328,50 @@ body.has-services-stack.stack-active .floating-pill-header {
     flex-shrink: 0 !important;
   }
 }
+
+/* ==========================================================================
+   UNBREAKABLE VISIBILITY GUARANTEE (NO BLANK HOLES OR GAPS)
+   ========================================================================== */
+.reveal,
+.section-header,
+.guarantee-section,
+.guarantee-banner-card,
+.packages-section,
+.packages-section .section-header,
+.pricing-jurisdiction-switcher,
+.plan-finder-box,
+.upsell-timing-card,
+.timing-timeline-grid,
+.timing-node,
+.approaches-grid,
+.approach-card,
+.vertical-reviews-section,
+.vertical-reviews-left,
+.vertical-reviews-right,
+.vr-card,
+.founder-cta-banner,
+.newsletter-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Guarantee Section Visual Polish */
+.guarantee-section {
+  padding: 40px 0 !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+  background-color: transparent !important;
+}
+
+.guarantee-banner-card {
+  margin: 0 auto !important;
+  max-width: 1240px !important;
+}
+
+/* Packages Section Top Clearance */
+.packages-section {
+  padding-top: 48px !important;
+  scroll-margin-top: 100px !important;
+}
+
 
