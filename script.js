@@ -263,7 +263,7 @@ function initDelegatedAnchorLinks() {
     // Determine target offset
     const isStackSection = targetEl.closest('#services') || targetEl.id === 'services';
     const headerEl = document.getElementById('header');
-    const headerOffset = isStackSection ? 70 : (headerEl ? headerEl.offsetHeight : 76);
+    const headerOffset = isStackSection ? 80 : 100;
 
     if (targetEl.classList.contains('stack-card')) {
       selectStackCard(targetEl.id);
@@ -888,10 +888,26 @@ window.submitFormationOrder = function() {
   const founderName = document.getElementById('founderName');
   const founderEmail = document.getElementById('founderEmail');
   const businessActivity = document.getElementById('businessActivity');
+  let errorBox = document.getElementById('wizardErrorBox');
+
+  if (!proposedName || !founderName || !founderEmail || !businessActivity) return;
 
   if (!proposedName.value.trim() || !founderName.value.trim() || !founderEmail.value.trim() || !businessActivity.value.trim()) {
-    alert('Please fill in all mandatory fields (Company Name, Founder Name, Contact Email, Business Activity) before submitting.');
+    if (!errorBox) {
+      errorBox = document.createElement('div');
+      errorBox.id = 'wizardErrorBox';
+      errorBox.className = 'form-error-banner';
+      errorBox.style.cssText = 'background: #FEF2F2; color: #991B1B; border: 1px solid #F87171; padding: 12px 16px; border-radius: 8px; font-size: 0.8125rem; font-weight: 600; margin-bottom: 16px; text-align: center; animation: fadeIn 0.3s ease;';
+      const form = document.getElementById('orderWizardForm');
+      if (form) form.insertBefore(errorBox, form.firstChild);
+    }
+    errorBox.textContent = 'Please fill in all mandatory fields (Company Name, Founder Name, Contact Email, Business Activity) before submitting.';
+    errorBox.style.display = 'block';
     return;
+  }
+
+  if (errorBox) {
+    errorBox.style.display = 'none';
   }
 
   const form = document.getElementById('orderWizardForm');
@@ -949,17 +965,22 @@ function initMotion() {
   gsap.ticker.lagSmoothing(0);
 
   // 4. Header Show/Hide on Scroll-Stack Section & Compact State
-  // Header hides when entering the scroll-stack section so it does not overlap the sticky tab bar
-  ScrollTrigger.create({
-    id: 'st-stack-active',
-    trigger: '#services',
-    start: 'top 80px',
-    end: 'bottom 30%',
-    onEnter: () => document.body.classList.add('stack-active'),
-    onLeave: () => document.body.classList.remove('stack-active'),
-    onEnterBack: () => document.body.classList.add('stack-active'),
-    onLeaveBack: () => document.body.classList.remove('stack-active'),
-  });
+  // Header hides when the sticky tab bar approaches the top so it never overlaps
+  const stackTabWrapper = document.getElementById('stackTabBarWrapper');
+  const servicesSec = document.getElementById('services');
+  if (servicesSec && stackTabWrapper) {
+    ScrollTrigger.create({
+      id: 'st-stack-active',
+      trigger: stackTabWrapper,
+      start: 'top 90px',
+      endTrigger: '#services',
+      end: 'bottom 20%',
+      onEnter: () => document.body.classList.add('stack-active'),
+      onLeave: () => document.body.classList.remove('stack-active'),
+      onEnterBack: () => document.body.classList.add('stack-active'),
+      onLeaveBack: () => document.body.classList.remove('stack-active'),
+    });
+  }
 
   // Header compact shadow past 80px scroll
   ScrollTrigger.create({
