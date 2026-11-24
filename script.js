@@ -27,10 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
 function initStickyHeader() {
   const header = document.getElementById('header');
   if (!header) return;
-  // Initial check on load
-  if (window.scrollY > 20) {
-    header.classList.add('scrolled');
-  }
+  
+  const updateStickyState = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  updateStickyState();
+  window.addEventListener('scroll', updateStickyState, { passive: true });
 }
 
 /* ==========================================================================
@@ -993,6 +1000,7 @@ function initMotion() {
   const stackTabWrapper = document.getElementById('stackTabBarWrapper');
   const servicesSec = document.getElementById('services');
   if (servicesSec && stackTabWrapper) {
+    document.body.classList.add('has-services-stack');
     ScrollTrigger.create({
       id: 'st-stack-active',
       trigger: stackTabWrapper,
@@ -1004,6 +1012,8 @@ function initMotion() {
       onEnterBack: () => document.body.classList.add('stack-active'),
       onLeaveBack: () => document.body.classList.remove('stack-active'),
     });
+  } else {
+    document.body.classList.remove('has-services-stack', 'stack-active');
   }
 
   // Header compact shadow past 80px scroll

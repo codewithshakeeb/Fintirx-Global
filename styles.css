@@ -5262,6 +5262,7 @@ header.header-compact .header-logo-img {
    ENHANCED FLOATING PILL HEADER & MULTIPAGE DROPDOWNS
    ========================================================================== */
 .floating-pill-header {
+  display: block !important;
   position: sticky;
   top: 14px;
   z-index: 1000;
@@ -5274,10 +5275,11 @@ header.header-compact .header-logo-img {
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(215, 231, 240, 0.95);
   box-shadow: 0 6px 28px rgba(15, 41, 54, 0.08);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
+  will-change: transform;
 }
 
-body.stack-active .floating-pill-header {
+body.has-services-stack.stack-active .floating-pill-header {
   transform: translateY(-160%);
   pointer-events: none;
   opacity: 0;
@@ -6052,12 +6054,24 @@ body.stack-active .floating-pill-header {
     margin: 10px auto 0 auto;
   }
   .floating-pill-header .header-container {
-    height: 60px;
-    padding: 0 16px;
+    height: 58px;
+    padding: 0 14px 0 16px;
+  }
+  .floating-pill-header .brand-logo {
+    height: 32px;
+    max-width: 120px;
+    width: auto;
   }
   .nav-login-link,
+  #headerTalkBtn,
   #talkExpertBtn {
-    display: none;
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
   }
   .vr-columns-container {
     grid-template-columns: 1fr;
@@ -6192,10 +6206,10 @@ body.stack-active .floating-pill-header {
 /* Global Button Text & Icon No-wrap */
 .btn, .pill-btn, .stack-tab-btn, .toggle-pill, .filter-pill, .nav-login-link {
   white-space: nowrap !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 6px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 /* Ensure clean hero image display without overlays */
@@ -6251,3 +6265,69 @@ body.stack-active .floating-pill-header {
   font-variant-numeric: tabular-nums;
   transition: color 0.2s ease;
 }
+
+/* ==========================================================================
+   UNBREAKABLE FLOATING PILL HEADER DISPLAY (DESKTOP & MOBILE)
+   ========================================================================== */
+.floating-pill-header {
+  display: block !important;
+  visibility: visible !important;
+  position: sticky !important;
+  top: 14px !important;
+  z-index: 1000 !important;
+  opacity: 1 !important;
+}
+
+/* Only hide header when explicitly inside stack deck section on the homepage */
+body.has-services-stack.stack-active .floating-pill-header {
+  transform: translateY(-160%) !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+/* Perfect Mobile & Tablet Header Balancing */
+@media (max-width: 768px) {
+  .floating-pill-header {
+    width: calc(100% - 24px) !important;
+    top: 10px !important;
+    margin: 10px auto 0 auto !important;
+    border-radius: var(--radius-full) !important;
+  }
+  .floating-pill-header .header-container {
+    height: 56px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .floating-pill-header .brand-logo {
+    height: 32px !important;
+    max-width: 120px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+  .floating-pill-header .nav-menu {
+    display: none !important;
+  }
+  .floating-pill-header .nav-login-link,
+  .floating-pill-header #headerLoginBtn,
+  .floating-pill-header #headerTalkBtn,
+  .floating-pill-header #talkExpertBtn,
+  .floating-pill-header .btn {
+    display: none !important;
+  }
+  .floating-pill-header .mobile-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: auto !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-sm) !important;
+    background: #FFFFFF !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+}
+
