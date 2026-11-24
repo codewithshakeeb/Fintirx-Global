@@ -493,6 +493,30 @@ function initPricingSwitcher() {
 
   if (!btnUS || !btnUK || !btnDual) return;
 
+  const animatePrice = (el, newTarget) => {
+    if (!el) return;
+    const current = parseFloat(el.textContent.replace(/,/g, '')) || 0;
+    const target = parseFloat(String(newTarget).replace(/,/g, ''));
+    if (isNaN(target)) return;
+
+    const startTime = performance.now();
+    const duration = 500;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const val = Math.round(current + (target - current) * easeOutCubic(progress));
+      el.textContent = val.toLocaleString('en-US');
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toLocaleString('en-US');
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
   const resetPills = () => {
     [btnUS, btnUK, btnDual].forEach(b => {
       b.classList.remove('active');
@@ -504,9 +528,9 @@ function initPricingSwitcher() {
     resetPills();
     btnUS.classList.add('active');
     btnUS.setAttribute('aria-checked', 'true');
-    if (priceStarter) priceStarter.textContent = '199';
-    if (priceStandard) priceStandard.textContent = '499';
-    if (priceComplete) priceComplete.textContent = '999';
+    animatePrice(priceStarter, 199);
+    animatePrice(priceStandard, 499);
+    animatePrice(priceComplete, 999);
 
     if (scopeStarter) scopeStarter.textContent = '🇺🇸 U.S. LLC Scope';
     if (scopeStandard) scopeStandard.textContent = '🇺🇸 U.S. LLC Scope';
@@ -521,9 +545,9 @@ function initPricingSwitcher() {
     resetPills();
     btnUK.classList.add('active');
     btnUK.setAttribute('aria-checked', 'true');
-    if (priceStarter) priceStarter.textContent = '189';
-    if (priceStandard) priceStandard.textContent = '489';
-    if (priceComplete) priceComplete.textContent = '899';
+    animatePrice(priceStarter, 189);
+    animatePrice(priceStandard, 489);
+    animatePrice(priceComplete, 899);
 
     if (scopeStarter) scopeStarter.textContent = '🇬🇧 UK LTD Scope';
     if (scopeStandard) scopeStandard.textContent = '🇬🇧 UK LTD Scope';
@@ -538,9 +562,9 @@ function initPricingSwitcher() {
     resetPills();
     btnDual.classList.add('active');
     btnDual.setAttribute('aria-checked', 'true');
-    if (priceStarter) priceStarter.textContent = '330';
-    if (priceStandard) priceStandard.textContent = '840';
-    if (priceComplete) priceComplete.textContent = '1,610';
+    animatePrice(priceStarter, 330);
+    animatePrice(priceStandard, 840);
+    animatePrice(priceComplete, 1610);
 
     if (scopeStarter) scopeStarter.textContent = '🌐 Dual US + UK Scope';
     if (scopeStandard) scopeStandard.textContent = '🌐 Dual US + UK Scope';
@@ -1290,34 +1314,8 @@ function initMotion() {
     });
   }
 
-  // 13. Social Proof Metrics Count-up & Testimonials Marquee
-  const counterElements = document.querySelectorAll('.counter');
-  counterElements.forEach((counter) => {
-    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
-    const suffix = counter.getAttribute('data-suffix') || '';
-    const decimals = parseInt(counter.getAttribute('data-decimals') || '0', 10);
-
-    const obj = { val: 0 };
-    ScrollTrigger.create({
-      trigger: counter,
-      start: 'top 90%',
-      once: true,
-      onEnter: () => {
-        gsap.to(obj, {
-          val: targetVal,
-          duration: 1.6,
-          ease: 'power2.out',
-          onUpdate: () => {
-            if (decimals > 0) {
-              counter.textContent = obj.val.toFixed(decimals) + suffix;
-            } else {
-              counter.textContent = Math.round(obj.val).toLocaleString() + suffix;
-            }
-          },
-        });
-      },
-    });
-  });
+  // 13. Universal Number Counter Engine
+  initNumberCounters();
 
   const marqueeTrack = document.getElementById('marqueeTrack');
   if (marqueeTrack) {
@@ -1553,4 +1551,102 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     });
   }
+});
+
+/* ==========================================================================
+   Universal High-Performance Number Counter Engine (IntersectionObserver + rAF)
+   ========================================================================== */
+function initNumberCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    if (el.dataset.counted === 'true') return;
+    el.dataset.counted = 'true';
+
+    let target = parseFloat(el.getAttribute('data-target'));
+    let suffix = el.getAttribute('data-suffix') || '';
+    let prefix = el.getAttribute('data-prefix') || '';
+    let decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+
+    if (isNaN(target)) {
+      const text = el.textContent.trim();
+      const match = text.match(/^([^0-9.-]*)([0-9,]+(?:\.[0-9]+)?)([^0-9]*)$/);
+      if (match) {
+        prefix = match[1] || prefix;
+        target = parseFloat(match[2].replace(/,/g, ''));
+        suffix = match[3] || suffix;
+        if (match[2].includes('.')) {
+          decimals = match[2].split('.')[1].length;
+        }
+      } else {
+        return;
+      }
+    }
+
+    const duration = 1600; // 1.6s smooth duration
+    const startTime = performance.now();
+    const startVal = 0;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    const step = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      const current = startVal + (target - startVal) * eased;
+
+      let formatted;
+      if (decimals > 0) {
+        formatted = current.toFixed(decimals);
+      } else {
+        formatted = Math.round(current).toLocaleString('en-US');
+      }
+
+      el.textContent = `${prefix}${formatted}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target).toLocaleString('en-US');
+        el.textContent = `${prefix}${finalVal}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -20px 0px'
+    });
+
+    counters.forEach((c) => observer.observe(c));
+  } else {
+    counters.forEach((c) => animateCounter(c));
+  }
+}
+
+// Call on DOMContentLoaded as well as load event
+document.addEventListener('DOMContentLoaded', () => {
+  initNumberCounters();
+});
+
+window.addEventListener('load', () => {
+  initNumberCounters();
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
+  }
+  // Unbreakable card visibility guarantee
+  document.querySelectorAll('.packages-grid, .package-card, .addons-four-categories, .addon-cat-card, .upsell-timing-card, .timing-timeline-grid, .timing-node').forEach(el => {
+    el.style.opacity = '1';
+    el.style.visibility = 'visible';
+  });
 });

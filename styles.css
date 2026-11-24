@@ -6229,3 +6229,25 @@ body.stack-active .floating-pill-header {
   background-color: rgba(41, 149, 195, 0.12) !important;
   box-shadow: 0 2px 8px rgba(31, 112, 145, 0.1) !important;
 }
+
+/* ==========================================================================
+   UNBREAKABLE VISIBILITY & TABULAR NUMERIC COUNTERS
+   ========================================================================== */
+.packages-grid,
+.package-card,
+.addons-four-categories,
+.addon-cat-card,
+.upsell-timing-card,
+.timing-timeline-grid,
+.timing-node,
+.approaches-grid,
+.approach-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
+}
