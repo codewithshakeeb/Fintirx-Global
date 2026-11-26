@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" width="160" height="44" role="img" aria-label="Relay">
-  <rect x="8" y="10" width="24" height="24" rx="6" fill="#1F7091"/>
-  <path d="M15 22h10m0 0l-4-4m4 4l-4 4" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <text x="42" y="28" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F2936" letter-spacing="-0.02em">Relay</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" width="180" height="44" role="img" aria-label="Relay">
+  <rect x="34" y="10" width="24" height="24" rx="6" fill="#1F7091"/>
+  <path d="M41 22h10m0 0l-4-4m4 4l-4 4" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="68" y="28" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F2936" letter-spacing="-0.02em">Relay</text>
 </svg>

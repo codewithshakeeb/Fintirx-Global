@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" width="180" height="44" role="img" aria-label="Mercury">
-  <circle cx="22" cy="22" r="14" fill="#1F7091" opacity="0.12"/>
-  <circle cx="22" cy="22" r="9" fill="none" stroke="#1F7091" stroke-width="2.4"/>
-  <circle cx="22" cy="22" r="3.5" fill="#2995C3"/>
-  <text x="44" y="28" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#0F2936" letter-spacing="-0.02em">Mercury</text>
+  <circle cx="34" cy="22" r="13" fill="#2995C3" opacity="0.14"/>
+  <circle cx="34" cy="22" r="8.5" fill="none" stroke="#1F7091" stroke-width="2.4"/>
+  <circle cx="34" cy="22" r="3.2" fill="#2995C3"/>
+  <text x="56" y="28" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#0F2936" letter-spacing="-0.02em">Mercury</text>
 </svg>

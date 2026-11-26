@@ -7835,12 +7835,37 @@ section, [id] {
   }
 }
 
+
 /* === PROVIDER LOGO TILES === */
+section, [id] {
+  scroll-margin-top: 112px;
+}
+
+.btn,
+.service-clean-link,
+.guide-read-link {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-block {
+  display: flex !important;
+  width: 100%;
+}
+
+.banking-assistance-section {
+  padding: 88px 0 !important;
+  scroll-margin-top: 112px !important;
+}
+
 .providers-logo-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
-  max-width: 980px;
+  max-width: 1040px;
   margin: 32px auto;
 }
 
@@ -7848,8 +7873,8 @@ section, [id] {
   background: #FFFFFF;
   border: 1px solid #D7E7F0;
   border-radius: 14px;
-  padding: 16px 18px;
-  min-height: 68px;
+  padding: 16px 14px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7871,19 +7896,31 @@ section, [id] {
   display: block;
 }
 
+.banking-notice-box {
+  max-width: 1040px !important;
+  margin: 0 auto !important;
+  padding: 18px 24px !important;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.55;
+}
+
 @media (max-width: 1024px) {
   .providers-logo-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 560px) {
   .providers-logo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
   .provider-logo-tile {
-    padding: 12px 14px;
-    min-height: 60px;
+    padding: 12px 10px;
+    height: 66px;
+  }
+  .banking-assistance-section {
+    padding: 64px 0 !important;
   }
 }
