@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initConsultationForm();
   initSmoothScroll();
+  initScrollReveals();
 });
 
 /* ==========================================================================
@@ -121,6 +122,7 @@ function initJourneyConsole() {
   const activeHeading = document.getElementById('consoleActiveHeading');
   const stepCounter = document.getElementById('consoleStepCounter');
   const progressText = document.getElementById('consoleProgressText');
+  const progressBarFill = document.getElementById('consoleProgressBarFill');
 
   const activateStep = (stepNum) => {
     stepItems.forEach((btn) => {
@@ -152,6 +154,7 @@ function initJourneyConsole() {
       if (activeHeading) activeHeading.textContent = meta.heading;
       if (stepCounter) stepCounter.textContent = `Step ${stepNum} of 5`;
       if (progressText) progressText.textContent = meta.progress;
+      if (progressBarFill) progressBarFill.style.width = `${stepNum * 20}%`;
     }
   };
 
@@ -535,6 +538,7 @@ function initPlanMatcher() {
   const planName = document.getElementById('matcherPlanName');
   const planDesc = document.getElementById('matcherPlanDesc');
   const planCta = document.getElementById('matcherPlanCta');
+  const resultBox = document.getElementById('matcherResultBox');
 
   if (!q1Row || !q2Row || !planName || !planDesc || !planCta) return;
 
@@ -579,9 +583,13 @@ function initPlanMatcher() {
 
   const renderResult = () => {
     const rec = recommendations[state.q1][state.q2];
-    planName.textContent = rec.name;
-    planDesc.textContent = rec.desc;
-    planCta.setAttribute('href', rec.href);
+    if (resultBox) resultBox.classList.add('updating');
+    setTimeout(() => {
+      planName.textContent = rec.name;
+      planDesc.textContent = rec.desc;
+      planCta.setAttribute('href', rec.href);
+      if (resultBox) resultBox.classList.remove('updating');
+    }, 120);
   };
 
   q1Row.querySelectorAll('[data-q1]').forEach((btn) => {
@@ -767,4 +775,45 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/* ==========================================================================
+   13. Safe Scroll-Triggered Section & Card Reveals
+   ========================================================================== */
+function initScrollReveals() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const targets = document.querySelectorAll(
+    '.market-card, .service-clean-card, .package-card, .guide-card-clean, .support-mini-card, .provider-logo-tile, .console-preview-card, .feature-split-card, .plan-matcher-card'
+  );
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+
+  document.documentElement.classList.add('js-reveal-ready');
+  targets.forEach((el) => el.classList.add('reveal-on-scroll'));
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06, rootMargin: '0px 0px -24px 0px' }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+
+  // Safety fallback: never leave elements stuck hidden if observer misses fast scroll
+  setTimeout(() => {
+    targets.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 120) {
+        el.classList.add('is-visible');
+      }
+    });
+  }, 900);
 }

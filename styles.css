@@ -7924,3 +7924,120 @@ section, [id] {
     padding: 64px 0 !important;
   }
 }
+
+/* === SENIOR UI/UX MOTION & EDITORIAL POLISH === */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-med: 320ms;
+}
+
+/* Editorial Restraint: Clean Hairline Borders & Subtle Elevation */
+.market-card,
+.service-clean-card,
+.package-card,
+.guide-card-clean,
+.support-mini-card,
+.console-preview-card,
+.feature-split-card {
+  border: 1px solid #D7E7F0;
+  box-shadow: 0 4px 16px rgba(15, 41, 54, 0.04);
+  transition: transform var(--duration-med) var(--ease-out), box-shadow var(--duration-med) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.market-card:hover,
+.service-clean-card:hover,
+.guide-card-clean:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(15, 41, 54, 0.07);
+  border-color: #2995C3;
+}
+
+/* Subtle Button Hover Lift & Accessible Focus-Visible Rings */
+.btn,
+.hero-btn,
+.feature-tab-pill,
+.matcher-opt-btn,
+.toggle-pill,
+.journey-acc-item,
+.faq-question {
+  transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.btn:hover,
+.hero-btn:hover {
+  transform: translateY(-1px);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2995C3;
+  outline-offset: 2px;
+}
+
+/* Console Animated Progress Bar */
+.console-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #EBF5FA;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin: 14px 0 6px 0;
+}
+
+.console-progress-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, #1F7091 0%, #2995C3 100%);
+  border-radius: 9999px;
+  transition: width var(--duration-med) var(--ease-out);
+}
+
+/* FAQ Chevron Smooth Rotation */
+.faq-icon {
+  transition: transform var(--duration-fast) var(--ease-out);
+  display: inline-block;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Plan Matcher Smooth Update */
+.matcher-result-box {
+  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.matcher-result-box.updating {
+  opacity: 0.65;
+  transform: translateY(2px);
+}
+
+/* Safe Scroll-Triggered Reveals (Never stuck at opacity: 0 without JS) */
+html.js-reveal-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--duration-med) var(--ease-out), transform var(--duration-med) var(--ease-out);
+}
+
+html.js-reveal-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html.js-reveal-ready .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
