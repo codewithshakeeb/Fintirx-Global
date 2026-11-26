@@ -134,9 +134,16 @@ window.selectStackCard = function(cardId) {
 
   // 3. Immediately bring target card to top with high z-index and clear visibility
   cards.forEach((c, idx) => {
-    c.classList.remove('card-selected-active');
-    if (idx === cardIndex) {
+    const inner = c.querySelector('.stack-card-inner');
+    if (idx < cardIndex) {
+      c.classList.remove('card-selected-active');
+      if (inner) inner.style.opacity = '0';
+    } else if (idx === cardIndex) {
       c.classList.add('card-selected-active');
+      if (inner) inner.style.opacity = '1';
+    } else {
+      c.classList.remove('card-selected-active');
+      if (inner) inner.style.opacity = '1';
     }
   });
 
@@ -206,6 +213,9 @@ function initDelegatedAnchorLinks() {
       document.querySelectorAll('.stack-card.card-selected-active').forEach(c => {
         c.classList.remove('card-selected-active');
       });
+      document.querySelectorAll('.stack-card-inner').forEach(inner => {
+        inner.style.opacity = '';
+      });
     }
   }, { passive: true });
 
@@ -213,6 +223,9 @@ function initDelegatedAnchorLinks() {
     if (!window.isTabClickScrolling) {
       document.querySelectorAll('.stack-card.card-selected-active').forEach(c => {
         c.classList.remove('card-selected-active');
+      });
+      document.querySelectorAll('.stack-card-inner').forEach(inner => {
+        inner.style.opacity = '';
       });
     }
   }, { passive: true });
@@ -1451,16 +1464,29 @@ function initStackSectionMotion() {
     cards.forEach((card, i) => {
       if (i < cards.length - 1) {
         const nextCard = cards[i + 1];
+        const inner = card.querySelector('.stack-card-inner');
+        if (inner) {
+          gsap.to(inner, {
+            opacity: 0,
+            ease: 'none',
+            scrollTrigger: {
+              id: 'deck-fade-' + i,
+              trigger: nextCard,
+              start: 'top bottom-=60',
+              end: 'top top+=110',
+              scrub: true,
+            },
+          });
+        }
         gsap.to(card, {
-          scale: 0.94,
-          y: -14,
-          opacity: 0.88,
+          scale: 0.96,
+          y: -10,
           ease: 'none',
           scrollTrigger: {
             id: 'deck-scrub-' + i,
             trigger: nextCard,
             start: 'top bottom',
-            end: 'top top+=140',
+            end: 'top top+=110',
             scrub: true,
           },
         });
