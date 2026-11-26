@@ -1,732 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporate Services - U.S. LLC & UK LTD | Fintrix Global</title>
-  <meta name="description" content="End-to-end corporate services for U.S. LLCs and UK LTDs. Entity formation, Registered Agent representation, IRS EIN, UK HMRC VAT/Corp Tax, privacy mail vault and banking guidance.">
+  <title>Formation &amp; Business Support Services | Fintrix Global</title>
+  <meta name="description"
+    content="Explore full-stack corporate services for US and UK entities: Company Formation, EIN &amp; ITIN, Compliance, Banking Document Support, Trademark, VAT/EORI, and Marketplace Setup.">
+  <link rel="canonical" href="https://fintirx-global.vercel.app/services.html">
+  <link rel="icon" type="image/jpeg" href="./logo.jpg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Formation &amp; Business Support Services | Fintrix Global">
+  <meta property="og:description" content="Choose the support your business needs. Each service has its own eligibility checks and an agreed scope.">
+  <meta property="og:image" content="./assets/founder-banner.webp">
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" type="image/jpeg" href="./logo.jpg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Floating Rounded Pill Header (Matching Screenshot 1) -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Top Contact Bar -->
+  <div class="top-contact-bar" role="region" aria-label="Quick Contact & Hours">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="top-bar-item">
+          <span class="top-bar-badge">Corporate Practice</span>
+          Comprehensive Formation, Tax ID, Compliance &amp; Operational Services
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-item">Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM PKT</span>
+        <span class="top-bar-item"><a href="tel:+923001234567">+92 300 1234567</a></span>
+        <span class="top-bar-item">
+          <a href="https://wa.me/923001234567?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20Fintrix%20Global%20services."
+            target="_blank" rel="noopener noreferrer" class="top-bar-whatsapp">
+            Chat on WhatsApp
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
   <header class="floating-pill-header" id="header">
     <div class="header-container">
       <a href="index.html" class="brand-link" aria-label="Fintrix Global Home">
         <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
       </a>
 
-      <!-- Desktop Multipage Navigation Menu -->
-      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item has-dropdown">
-            <a href="services.html" class="nav-link active">
-              Services <span class="dropdown-caret">▼</span>
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Company Formation <span class="dropdown-caret">▼</span>
             </a>
             <div class="dropdown-menu">
-              <a href="services.html#llc" class="dropdown-link">
-                <span class="dropdown-title">US LLC Formation</span>
-                <span class="dropdown-desc">Wyoming, Delaware, New Mexico & all 50 states</span>
+              <a href="usa-formation.html" class="dropdown-link">
+                <strong>USA Formation</strong>
+                <span>US LLC &amp; C-Corp registration in WY, DE, NM, FL</span>
               </a>
-              <a href="services.html#ltd" class="dropdown-link">
-                <span class="dropdown-title">UK LTD Incorporation</span>
-                <span class="dropdown-desc">Companies House filing, Articles & PSC Register</span>
+              <a href="uk-formation.html" class="dropdown-link">
+                <strong>UK Formation</strong>
+                <span>UK Private LTD incorporation &amp; director ID checks</span>
               </a>
-              <a href="services.html#agent" class="dropdown-link">
-                <span class="dropdown-title">Registered Agent & Office</span>
-                <span class="dropdown-desc">Physical address privacy & digital mail vault</span>
-              </a>
-              <a href="services.html#tax" class="dropdown-link">
-                <span class="dropdown-title">Tax IDs & Annual Filings</span>
-                <span class="dropdown-desc">IRS EIN, ITIN, Form 5472 & UK Corporation Tax</span>
+              <a href="us-llc-vs-uk-ltd.html" class="dropdown-link">
+                <strong>US LLC vs UK LTD</strong>
+                <span>Side-by-side comparison matrix for founders</span>
               </a>
             </div>
           </li>
-          <li class="nav-item">
-            <a href="compliance.html" class="nav-link ">Compliance</a>
-          </li>
-          <li class="nav-item">
-            <a href="pricing.html" class="nav-link ">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link ">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link ">Contact</a>
-          </li>
+          <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
       </nav>
 
-      <!-- Header Action CTAs -->
       <div class="header-actions">
-        <button type="button" class="nav-login-link" id="headerLoginBtn">Log in</button>
-        <a href="contact.html" class="btn btn-primary pill-btn magnetic" id="headerTalkBtn">
-          <span>Talk to an Expert</span>
-          <svg class="btn-icon-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <!-- Mobile Toggle -->
-        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <a href="contact.html" class="btn btn-secondary-nav">Talk to an Expert</a>
+        <a href="pricing.html" class="btn btn-primary-nav">Start Your Company</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Navigation -->
+  <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="mobile-drawer-content">
-      <div class="mobile-drawer-header">
-        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="120" height="36">
-        <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Navigation Menu">✕</button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="index.html" class="mobile-link">Home</a>
-        <a href="services.html" class="mobile-link active">Services & Features</a>
-        <a href="compliance.html" class="mobile-link">Corporate Compliance</a>
-        <a href="pricing.html" class="mobile-link">Packages & Pricing</a>
-        <a href="about.html" class="mobile-link">About Us & Team</a>
-        <a href="contact.html" class="mobile-link">Contact & Consultation</a>
+    <div class="drawer-header">
+      <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="120" height="36">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-content">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li class="mobile-group-title">Company Formation</li>
+          <li><a href="usa-formation.html" class="mobile-nav-link sub-link">USA Formation (LLC &amp; Corp)</a></li>
+          <li><a href="uk-formation.html" class="mobile-nav-link sub-link">UK Formation (Private LTD)</a></li>
+          <li><a href="us-llc-vs-uk-ltd.html" class="mobile-nav-link sub-link">US LLC vs UK LTD Comparison</a></li>
+          <li class="mobile-group-title">Platform &amp; Practice</li>
+          <li><a href="services.html" class="mobile-nav-link active">All Services</a></li>
+          <li><a href="pricing.html" class="mobile-nav-link">Packages &amp; Pricing</a></li>
+          <li><a href="resources.html" class="mobile-nav-link">Founder Resources</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+        </ul>
       </nav>
-      <div class="mobile-drawer-actions">
-        <a href="contact.html" class="btn btn-primary w-full">Talk to an Expert →</a>
-        <button type="button" class="btn btn-outline w-full" id="mobilePortalBtn">Client Portal Demo</button>
-      </div>
-      <div class="mobile-drawer-footer">
-        <p>Transparent Pricing • Separate Govt Fees • Dual US & UK Coverage</p>
+      <div class="drawer-footer">
+        <a href="pricing.html" class="btn btn-primary btn-block">Start Your Company &rarr;</a>
+        <a href="contact.html" class="btn btn-secondary btn-block">Talk to an Expert</a>
       </div>
     </div>
   </div>
 
   <main id="mainContent">
-    <!-- Subpage Hero -->
-    <section class="subpage-hero">
-      <div class="container">
-        <span class="subpage-badge">Comprehensive Corporate Infrastructure</span>
-        <h1 class="subpage-title">Dual-Jurisdiction U.S. & UK Business Services</h1>
-        <p class="subpage-subtitle">
-          From entity incorporation to ongoing statutory compliance, IRS tax registrations, registered agent coverage, and cross-border bank account guidance.
+    <!-- 5.1 Services Overview Header -->
+    <section class="subpage-hero" style="padding: 120px 0 60px 0; background: linear-gradient(180deg, #F4F9FC 0%, #FFFFFF 100%);">
+      <div class="container text-center">
+        <span class="section-eyebrow">SERVICES CATALOG</span>
+        <h1 class="section-title" style="font-size: 2.75rem; margin-top: 16px;">Formation and business support services</h1>
+        <p class="section-subtitle" style="max-width: 820px; margin: 0 auto 28px auto;">
+          Choose the support your business needs. Each service has its own eligibility checks and an agreed scope, so you only pay for what you use.
         </p>
       </div>
     </section>
 
-    <!-- Services Deep Dive Section -->
-    <section class="container" style="padding: 60px 0;">
-      <div class="packages-grid">
-        <!-- Service 1: US LLC Formation -->
-        <div class="package-card" id="llc">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">UNITED STATES</span>
-            <h3 class="package-tier-name">U.S. LLC Formation</h3>
-            <p class="package-target">Full legal formation in Wyoming, Delaware, New Mexico, Florida, or any of the 50 U.S. states.</p>
-          </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Comprehensive preliminary business name availability check</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Preparation and formal lodgment of Articles of Organization</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Customized Operating Agreement tailored to single or multi-member setup</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Initial organizational minutes & member ownership certificates</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Physical in-state Registered Agent with immediate representation</span></li>
-            </ul>
-          </div>
-        </div>
+    <!-- Services Detail Section -->
+    <section style="padding: 40px 0 80px 0; background: #FFFFFF;">
+      <div class="container" style="max-width: 1000px;">
+        <div style="display: flex; flex-direction: column; gap: 48px;">
 
-        <!-- Service 2: UK LTD Incorporation -->
-        <div class="package-card" id="ltd">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">UNITED KINGDOM</span>
-            <h3 class="package-tier-name">UK LTD Incorporation</h3>
-            <p class="package-target">Official Private Limited Company incorporation directly registered with UK Companies House.</p>
+          <!-- 1. Company Formation -->
+          <div class="service-detail-card" id="company-formation" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">Core Service</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">1. Company Formation</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Register a US LLC, US corporation or UK LTD with verified accuracy and complete digital documentation.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Name reservation &amp; clearance check</li>
+                  <li>Articles of Organization or Companies House IN01 lodgement</li>
+                  <li>Operating Agreement or Articles of Association template</li>
+                  <li>Registered agent or registered office initial setup</li>
+                  <li>Immediate digital delivery of certified corporate records</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Proposed company name(s)</li>
+                  <li>Valid government passport or national ID</li>
+                  <li>Proof of residential address (utility bill or bank statement)</li>
+                  <li>Summary of business activity and ownership breakdown</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Government filing fees (state Secretary of State fees in the US, Companies House fees in the UK) are charged separately at cost unless itemized in a bundled quote.
+            </div>
+            <a href="contact.html?service=formation" class="btn btn-primary">Request Formation Quote &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Companies House real-time name clearance & reservation</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Memorandum & Articles of Association model submission</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Official Certificate of Incorporation issued with company registration number</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Establishment and filing of the PSC (Persons with Significant Control) Register</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Prestigious London Covent Garden Registered Office Address</span></li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Service 3: Registered Agent & Office -->
-        <div class="package-card" id="agent">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">OFFICIAL PRESENCE</span>
-            <h3 class="package-tier-name">Registered Agent & Office</h3>
-            <p class="package-target">Protect your home address privacy with compliant statutory street representation in the US and UK.</p>
+          <!-- 2. EIN and ITIN -->
+          <div class="service-detail-card" id="ein-itin" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">Tax IDs</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">2. EIN and ITIN Support</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Tax identification numbers let your company or you personally deal with the US tax system and open merchant accounts.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>EIN application preparation for eligible corporate entities</li>
+                  <li>ITIN application preparation for eligible international individuals</li>
+                  <li>Thorough review of identity documents prior to submission</li>
+                  <li>Direct status follow-up with the Internal Revenue Service</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Company details &amp; filed Articles of Organization</li>
+                  <li>Valid passport with clear photo and expiration</li>
+                  <li>Proof of residential address</li>
+                  <li>The specific reason and tax exception for requesting an ITIN</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Government processing times vary. ITIN applications have strict documentation rules. Certified Acceptance Agent (CAA) services, where required, are clearly separated and itemized.
+            </div>
+            <a href="contact.html?service=ein-itin" class="btn btn-primary">Request Tax ID Support &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Physical commercial street address required on public registry records</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Continuous availability during business hours for official Service of Process</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Same-day digital mail scanning with instant portal notification</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Spam & marketing junk filtering so only critical legal mail is processed</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>International physical forwarding options for bank debit cards & original documents</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      <!-- Second Row of Services -->
-      <div class="packages-grid" style="margin-top: 30px;">
-        <!-- Service 4: Tax IDs & Filings -->
-        <div class="package-card" id="tax">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">TAX & REGULATORY</span>
-            <h3 class="package-tier-name">IRS EIN & UK Tax Filings</h3>
-            <p class="package-target">Federal and statutory tax IDs required for merchant gateways, hiring, and banking.</p>
+          <!-- 3. Annual Tax and Compliance -->
+          <div class="service-detail-card" id="annual-tax-compliance" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">Ongoing Duties</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">3. Annual Tax and Compliance</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Keep your company in good standing every year without unexpected state administrative penalties or dissolution.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included (US):</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>State annual report preparation and submission</li>
+                  <li>Federal tax return filing support</li>
+                  <li>Information returns for foreign-owned LLCs (IRS Form 5472 &amp; 1120)</li>
+                  <li>Annual registered agent renewal coordination</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included (UK):</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Annual confirmation statement filing with Companies House</li>
+                  <li>Statutory annual accounts support</li>
+                  <li>Corporation Tax return preparation support (CT600)</li>
+                  <li>Quarterly VAT return filing support where registered</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Complex accounting and tax return certifications are coordinated with licensed accounting professionals. Late filings lead to statutory penalties, so we provide advance reminders.
+            </div>
+            <a href="contact.html?service=compliance" class="btn btn-primary">Get Compliance Plan &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>IRS Employer Identification Number (EIN) processed via Form SS-4</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Non-resident EIN procurement without requiring a U.S. SSN or ITIN</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>UK HMRC Corporation Tax registration & Unique Taxpayer Reference (UTR)</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>UK VAT registration and PAYE payroll registration support</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Foreign-owned U.S. LLC Form 5472 & Pro Forma 1120 filing preparation</span></li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Service 5: Banking Guidance -->
-        <div class="package-card" id="banking">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">GLOBAL FINANCIALS</span>
-            <h3 class="package-tier-name">Corporate Banking Guidance</h3>
-            <p class="package-target">Step-by-step documentation packaging for Tier-1 FinTech and commercial business accounts.</p>
+          <!-- 4. Banking and Payment Support -->
+          <div class="service-detail-card" id="banking-payment-support" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">Application Readiness</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">4. Banking and Payment Support</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Banks and payment providers ask for specific documents and information. We help you prepare them accurately.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Formation document pack structured for compliance review</li>
+                  <li>Commercial proof of address documentation</li>
+                  <li>Business model description and commercial activity summary</li>
+                  <li>Step-by-step guidance through online onboarding flows</li>
+                  <li>Assistance formulating responses to follow-up KYC questions</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Issued EIN notice (CP 575 or 147C) or Companies House registration</li>
+                  <li>Functional business website or active portfolio link</li>
+                  <li>Detailed description of goods/services sold and customer geography</li>
+                  <li>Valid passport of beneficial owners (25%+ equity)</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Prominent Non-Affiliation and No-Guarantee Notice Box -->
+            <div class="banking-notice-box" style="margin-bottom: 24px;">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <div>
+                <strong>Important Notice:</strong> Providers decide whether to open an account. We offer independent application assistance only. We cannot guarantee approval and are not affiliated with any bank, fintech, or payment provider.
+              </div>
+            </div>
+            <a href="contact.html?service=banking" class="btn btn-primary">Prepare Banking Application &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Formal Banking Resolution certificate signed by managers or directors</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Curated introduction & application guidance for Mercury, Relay, and Wise US</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>UK business accounts: Wise Business, Tide, Revolut Business & Payoneer</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Stripe and PayPal Merchant account onboarding documentation assistance</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Cross-border proof of address and utility verification guidance</span></li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Service 6: Corporate Amendments & Maintenance -->
-        <div class="package-card" id="changes">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">LIFECYCLE MANAGEMENT</span>
-            <h3 class="package-tier-name">Corporate Amendments</h3>
-            <p class="package-target">Keep your corporate record pristine as your co-founders, address, or business model evolves.</p>
+          <!-- 5. VAT and EORI -->
+          <div class="service-detail-card" id="vat-eori" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">UK Customs &amp; Tax</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">5. VAT and EORI Registration</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Companies selling to UK customers or moving physical goods across the UK border require these statutory registrations.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Eligibility and threshold liability review</li>
+                  <li>UK VAT registration preparation with HMRC</li>
+                  <li>Economic Operators Registration and Identification (EORI) application</li>
+                  <li>Initial guidance on filing deadlines and digital VAT accounting</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>UK company incorporation certificate &amp; UTR number</li>
+                  <li>Description of physical products and supplier invoices</li>
+                  <li>Estimated or historical UK annual turnover</li>
+                  <li>UK bank account details for VAT disbursement</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Whether registration is required depends on turnover thresholds, physical warehousing locations, and movement of goods. We confirm eligibility before initiating filings.
+            </div>
+            <a href="contact.html?service=vat-eori" class="btn btn-primary">Request VAT &amp; EORI Guidance &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Official Articles of Amendment filing with Secretary of State</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Companies House appointment, resignation & PSC shareholding updates</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Member & Manager transfers with updated internal Operating Agreement</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Certificates of Good Standing / Certificates of Fact procurement</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Orderly formal voluntary dissolution and tax clearance services</span></li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Service 7: Digital Mail & Document Vault -->
-        <div class="package-card" id="vault">
-          <div class="package-header">
-            <span class="badge" style="background:#EBF5FA; color:#1F7091; font-weight:700; margin-bottom:10px; display:inline-block;">SECURE DIGITAL ACCESS</span>
-            <h3 class="package-tier-name">Digital Mail &amp; Document Vault</h3>
-            <p class="package-target">Bank-grade encrypted repository for instant mail scans, formation certificates, and statutory records.</p>
+          <!-- 6. Trademark Registration -->
+          <div class="service-detail-card" id="trademark-registration" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">Brand Defense</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">6. Trademark Registration</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Protect your brand name and logo across the United States (USPTO) and United Kingdom (UK IPO).
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Preliminary conflict search for existing registered marks</li>
+                  <li>Application preparation with Nice Classification classification</li>
+                  <li>Submission coordination with USPTO and/or UK IPO</li>
+                  <li>Docket monitoring and examination status updates</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Exact word mark text or high-resolution logo graphic</li>
+                  <li>List of commercial goods and services sold under the mark</li>
+                  <li>Specimen of use in commerce (for US in-use filings)</li>
+                  <li>Owner or corporate entity legal details</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Official registration is decided exclusively by the respective government trademark office. Statutory examination fees and publication timelines are separate from our service fee.
+            </div>
+            <a href="contact.html?service=trademark" class="btn btn-primary">Protect Your Brand &rarr;</a>
           </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Same-day optical scanning and PDF upload of all state &amp; IRS/HMRC correspondence</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>256-bit AES encrypted cloud storage accessible 24/7 anywhere in the world</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Instant download of certified formation deeds, EIN letters, and PSC records</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Physical mail forwarding on request via DHL/FedEx to your home address</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Direct sharing links for banks, payment processors, and venture investors</span></li>
-            </ul>
+
+          <!-- 7. Marketplace Setup -->
+          <div class="service-detail-card" id="marketplace-setup" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">E-Commerce Readiness</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">7. Marketplace Setup</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Prepare your seller account with the clean corporate documents and tax certificates marketplaces require.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Commercial document verification pack</li>
+                  <li>Account onboarding and registration guidance</li>
+                  <li>Tax interview form preparation (W-8BEN / W-9)</li>
+                  <li>Listing readiness and seller verification checklist</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Certified formation documents &amp; tax ID (EIN or UTR)</li>
+                  <li>Corporate bank account statement with matching address</li>
+                  <li>Internationally chargeable credit card</li>
+                  <li>Government-issued passport of primary account manager</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Each marketplace sets its own underwriting rules and may suspend or reject accounts at its discretion. We cannot guarantee approval.
+            </div>
+            <a href="contact.html?service=marketplace" class="btn btn-primary">Prepare Marketplace Onboarding &rarr;</a>
           </div>
+
+          <!-- 8. Brand Registry -->
+          <div class="service-detail-card" id="brand-registry" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">IP Protection</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">8. Brand Registry</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Unlock A+ Content, storefront customization, and automated counterfeit protection on major retail marketplaces.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Eligibility assessment against marketplace brand criteria</li>
+                  <li>Application preparation with registered or pending trademark serials</li>
+                  <li>Verification code coordination and confirmation handling</li>
+                  <li>Follow-up with program administrators until resolution</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Active USPTO or UK IPO registered or pending trademark</li>
+                  <li>Photographs of product packaging showing permanent branding</li>
+                  <li>Active professional selling account on the marketplace</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Program enrollment is determined entirely by each marketplace. We ensure all documentary submissions adhere to the registry's published standards.
+            </div>
+            <a href="contact.html?service=brand-registry" class="btn btn-primary">Apply for Brand Registry &rarr;</a>
+          </div>
+
+          <!-- 9. USA Sales Tax -->
+          <div class="service-detail-card" id="usa-sales-tax" style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); scroll-margin-top: 110px;">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <span style="background: #EBF5FA; color: #1F7091; padding: 6px 14px; border-radius: 6px; font-weight: 700; font-size: 0.8125rem;">State Taxes</span>
+              <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-ink-primary); margin: 0;">9. USA Sales Tax Support</h2>
+            </div>
+            <p style="font-size: 1.0625rem; color: var(--color-ink-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Selling to US consumers may create physical or economic nexus obligations across multiple US states.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 24px;">
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What is included:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>Sales nexus analysis based on trading volume and inventory locations</li>
+                  <li>Registration preparation for states where permits are required</li>
+                  <li>Guidance on marketplace facilitator laws and exemptions</li>
+                  <li>Filing calendar setup for monthly, quarterly, or annual returns</li>
+                </ul>
+              </div>
+              <div style="background: #F4F9FC; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <h4 style="font-weight: 700; color: #0F2936; margin-bottom: 10px;">What you will need:</h4>
+                <ul style="padding-left: 20px; margin: 0; color: var(--color-ink-secondary); font-size: 0.9375rem; line-height: 1.6;">
+                  <li>State-by-state breakdown of US gross revenue and transaction count</li>
+                  <li>Locations of 3PL fulfillment warehouses or Amazon FBA centers</li>
+                  <li>Valid US EIN and company formation certificate</li>
+                </ul>
+              </div>
+            </div>
+            <div style="background: #EBF5FA; border-left: 4px solid var(--color-primary-dark); padding: 14px 18px; border-radius: 4px; font-size: 0.875rem; color: #0F2936; margin-bottom: 20px;">
+              <strong>Important Note:</strong> Nexus rules differ significantly across individual states. Specialized tax filings are coordinated through licensed tax practitioners.
+            </div>
+            <a href="contact.html?service=sales-tax" class="btn btn-primary">Assess Sales Tax Duties &rarr;</a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Detailed U.S. LLC vs UK LTD Comparison Table -->
-    <section class="container" id="comparison" style="padding-bottom: 60px;">
-      <div class="section-header text-center">
-        <span class="section-eyebrow">HEAD-TO-HEAD BREAKDOWN</span>
-        <h2 class="section-title">U.S. LLC vs. UK LTD: Which Structure Fits You?</h2>
-        <p class="section-subtitle">Based on Section 1 of our Core Business Services Guide.</p>
-      </div>
-
-      <div style="overflow-x: auto;">
-        <table class="comparison-matrix-table">
-          <thead>
-            <tr>
-              <th style="width: 25%;">Feature / Attribute</th>
-              <th style="width: 37.5%; color: #1F7091;">🇺🇸 United States LLC</th>
-              <th style="width: 37.5%; color: #2995C3;">🇬🇧 United Kingdom LTD</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Governing Authority</strong></td>
-              <td>Secretary of State (State-by-state, e.g., Wyoming, Delaware)</td>
-              <td>Companies House (Single centralized national registry)</td>
-            </tr>
-            <tr>
-              <td><strong>Liability Protection</strong></td>
-              <td>Full corporate veil protecting personal assets of members</td>
-              <td>Limited liability by shares protecting shareholders and directors</td>
-            </tr>
-            <tr>
-              <td><strong>Tax Classification</strong></td>
-              <td>Pass-through by default (Disregarded entity or Partnership); option for C-Corp</td>
-              <td>Subject to UK Corporation Tax (currently 19%–25%) on net profits</td>
-            </tr>
-            <tr>
-              <td><strong>Foreign Owner Reporting</strong></td>
-              <td>IRS Form 5472 + Pro Forma 1120 mandatory for 25%+ foreign owned</td>
-              <td>Annual Statutory Accounts & Company Tax Return (CT600) to HMRC</td>
-            </tr>
-            <tr>
-              <td><strong>Annual Maintenance</strong></td>
-              <td>State Annual Report / Franchise Tax + Registered Agent renewal</td>
-              <td>Annual Confirmation Statement + Accounts + Registered Office</td>
-            </tr>
-            <tr>
-              <td><strong>Public Privacy</strong></td>
-              <td>High in Wyoming & New Mexico (members not published on state registry)</td>
-              <td>Low (Directors, PSC shareholders, and accounts published on public registry)</td>
-            </tr>
-            <tr>
-              <td><strong>Global Merchant Gateways</strong></td>
-              <td>Full access to US Stripe, PayPal, Mercury, Shopify Payments</td>
-              <td>Full access to UK/European Stripe, Wise, Tide, PayPal Europe</td>
-            </tr>
-            <tr>
-              <td><strong>Recommended For</strong></td>
-              <td>SaaS, digital creators, international consultants, e-commerce stores</td>
-              <td>European trade, UK market focus, founders wanting quick single-agency setup</td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- Final CTA -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #1F7091 0%, #0F2936 100%); color: #FFFFFF; text-align: center;">
+      <div class="container">
+        <div style="max-width: 760px; margin: 0 auto;">
+          <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; color: #FFFFFF;">Ready to get started?</h2>
+          <p style="font-size: 1.0625rem; color: #D7E7F0; margin-bottom: 28px;">
+            Tell us about your business goals and we will assemble an itemized scope of work.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="contact.html" class="btn" style="background: #2995C3; color: #FFFFFF; font-weight: 700; padding: 14px 28px; border-radius: 8px;">Request a Quote</a>
+            <a href="https://wa.me/923001234567?text=Hello%2C%20I%20would%20like%20to%20discuss%20Fintrix%20Global%20services."
+              target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 14px 28px; font-weight: 700; border-radius: 8px;">
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Pre-Footer Founder Conversion Banner (Matching Screenshot 5) -->
-  <section class="container" style="margin-top: 60px;">
-    <div class="founder-cta-banner reveal">
-      <div class="founder-cta-content">
-        <h2 class="founder-cta-title">Someone Out There Needs Your Business.</h2>
-        <p class="founder-cta-subtitle">Get set up right, with experts handling all the details.</p>
-        <a href="contact.html" class="founder-cta-btn magnetic">
-          <span>Start My Business</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <p class="founder-cta-note">Starting at $297/year, plus state fees · No U.S. residency or SSN required</p>
-      </div>
-      <div class="founder-cta-image-col">
-        <img src="./assets/founder-banner.webp" alt="Smiling entrepreneur with laptop" class="founder-banner-img" width="400" height="320" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Monthly Newsletter Box -->
-    <div class="newsletter-card reveal" style="margin-bottom: 60px;">
-      <div class="newsletter-grid">
-        <div class="newsletter-info">
-          <div class="newsletter-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </div>
-          <div>
-            <h3 class="newsletter-title">Join Fintrix Global's Monthly Newsletter</h3>
-            <p class="newsletter-desc">Founder guides, compliance deadlines, and cross-border tax updates once a month.</p>
-          </div>
-        </div>
-
-        <div class="newsletter-form-col">
-          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
-            <div class="input-with-button">
-              <input type="email" class="email-input" id="newsletterEmail" placeholder="Enter your email" required aria-label="Business Email Address">
-              <button type="submit" class="btn btn-primary pill-btn" id="subscribeBtn">Subscribe →</button>
-            </div>
-            <div class="newsletter-feedback" id="newsletterFeedback" aria-live="polite"></div>
-            <p class="privacy-note">By subscribing you agree with our <a href="about.html#privacy">Privacy Policy</a>.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modern Categorized Footer (Matching Screenshot 6) -->
-  <footer class="site-footer" id="footer">
-    <div class="container footer-container">
-      <div class="footer-top-row">
-        <!-- Brand Info -->
-        <div class="footer-col brand-col">
-          <a href="index.html" class="footer-brand-link" aria-label="Fintrix Global Home">
-            <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
-          </a>
-          <p class="footer-tagline">
-            Your business deserves your full attention. Give it more of your time while Fintrix Global handles everything from formation and registered agent to taxes & compliance, all in one place.
+  <!-- Footer -->
+  <footer class="site-footer" id="footer" style="background: #0F2936; color: #D7E7F0; padding: 64px 0 32px 0;">
+    <div class="container">
+      <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 48px;">
+        <div class="footer-col">
+          <img src="./logo.jpg" alt="Fintrix Global" style="max-height: 38px; width: auto; margin-bottom: 16px; border-radius: 4px;">
+          <p style="font-size: 0.875rem; color: #94A3B8; line-height: 1.6; margin-bottom: 16px;">
+            Fintrix Global provides company formation and business support services for founders in Pakistan and international markets. Clear steps, transparent costs, and ongoing statutory assistance.
           </p>
-          <div class="footer-social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">ig</a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">x</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">in</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">yt</a>
-          </div>
-          <div class="footer-tp-badge" style="margin-top: 14px;">
-            <div class="tp-stars">
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-            </div>
-            <span style="font-size: 0.8125rem; font-weight: 600; color: #0F2936; margin-left: 6px;"><span class="counter" data-target="4.4" data-suffix=" / 5" data-decimals="1">4.4 / 5</span> • <span class="counter" data-target="2000" data-suffix="+">2,000+</span> Reviews</span>
+          <div style="font-size: 0.8125rem; color: #CBD5E1; line-height: 1.6;">
+            <p><strong>Office:</strong> Karachi, Pakistan</p>
+            <p><strong>Hours:</strong> Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM PKT</p>
+            <p><strong>Email:</strong> <a href="mailto:support@fintrixglobal.com" style="color: #2995C3;">support@fintrixglobal.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+923001234567" style="color: #2995C3;">+92 300 1234567</a></p>
           </div>
         </div>
 
-        <!-- Col 1: Products & Services -->
         <div class="footer-col">
-          <h4 class="footer-col-title">Services</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#llc">U.S. LLC Formation</a></li>
-            <li><a href="services.html#ltd">UK LTD Incorporation</a></li>
-            <li><a href="services.html#agent">Registered Agent Coverage</a></li>
-            <li><a href="services.html#tax">IRS EIN & Tax IDs</a></li>
-            <li><a href="services.html#agent">UK Registered Office</a></li>
-            <li><a href="services.html#banking">Business Bank Account Guidance</a></li>
-            <li><a href="services.html#vault">Document & Mail Vault</a></li>
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">USA Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <li><a href="usa-formation.html" style="color: #CBD5E1; text-decoration: none;">USA Formation</a></li>
+            <li><a href="services.html#ein-itin" style="color: #CBD5E1; text-decoration: none;">EIN and ITIN</a></li>
+            <li><a href="services.html#usa-sales-tax" style="color: #CBD5E1; text-decoration: none;">USA Sales Tax</a></li>
+            <li><a href="services.html#annual-tax-compliance" style="color: #CBD5E1; text-decoration: none;">Annual Tax and Compliance</a></li>
           </ul>
         </div>
 
-        <!-- Col 2: Company -->
         <div class="footer-col">
-          <h4 class="footer-col-title">Company</h4>
-          <ul class="footer-links-list">
-            <li><a href="about.html">About Fintrix Global</a></li>
-            <li><a href="about.html#team">Our Specialist Team</a></li>
-            <li><a href="pricing.html">Plans & Pricing</a></li>
-            <li><a href="contact.html">Book a Consultation</a></li>
-            <li><a href="contact.html#offices">US & UK Corporate Offices</a></li>
-            <li><a href="about.html#security">Trust & Data Security</a></li>
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">UK Services</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <li><a href="uk-formation.html" style="color: #CBD5E1; text-decoration: none;">UK Formation</a></li>
+            <li><a href="services.html#vat-eori" style="color: #CBD5E1; text-decoration: none;">VAT and EORI</a></li>
+            <li><a href="uk-formation.html#confirmation-statement" style="color: #CBD5E1; text-decoration: none;">Confirmation Statement</a></li>
+            <li><a href="us-llc-vs-uk-ltd.html" style="color: #CBD5E1; text-decoration: none;">US LLC vs UK LTD</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Compare -->
         <div class="footer-col">
-          <h4 class="footer-col-title">Compare</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#comparison">US LLC vs UK LTD</a></li>
-            <li><a href="services.html#comparison">Fintrix vs LegalZoom</a></li>
-            <li><a href="services.html#comparison">Fintrix vs Doola</a></li>
-            <li><a href="services.html#comparison">Fintrix vs ZenBusiness</a></li>
-            <li><a href="services.html#comparison">Fintrix vs Stripe Atlas</a></li>
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">Business Support</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <li><a href="services.html#banking-payment-support" style="color: #CBD5E1; text-decoration: none;">Banking Support</a></li>
+            <li><a href="services.html#trademark-registration" style="color: #CBD5E1; text-decoration: none;">Trademark Registration</a></li>
+            <li><a href="services.html#marketplace-setup" style="color: #CBD5E1; text-decoration: none;">Marketplace Setup</a></li>
+            <li><a href="services.html#brand-registry" style="color: #CBD5E1; text-decoration: none;">Brand Registry</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Learn & Jurisdictions -->
         <div class="footer-col">
-          <h4 class="footer-col-title">Jurisdictions</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#llc">Wyoming for Non-US Founders</a></li>
-            <li><a href="services.html#llc">Delaware for Venture Tech</a></li>
-            <li><a href="services.html#llc">New Mexico Privacy LLC</a></li>
-            <li><a href="services.html#ltd">UK Companies House Rules</a></li>
-            <li><a href="compliance.html#form5472">Form 5472 Foreign Reporting</a></li>
-            <li><a href="compliance.html#calendar">Statutory Annual Deadlines</a></li>
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">Company</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <li><a href="about.html" style="color: #CBD5E1; text-decoration: none;">About Us</a></li>
+            <li><a href="contact.html" style="color: #CBD5E1; text-decoration: none;">Contact Us</a></li>
+            <li><a href="pricing.html" style="color: #CBD5E1; text-decoration: none;">Pricing</a></li>
+            <li><a href="resources.html" style="color: #CBD5E1; text-decoration: none;">Resources</a></li>
+            <li><a href="services.html" style="color: #CBD5E1; text-decoration: none;">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #FFFFFF; margin-bottom: 16px;">Legal</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem;">
+            <li><a href="privacy-policy.html" style="color: #CBD5E1; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html" style="color: #CBD5E1; text-decoration: none;">Terms &amp; Conditions</a></li>
+            <li><a href="refund-cancellation-policy.html" style="color: #CBD5E1; text-decoration: none;">Refund &amp; Cancellation</a></li>
+            <li><a href="legal-disclaimer.html" style="color: #CBD5E1; text-decoration: none;">Legal Disclaimer</a></li>
           </ul>
         </div>
       </div>
 
-      <!-- Legal Row & Disclaimer -->
-      <div class="footer-bottom-row">
-        <div class="footer-legal-copy">
-          <p>© 2026 Fintrix Global Inc. All rights reserved. | <a href="about.html#terms">Terms of Service</a> | <a href="about.html#privacy">Privacy Policy</a></p>
-        </div>
-        <div class="footer-compliance-pill">
-          <span class="compliance-dot"></span>
-          <span>Dual Jurisdiction U.S. & U.K. Regulated Compliance Provider</span>
-        </div>
+      <div class="footer-disclaimer-strip" style="border-top: 1px solid rgba(215, 231, 240, 0.12); padding-top: 24px; margin-bottom: 24px; font-size: 0.8125rem; color: #94A3B8; line-height: 1.6;">
+        <p>
+          <strong>Disclaimer:</strong> Fintrix Global provides company formation and business support services. We are not a law firm, accounting firm or tax advisor and do not give legal, tax or financial advice. Banking, payment processor and marketplace approvals are decided only by the relevant provider. Fees, timelines and requirements vary by state and country.
+        </p>
       </div>
 
-      <!-- Mandatory Legal Disclaimer from PDF Section 15 -->
-      <div class="footer-disclaimer-box">
-        <p><strong>Legal & Tax Services Disclaimer:</strong> Fintrix Global is a corporate service and technology provider assisting with business formations, registered agent services, and compliance filings. Fintrix Global is not an attorney, law firm, CPA firm, or chartered accounting practice, and does not provide formal legal advice or specialized statutory auditing services. Using Fintrix Global's digital platform or consulting team does not create an attorney-client or fiduciary CPA-client relationship. All company documents, operating templates, and statutory guides are prepared based on standard statutory templates and state guidelines. For complex cross-border taxation or specialized dispute counsel, founders are encouraged to consult certified independent legal or tax practitioners in their relevant jurisdiction.</p>
+      <div class="footer-bottom-strip" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8125rem; color: #64748B;">
+        <p>&copy; 2026 Fintrix Global. All rights reserved.</p>
+        <p>Karachi, Pakistan | Operating Globally</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts: GSAP, ScrollTrigger, Lenis + script.js -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="./script.js"></script>
-<!-- ==========================================================================
-       FORMATION ORDER WIZARD MODAL (Multi-step Interactive Intake)
-       ========================================================================== -->
-  <div class="modal-overlay" id="orderModal" hidden>
-    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
-      <div class="modal-header">
-        <div>
-          <span class="modal-eyebrow">FINTRIX FORMATION WIZARD</span>
-          <h3 class="modal-title" id="orderModalTitle">Start Your Company</h3>
-        </div>
-        <button type="button" class="modal-close" id="orderModalClose" aria-label="Close modal">&times;</button>
-      </div>
+  <!-- Floating WhatsApp Chat Button -->
+  <a href="https://wa.me/923001234567?text=Hello%2C%20I%20would%20like%20to%20discuss%20Fintrix%20Global%20services."
+    class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with Fintrix Global on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z"/>
+    </svg>
+    <span class="floating-whatsapp-tooltip">Chat with us on WhatsApp</span>
+  </a>
 
-      <div class="modal-body">
-        <!-- Wizard Steps Indicator -->
-        <div class="wizard-steps-indicator">
-          <div class="wizard-step active" id="wStep1">
-            <span class="step-num">1</span>
-            <span class="step-label">Select Package</span>
-          </div>
-          <div class="wizard-step" id="wStep2">
-            <span class="step-num">2</span>
-            <span class="step-label">Entity Details</span>
-          </div>
-          <div class="wizard-step" id="wStep3">
-            <span class="step-num">3</span>
-            <span class="step-label">Review &amp; Submit</span>
-          </div>
-        </div>
-
-        <form id="orderWizardForm" onsubmit="return false;">
-          <!-- Pane 1: Package Selection -->
-          <div class="modal-pane active" id="pane1">
-            <p style="font-size: 0.9375rem; color: #4A6572; margin-bottom: 18px;">
-              Choose the package that fits your operational needs. All packages include statutory name reservation, Articles of Organization / Incorporation, and official tax registration.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <label class="pkg-radio-card">
-                <input type="radio" name="wizardPkg" value="Starter" data-price="199">
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Starter Package</strong>
-                    <span class="pkg-radio-price">$199 one-time</span>
-                  </div>
-                  <p>Complete official filing, EIN / Tax ID, 1st year registered agent, and client document vault.</p>
-                </div>
-              </label>
-
-              <label class="pkg-radio-card selected">
-                <input type="radio" name="wizardPkg" value="Standard" data-price="499" checked>
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Standard Package (Most Popular)</strong>
-                    <span class="pkg-radio-price">$499 /year</span>
-                  </div>
-                  <p>Starter features + unique business address, mail scanning/forwarding, and managed annual reporting.</p>
-                </div>
-              </label>
-
-              <label class="pkg-radio-card">
-                <input type="radio" name="wizardPkg" value="Complete" data-price="999">
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Complete Package (All-Inclusive VIP)</strong>
-                    <span class="pkg-radio-price">$999 /year</span>
-                  </div>
-                  <p>Standard features + banking resolution packet for Mercury/Relay, unlimited corporate amendments, and dedicated CPA desk.</p>
-                </div>
-              </label>
-            </div>
-
-            <div class="modal-pane-nav">
-              <span style="font-size: 0.8125rem; color: #7E97A6;">Step 1 of 3</span>
-              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(2)">Next: Entity Details &rarr;</button>
-            </div>
-          </div>
-
-          <!-- Pane 2: Entity Details -->
-          <div class="modal-pane" id="pane2" hidden>
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div>
-                <label for="proposedName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Proposed Company Name *
-                </label>
-                <input type="text" id="proposedName" class="form-input" placeholder="e.g. Acme Global Innovations" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-              </div>
-
-              <div>
-                <label for="targetJurisdiction" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Target Jurisdiction *
-                </label>
-                <select id="targetJurisdiction" class="form-input" style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                  <option value="wyoming">U.S. LLC - Wyoming (Top privacy & low fees)</option>
-                  <option value="delaware">U.S. LLC - Delaware (Venture capital standard)</option>
-                  <option value="newmexico">U.S. LLC - New Mexico (Zero annual state fees)</option>
-                  <option value="florida">U.S. LLC - Florida (Commercial hub)</option>
-                  <option value="uk-ltd">UK LTD - England &amp; Wales (Companies House)</option>
-                  <option value="dual-bundle">Dual US LLC + UK LTD Bundle (Save 15%)</option>
-                </select>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div>
-                  <label for="founderName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                    Founder / Contact Name *
-                  </label>
-                  <input type="text" id="founderName" class="form-input" placeholder="Full legal name" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                </div>
-                <div>
-                  <label for="founderEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                    Business Email *
-                  </label>
-                  <input type="email" id="founderEmail" class="form-input" placeholder="name@company.com" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                </div>
-              </div>
-
-              <div>
-                <label for="businessActivity" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Primary Business Activity *
-                </label>
-                <input type="text" id="businessActivity" class="form-input" placeholder="e.g. SaaS, E-Commerce, Consulting, Digital Agency" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-              </div>
-            </div>
-
-            <div class="modal-pane-nav">
-              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(1)">&larr; Back</button>
-              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(3)">Next: Review &amp; Dispatch &rarr;</button>
-            </div>
-          </div>
-
-          <!-- Pane 3: Review & Summary -->
-          <div class="modal-pane" id="pane3" hidden>
-            <div class="fee-summary-box">
-              <div class="fee-line">
-                <span>Selected Package:</span>
-                <strong id="summaryTierName">Standard Package</strong>
-              </div>
-              <div class="fee-line">
-                <span>Service Fee:</span>
-                <strong id="summaryServiceFee">$499.00</strong>
-              </div>
-              <div class="fee-line">
-                <span>Statutory Government Fees:</span>
-                <span class="badge-govt-tag">Billed separately at actual state/registry cost</span>
-              </div>
-              <div class="fee-line" style="border-top: 1px solid #D7E7F0; padding-top: 8px; margin-top: 4px;">
-                <span>Formation Guarantee:</span>
-                <span style="color: #059669; font-weight: 700;">100% Money-Back Guarantee</span>
-              </div>
-            </div>
-
-            <p style="font-size: 0.8125rem; color: #64748B; margin-top: 14px; line-height: 1.5;">
-              By clicking "Submit &amp; Open Client Portal", our formation desk conducts an instant name check and prepares your filing queue. Third-party government fees are billed separately with complete receipt transparency.
-            </p>
-
-            <div class="modal-pane-nav">
-              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(2)">&larr; Back</button>
-              <button type="button" class="btn btn-primary pill-btn magnetic" onclick="submitFormationOrder()">Submit &amp; Open Client Portal &rarr;</button>
-            </div>
-          </div>
-        </form>
-
-        <!-- Success State -->
-        <div class="wizard-success-state" id="wizardSuccess" hidden>
-          <div class="success-icon-wrap">✓</div>
-          <h4 class="success-title">Order Received! Welcome to Fintrix Global</h4>
-          <p class="success-desc">
-            Your incorporation queue has been opened. Our licensed compliance specialists are performing preliminary registry clearance and will dispatch your confirmation docket within 24 hours.
-          </p>
-          <button type="button" class="btn btn-primary pill-btn" onclick="closeOrderModal()">View Application Portal</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       CLIENT PORTAL DEMO MODAL
-       ========================================================================== -->
-  <div class="modal-overlay" id="portalModal" hidden>
-    <div class="modal-container modal-lg" role="dialog" aria-modal="true" aria-labelledby="portalModalTitle">
-      <div class="modal-header">
-        <div class="portal-brand-head">
-          <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" style="max-height: 32px; width: auto;">
-          <h3 class="modal-title" id="portalModalTitle" style="font-size: 1.125rem;">Encrypted Client Portal Demo</h3>
-        </div>
-        <button type="button" class="modal-close" id="portalModalClose" aria-label="Close modal">&times;</button>
-      </div>
-
-      <div class="modal-body portal-modal-body">
-        <div class="portal-demo-layout">
-          <!-- Sidebar -->
-          <div class="portal-sidebar">
-            <div class="user-profile-tile">
-              <div class="u-avatar">AF</div>
-              <div class="u-text">
-                <strong>Apex Frontier LLC</strong>
-                <small>WY SOS #2026-9481</small>
-              </div>
-            </div>
-
-            <nav class="portal-menu">
-              <a href="javascript:void(0)" class="p-nav-link active">📊 Dashboard &amp; Status</a>
-              <a href="javascript:void(0)" class="p-nav-link">📁 Document Vault (4)</a>
-              <a href="javascript:void(0)" class="p-nav-link">📬 Digital Mail Room (1 New)</a>
-              <a href="javascript:void(0)" class="p-nav-link">📅 Compliance Calendar</a>
-              <a href="javascript:void(0)" class="p-nav-link">🏦 Banking Resolution Desk</a>
-            </nav>
-
-            <div class="portal-sidebar-footer">
-              <span class="status-indicator-green"></span>
-              <span>Encrypted Vault Online</span>
-            </div>
-          </div>
-
-          <!-- Main Area -->
-          <div class="portal-main-area">
-            <div class="portal-top-banner">
-              <div>
-                <h4 style="color: #0F2936; font-weight: 800;">Entity Status: Active &amp; Good Standing</h4>
-                <p>Wyoming LLC Filing confirmed • Form 147C EIN Letter active • Next filing: Annual Report 2027</p>
-              </div>
-              <span class="status-pulse-badge" style="background: #EBF5FA; color: #1F7091; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.75rem;">
-                ✓ Verified
-              </span>
-            </div>
-
-            <div class="portal-section-box">
-              <h5 style="font-size: 0.875rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Stored Vault Documents (Bank-Grade AES-256)</h5>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">Certificate_of_Organization_Certified.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Wyoming Secretary of State • Official Seal</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">IRS_Form_147C_EIN_Confirmation.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Internal Revenue Service • Verified Tax ID</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">Operating_Agreement_Multi_Member.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Executed Statutory Agreement • Banking Clause Included</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-              </div>
-            </div>
-
-            <div style="text-align: right;">
-              <button type="button" class="btn btn-outline pill-btn" onclick="closePortalModal()">Exit Live Demo</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  <script src="script.js"></script>
 </body>
 </html>

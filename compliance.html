@@ -1,647 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporate Compliance, Taxes & Filings | Fintrix Global</title>
-  <meta name="description" content="Stay 100% compliant in the US and UK. Automated reminders and expert filing for IRS Form 5472, State Annual Reports, UK Confirmation Statements, and corporate amendments.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <title>Annual Tax and Compliance | Fintrix Global</title>
+  <meta http-equiv="refresh" content="0; url=services.html#annual-tax-compliance">
+  <link rel="canonical" href="https://fintirx-global.vercel.app/services.html#annual-tax-compliance">
   <link rel="icon" type="image/jpeg" href="./logo.jpg">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <!-- Floating Rounded Pill Header (Matching Screenshot 1) -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <div class="top-contact-bar" role="region" aria-label="Quick Contact & Hours">
+    <div class="container">
+      <div class="top-bar-left">
+        <span class="top-bar-item">
+          <span class="top-bar-badge">Compliance Practice</span>
+          Annual Reports, Tax Deadlines &amp; Statutory Good Standing
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-item">Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM PKT</span>
+        <span class="top-bar-item"><a href="tel:+923001234567">+92 300 1234567</a></span>
+        <span class="top-bar-item">
+          <a href="https://wa.me/923001234567?text=Hello%2C%20I%20have%20a%20compliance%20inquiry."
+            target="_blank" rel="noopener noreferrer" class="top-bar-whatsapp">
+            Chat on WhatsApp
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+
   <header class="floating-pill-header" id="header">
     <div class="header-container">
       <a href="index.html" class="brand-link" aria-label="Fintrix Global Home">
         <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
       </a>
-
-      <!-- Desktop Multipage Navigation Menu -->
-      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+      <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li class="nav-item has-dropdown">
-            <a href="services.html" class="nav-link ">
-              Services <span class="dropdown-caret">▼</span>
-            </a>
-            <div class="dropdown-menu">
-              <a href="services.html#llc" class="dropdown-link">
-                <span class="dropdown-title">US LLC Formation</span>
-                <span class="dropdown-desc">Wyoming, Delaware, New Mexico & all 50 states</span>
-              </a>
-              <a href="services.html#ltd" class="dropdown-link">
-                <span class="dropdown-title">UK LTD Incorporation</span>
-                <span class="dropdown-desc">Companies House filing, Articles & PSC Register</span>
-              </a>
-              <a href="services.html#agent" class="dropdown-link">
-                <span class="dropdown-title">Registered Agent & Office</span>
-                <span class="dropdown-desc">Physical address privacy & digital mail vault</span>
-              </a>
-              <a href="services.html#tax" class="dropdown-link">
-                <span class="dropdown-title">Tax IDs & Annual Filings</span>
-                <span class="dropdown-desc">IRS EIN, ITIN, Form 5472 & UK Corporation Tax</span>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="compliance.html" class="nav-link active">Compliance</a>
-          </li>
-          <li class="nav-item">
-            <a href="pricing.html" class="nav-link ">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link ">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link ">Contact</a>
-          </li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+          <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
       </nav>
-
-      <!-- Header Action CTAs -->
       <div class="header-actions">
-        <button type="button" class="nav-login-link" id="headerLoginBtn">Log in</button>
-        <a href="contact.html" class="btn btn-primary pill-btn magnetic" id="headerTalkBtn">
-          <span>Talk to an Expert</span>
-          <svg class="btn-icon-right" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <!-- Mobile Toggle -->
-        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
+        <a href="contact.html" class="btn btn-primary-nav">Talk to an Expert</a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Navigation -->
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="mobile-drawer-content">
-      <div class="mobile-drawer-header">
-        <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="120" height="36">
-        <button type="button" class="drawer-close" id="drawerClose" aria-label="Close Navigation Menu">✕</button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="index.html" class="mobile-link ">Home</a>
-        <a href="services.html" class="mobile-link ">Services & Features</a>
-        <a href="compliance.html" class="mobile-link active">Corporate Compliance</a>
-        <a href="pricing.html" class="mobile-link ">Packages & Pricing</a>
-        <a href="about.html" class="mobile-link ">About Us & Team</a>
-        <a href="contact.html" class="mobile-link ">Contact & Consultation</a>
-      </nav>
-      <div class="mobile-drawer-actions">
-        <a href="contact.html" class="btn btn-primary w-full">Talk to an Expert →</a>
-        <button type="button" class="btn btn-outline w-full" id="mobilePortalBtn">Client Portal Demo</button>
-      </div>
-      <div class="mobile-drawer-footer">
-        <p>Transparent Pricing • Separate Govt Fees • Dual US & UK Coverage</p>
-      </div>
+  <main id="mainContent" style="padding: 140px 0 80px 0; text-align: center;">
+    <div class="container">
+      <h2>Redirecting to Annual Tax and Compliance...</h2>
+      <p style="margin: 16px 0;">If you are not redirected automatically, please <a href="services.html#annual-tax-compliance" style="color: #1F7091; font-weight: 700; text-decoration: underline;">click here to view Annual Tax and Compliance Services</a>.</p>
     </div>
-  </div>
-
-  <main id="mainContent">
-    <!-- Subpage Hero -->
-    <section class="subpage-hero">
-      <div class="container">
-        <span class="subpage-badge">Lifecycle Stage 2 • Ongoing Regulatory Protection</span>
-        <h1 class="subpage-title">Stay 100% Compliant. Zero Surprises.</h1>
-        <p class="subpage-subtitle">
-          Missing statutory filings can lead to severe penalties or administrative dissolution. We track, prepare, and file your statutory requirements with the IRS, Secretaries of State, Companies House, and HMRC.
-        </p>
-      </div>
-    </section>
-
-    <!-- Compliance Calendar Section -->
-    <section class="container" id="calendar" style="padding: 60px 0;">
-      <div class="section-header text-center">
-        <span class="section-eyebrow">CRITICAL DEADLINES</span>
-        <h2 class="section-title">The Master Corporate Compliance Calendar</h2>
-        <p class="section-subtitle">Every mandatory filing handled proactively before penalties occur.</p>
-      </div>
-
-      <div class="calendar-grid">
-        <!-- April 15: US Form 5472 -->
-        <div class="calendar-card" id="form5472">
-          <span class="cal-date-badge urgent">April 15 (Annual)</span>
-          <h3 class="cal-title">IRS Form 5472 & Pro Forma 1120</h3>
-          <p class="cal-desc">Mandatory informational return for foreign-owned single-member U.S. LLCs reporting reportable transactions.</p>
-          <span class="cal-penalty">⚠️ $25,000 failure-to-file penalty</span>
-        </div>
-
-        <!-- Wyoming Annual Report -->
-        <div class="calendar-card">
-          <span class="cal-date-badge normal">Anniversary Month</span>
-          <h3 class="cal-title">Wyoming Annual Report & License Tax</h3>
-          <p class="cal-desc">Due on the 1st day of the anniversary month of incorporation. Maintains Good Standing with Wyoming Secretary of State.</p>
-          <span style="font-size:0.8125rem; color:#0369A1; font-weight:600;">Statutory Fee: $62 flat</span>
-        </div>
-
-        <!-- Delaware Franchise Tax -->
-        <div class="calendar-card">
-          <span class="cal-date-badge normal">June 1st (Annual)</span>
-          <h3 class="cal-title">Delaware LLC Alternative Entity Tax</h3>
-          <p class="cal-desc">Annual Franchise Tax due on or before June 1st. Failure to pay incurs a $200 penalty plus 1.5% monthly interest.</p>
-          <span style="font-size:0.8125rem; color:#0369A1; font-weight:600;">Statutory Fee: $300 flat</span>
-        </div>
-
-        <!-- UK Confirmation Statement -->
-        <div class="calendar-card">
-          <span class="cal-date-badge normal">Every 12 Months</span>
-          <h3 class="cal-title">UK Companies House Confirmation Statement</h3>
-          <p class="cal-desc">Verifies company officers, registered office, share capital, and Persons with Significant Control (PSC).</p>
-          <span style="font-size:0.8125rem; color:#0369A1; font-weight:600;">Statutory Fee: £34 online</span>
-        </div>
-
-        <!-- UK HMRC CT600 -->
-        <div class="calendar-card">
-          <span class="cal-date-badge urgent">12 Mos Post Accounting Period</span>
-          <h3 class="cal-title">HMRC Corporation Tax Return (CT600)</h3>
-          <p class="cal-desc">Statutory company accounts and tax computation submitted electronically to HMRC and Companies House.</p>
-          <span class="cal-penalty">⚠️ Automatic escalating late filing fines</span>
-        </div>
-
-        <!-- Registered Agent Renewal -->
-        <div class="calendar-card">
-          <span class="cal-date-badge normal">Yearly Renewal</span>
-          <h3 class="cal-title">Registered Agent & Office Representation</h3>
-          <p class="cal-desc">Unbroken statutory representation ensures state notices and legal process are captured immediately.</p>
-          <span style="font-size:0.8125rem; color:#0369A1; font-weight:600;">Managed automatically by Fintrix</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Corporate Amendments Section -->
-    <section class="container" style="padding-bottom: 70px;">
-      <div class="section-header text-center">
-        <span class="section-eyebrow">LIFECYCLE STAGE 3</span>
-        <h2 class="section-title">Corporate Amendments & Entity Changes</h2>
-        <p class="section-subtitle">As your company scales, Fintrix handles all official updates without disruption.</p>
-      </div>
-
-      <div class="packages-grid">
-        <div class="package-card">
-          <div class="package-header">
-            <h3 class="package-tier-name">Company Name & Structure</h3>
-            <p class="package-target">Articles of Amendment filed with the Secretary of State or Companies House.</p>
-          </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Legal name changes with official state certification</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Conversion between Member-managed and Manager-managed LLCs</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Issuance and reallocation of UK share classes</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="package-card">
-          <div class="package-header">
-            <h3 class="package-tier-name">Ownership & Leadership</h3>
-            <p class="package-target">Adding or removing co-founders, directors, and equity holders.</p>
-          </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Updating PSC registers and director appointments</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Drafting member admission & withdrawal agreements</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Updating EIN records with IRS via official Form 8822-B</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="package-card">
-          <div class="package-header">
-            <h3 class="package-tier-name">Good Standing & Dissolution</h3>
-            <p class="package-target">Certificates of Fact and orderly winding-up services.</p>
-          </div>
-          <div class="package-body">
-            <ul class="package-features-list">
-              <li class="feat-included"><span class="feat-check">✓</span><span>Expedited Certificates of Good Standing for bank loan/grant applications</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Formal voluntary dissolution & cancellation of corporate charter</span></li>
-              <li class="feat-included"><span class="feat-check">✓</span><span>Tax clearance verification prior to closing accounts</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- Pre-Footer Founder Conversion Banner (Matching Screenshot 5) -->
-  <section class="container" style="margin-top: 60px;">
-    <div class="founder-cta-banner reveal">
-      <div class="founder-cta-content">
-        <h2 class="founder-cta-title">Someone Out There Needs Your Business.</h2>
-        <p class="founder-cta-subtitle">Get set up right, with experts handling all the details.</p>
-        <a href="contact.html" class="founder-cta-btn magnetic">
-          <span>Start My Business</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-        <p class="founder-cta-note">Starting at $297/year, plus state fees · No U.S. residency or SSN required</p>
-      </div>
-      <div class="founder-cta-image-col">
-        <img src="./assets/founder-banner.webp" alt="Smiling entrepreneur with laptop" class="founder-banner-img" width="400" height="320" loading="lazy">
-      </div>
-    </div>
-
-    <!-- Monthly Newsletter Box -->
-    <div class="newsletter-card reveal" style="margin-bottom: 60px;">
-      <div class="newsletter-grid">
-        <div class="newsletter-info">
-          <div class="newsletter-icon-wrap">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </div>
-          <div>
-            <h3 class="newsletter-title">Join Fintrix Global's Monthly Newsletter</h3>
-            <p class="newsletter-desc">Founder guides, compliance deadlines, and cross-border tax updates once a month.</p>
-          </div>
-        </div>
-
-        <div class="newsletter-form-col">
-          <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
-            <div class="input-with-button">
-              <input type="email" class="email-input" id="newsletterEmail" placeholder="Enter your email" required aria-label="Business Email Address">
-              <button type="submit" class="btn btn-primary pill-btn" id="subscribeBtn">Subscribe →</button>
-            </div>
-            <div class="newsletter-feedback" id="newsletterFeedback" aria-live="polite"></div>
-            <p class="privacy-note">By subscribing you agree with our <a href="about.html#privacy">Privacy Policy</a>.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modern Categorized Footer (Matching Screenshot 6) -->
-  <footer class="site-footer" id="footer">
-    <div class="container footer-container">
-      <div class="footer-top-row">
-        <!-- Brand Info -->
-        <div class="footer-col brand-col">
-          <a href="index.html" class="footer-brand-link" aria-label="Fintrix Global Home">
-            <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" width="130" height="38">
-          </a>
-          <p class="footer-tagline">
-            Your business deserves your full attention. Give it more of your time while Fintrix Global handles everything from formation and registered agent to taxes & compliance, all in one place.
-          </p>
-          <div class="footer-social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">f</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">ig</a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">x</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">in</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">yt</a>
-          </div>
-          <div class="footer-tp-badge" style="margin-top: 14px;">
-            <div class="tp-stars">
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-              <span class="tp-star-box">★</span>
-            </div>
-            <span style="font-size: 0.8125rem; font-weight: 600; color: #0F2936; margin-left: 6px;"><span class="counter" data-target="4.4" data-suffix=" / 5" data-decimals="1">4.4 / 5</span> • <span class="counter" data-target="2000" data-suffix="+">2,000+</span> Reviews</span>
-          </div>
-        </div>
-
-        <!-- Col 1: Products & Services -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Services</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#llc">U.S. LLC Formation</a></li>
-            <li><a href="services.html#ltd">UK LTD Incorporation</a></li>
-            <li><a href="services.html#agent">Registered Agent Coverage</a></li>
-            <li><a href="services.html#tax">IRS EIN & Tax IDs</a></li>
-            <li><a href="services.html#agent">UK Registered Office</a></li>
-            <li><a href="services.html#banking">Business Bank Account Guidance</a></li>
-            <li><a href="services.html#vault">Document & Mail Vault</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 2: Company -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Company</h4>
-          <ul class="footer-links-list">
-            <li><a href="about.html">About Fintrix Global</a></li>
-            <li><a href="about.html#team">Our Specialist Team</a></li>
-            <li><a href="pricing.html">Plans & Pricing</a></li>
-            <li><a href="contact.html">Book a Consultation</a></li>
-            <li><a href="contact.html#offices">US & UK Corporate Offices</a></li>
-            <li><a href="about.html#security">Trust & Data Security</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Compare -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Compare</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#comparison">US LLC vs UK LTD</a></li>
-            <li><a href="services.html#comparison">Fintrix vs LegalZoom</a></li>
-            <li><a href="services.html#comparison">Fintrix vs Doola</a></li>
-            <li><a href="services.html#comparison">Fintrix vs ZenBusiness</a></li>
-            <li><a href="services.html#comparison">Fintrix vs Stripe Atlas</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Learn & Jurisdictions -->
-        <div class="footer-col">
-          <h4 class="footer-col-title">Jurisdictions</h4>
-          <ul class="footer-links-list">
-            <li><a href="services.html#llc">Wyoming for Non-US Founders</a></li>
-            <li><a href="services.html#llc">Delaware for Venture Tech</a></li>
-            <li><a href="services.html#llc">New Mexico Privacy LLC</a></li>
-            <li><a href="services.html#ltd">UK Companies House Rules</a></li>
-            <li><a href="compliance.html#form5472">Form 5472 Foreign Reporting</a></li>
-            <li><a href="compliance.html#calendar">Statutory Annual Deadlines</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Legal Row & Disclaimer -->
-      <div class="footer-bottom-row">
-        <div class="footer-legal-copy">
-          <p>© 2026 Fintrix Global Inc. All rights reserved. | <a href="about.html#terms">Terms of Service</a> | <a href="about.html#privacy">Privacy Policy</a></p>
-        </div>
-        <div class="footer-compliance-pill">
-          <span class="compliance-dot"></span>
-          <span>Dual Jurisdiction U.S. & U.K. Regulated Compliance Provider</span>
-        </div>
-      </div>
-
-      <!-- Mandatory Legal Disclaimer from PDF Section 15 -->
-      <div class="footer-disclaimer-box">
-        <p><strong>Legal & Tax Services Disclaimer:</strong> Fintrix Global is a corporate service and technology provider assisting with business formations, registered agent services, and compliance filings. Fintrix Global is not an attorney, law firm, CPA firm, or chartered accounting practice, and does not provide formal legal advice or specialized statutory auditing services. Using Fintrix Global's digital platform or consulting team does not create an attorney-client or fiduciary CPA-client relationship. All company documents, operating templates, and statutory guides are prepared based on standard statutory templates and state guidelines. For complex cross-border taxation or specialized dispute counsel, founders are encouraged to consult certified independent legal or tax practitioners in their relevant jurisdiction.</p>
-      </div>
+  <footer class="site-footer" id="footer" style="background: #0F2936; color: #D7E7F0; padding: 40px 0 20px 0; text-align: center;">
+    <div class="container">
+      <p style="font-size: 0.8125rem; color: #94A3B8; max-width: 800px; margin: 0 auto 16px auto;">
+        <strong>Disclaimer:</strong> Fintrix Global provides company formation and business support services. We are not a law firm, accounting firm or tax advisor and do not give legal, tax or financial advice. Banking, payment processor and marketplace approvals are decided only by the relevant provider. Fees, timelines and requirements vary by state and country.
+      </p>
+      <p style="font-size: 0.8125rem; color: #64748B;">&copy; 2026 Fintrix Global. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts: GSAP, ScrollTrigger, Lenis + script.js -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="./script.js"></script>
-<!-- ==========================================================================
-       FORMATION ORDER WIZARD MODAL (Multi-step Interactive Intake)
-       ========================================================================== -->
-  <div class="modal-overlay" id="orderModal" hidden>
-    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
-      <div class="modal-header">
-        <div>
-          <span class="modal-eyebrow">FINTRIX FORMATION WIZARD</span>
-          <h3 class="modal-title" id="orderModalTitle">Start Your Company</h3>
-        </div>
-        <button type="button" class="modal-close" id="orderModalClose" aria-label="Close modal">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <!-- Wizard Steps Indicator -->
-        <div class="wizard-steps-indicator">
-          <div class="wizard-step active" id="wStep1">
-            <span class="step-num">1</span>
-            <span class="step-label">Select Package</span>
-          </div>
-          <div class="wizard-step" id="wStep2">
-            <span class="step-num">2</span>
-            <span class="step-label">Entity Details</span>
-          </div>
-          <div class="wizard-step" id="wStep3">
-            <span class="step-num">3</span>
-            <span class="step-label">Review &amp; Submit</span>
-          </div>
-        </div>
-
-        <form id="orderWizardForm" onsubmit="return false;">
-          <!-- Pane 1: Package Selection -->
-          <div class="modal-pane active" id="pane1">
-            <p style="font-size: 0.9375rem; color: #4A6572; margin-bottom: 18px;">
-              Choose the package that fits your operational needs. All packages include statutory name reservation, Articles of Organization / Incorporation, and official tax registration.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <label class="pkg-radio-card">
-                <input type="radio" name="wizardPkg" value="Starter" data-price="199">
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Starter Package</strong>
-                    <span class="pkg-radio-price">$199 one-time</span>
-                  </div>
-                  <p>Complete official filing, EIN / Tax ID, 1st year registered agent, and client document vault.</p>
-                </div>
-              </label>
-
-              <label class="pkg-radio-card selected">
-                <input type="radio" name="wizardPkg" value="Standard" data-price="499" checked>
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Standard Package (Most Popular)</strong>
-                    <span class="pkg-radio-price">$499 /year</span>
-                  </div>
-                  <p>Starter features + unique business address, mail scanning/forwarding, and managed annual reporting.</p>
-                </div>
-              </label>
-
-              <label class="pkg-radio-card">
-                <input type="radio" name="wizardPkg" value="Complete" data-price="999">
-                <div class="pkg-radio-details">
-                  <div class="pkg-radio-title">
-                    <strong>Complete Package (All-Inclusive VIP)</strong>
-                    <span class="pkg-radio-price">$999 /year</span>
-                  </div>
-                  <p>Standard features + banking resolution packet for Mercury/Relay, unlimited corporate amendments, and dedicated CPA desk.</p>
-                </div>
-              </label>
-            </div>
-
-            <div class="modal-pane-nav">
-              <span style="font-size: 0.8125rem; color: #7E97A6;">Step 1 of 3</span>
-              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(2)">Next: Entity Details &rarr;</button>
-            </div>
-          </div>
-
-          <!-- Pane 2: Entity Details -->
-          <div class="modal-pane" id="pane2" hidden>
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div>
-                <label for="proposedName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Proposed Company Name *
-                </label>
-                <input type="text" id="proposedName" class="form-input" placeholder="e.g. Acme Global Innovations" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-              </div>
-
-              <div>
-                <label for="targetJurisdiction" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Target Jurisdiction *
-                </label>
-                <select id="targetJurisdiction" class="form-input" style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                  <option value="wyoming">U.S. LLC - Wyoming (Top privacy & low fees)</option>
-                  <option value="delaware">U.S. LLC - Delaware (Venture capital standard)</option>
-                  <option value="newmexico">U.S. LLC - New Mexico (Zero annual state fees)</option>
-                  <option value="florida">U.S. LLC - Florida (Commercial hub)</option>
-                  <option value="uk-ltd">UK LTD - England &amp; Wales (Companies House)</option>
-                  <option value="dual-bundle">Dual US LLC + UK LTD Bundle (Save 15%)</option>
-                </select>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div>
-                  <label for="founderName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                    Founder / Contact Name *
-                  </label>
-                  <input type="text" id="founderName" class="form-input" placeholder="Full legal name" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                </div>
-                <div>
-                  <label for="founderEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                    Business Email *
-                  </label>
-                  <input type="email" id="founderEmail" class="form-input" placeholder="name@company.com" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-                </div>
-              </div>
-
-              <div>
-                <label for="businessActivity" style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0F2936; margin-bottom: 6px;">
-                  Primary Business Activity *
-                </label>
-                <input type="text" id="businessActivity" class="form-input" placeholder="e.g. SaaS, E-Commerce, Consulting, Digital Agency" required style="width: 100%; padding: 10px 14px; border: 1px solid #D7E7F0; border-radius: 8px;">
-              </div>
-            </div>
-
-            <div class="modal-pane-nav">
-              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(1)">&larr; Back</button>
-              <button type="button" class="btn btn-primary pill-btn" onclick="goToWizardStep(3)">Next: Review &amp; Dispatch &rarr;</button>
-            </div>
-          </div>
-
-          <!-- Pane 3: Review & Summary -->
-          <div class="modal-pane" id="pane3" hidden>
-            <div class="fee-summary-box">
-              <div class="fee-line">
-                <span>Selected Package:</span>
-                <strong id="summaryTierName">Standard Package</strong>
-              </div>
-              <div class="fee-line">
-                <span>Service Fee:</span>
-                <strong id="summaryServiceFee">$499.00</strong>
-              </div>
-              <div class="fee-line">
-                <span>Statutory Government Fees:</span>
-                <span class="badge-govt-tag">Billed separately at actual state/registry cost</span>
-              </div>
-              <div class="fee-line" style="border-top: 1px solid #D7E7F0; padding-top: 8px; margin-top: 4px;">
-                <span>Formation Guarantee:</span>
-                <span style="color: #059669; font-weight: 700;">100% Money-Back Guarantee</span>
-              </div>
-            </div>
-
-            <p style="font-size: 0.8125rem; color: #64748B; margin-top: 14px; line-height: 1.5;">
-              By clicking "Submit &amp; Open Client Portal", our formation desk conducts an instant name check and prepares your filing queue. Third-party government fees are billed separately with complete receipt transparency.
-            </p>
-
-            <div class="modal-pane-nav">
-              <button type="button" class="btn btn-outline pill-btn" onclick="goToWizardStep(2)">&larr; Back</button>
-              <button type="button" class="btn btn-primary pill-btn magnetic" onclick="submitFormationOrder()">Submit &amp; Open Client Portal &rarr;</button>
-            </div>
-          </div>
-        </form>
-
-        <!-- Success State -->
-        <div class="wizard-success-state" id="wizardSuccess" hidden>
-          <div class="success-icon-wrap">✓</div>
-          <h4 class="success-title">Order Received! Welcome to Fintrix Global</h4>
-          <p class="success-desc">
-            Your incorporation queue has been opened. Our licensed compliance specialists are performing preliminary registry clearance and will dispatch your confirmation docket within 24 hours.
-          </p>
-          <button type="button" class="btn btn-primary pill-btn" onclick="closeOrderModal()">View Application Portal</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       CLIENT PORTAL DEMO MODAL
-       ========================================================================== -->
-  <div class="modal-overlay" id="portalModal" hidden>
-    <div class="modal-container modal-lg" role="dialog" aria-modal="true" aria-labelledby="portalModalTitle">
-      <div class="modal-header">
-        <div class="portal-brand-head">
-          <img src="./logo.jpg" alt="Fintrix Global" class="brand-logo" style="max-height: 32px; width: auto;">
-          <h3 class="modal-title" id="portalModalTitle" style="font-size: 1.125rem;">Encrypted Client Portal Demo</h3>
-        </div>
-        <button type="button" class="modal-close" id="portalModalClose" aria-label="Close modal">&times;</button>
-      </div>
-
-      <div class="modal-body portal-modal-body">
-        <div class="portal-demo-layout">
-          <!-- Sidebar -->
-          <div class="portal-sidebar">
-            <div class="user-profile-tile">
-              <div class="u-avatar">AF</div>
-              <div class="u-text">
-                <strong>Apex Frontier LLC</strong>
-                <small>WY SOS #2026-9481</small>
-              </div>
-            </div>
-
-            <nav class="portal-menu">
-              <a href="javascript:void(0)" class="p-nav-link active">📊 Dashboard &amp; Status</a>
-              <a href="javascript:void(0)" class="p-nav-link">📁 Document Vault (4)</a>
-              <a href="javascript:void(0)" class="p-nav-link">📬 Digital Mail Room (1 New)</a>
-              <a href="javascript:void(0)" class="p-nav-link">📅 Compliance Calendar</a>
-              <a href="javascript:void(0)" class="p-nav-link">🏦 Banking Resolution Desk</a>
-            </nav>
-
-            <div class="portal-sidebar-footer">
-              <span class="status-indicator-green"></span>
-              <span>Encrypted Vault Online</span>
-            </div>
-          </div>
-
-          <!-- Main Area -->
-          <div class="portal-main-area">
-            <div class="portal-top-banner">
-              <div>
-                <h4 style="color: #0F2936; font-weight: 800;">Entity Status: Active &amp; Good Standing</h4>
-                <p>Wyoming LLC Filing confirmed • Form 147C EIN Letter active • Next filing: Annual Report 2027</p>
-              </div>
-              <span class="status-pulse-badge" style="background: #EBF5FA; color: #1F7091; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.75rem;">
-                ✓ Verified
-              </span>
-            </div>
-
-            <div class="portal-section-box">
-              <h5 style="font-size: 0.875rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Stored Vault Documents (Bank-Grade AES-256)</h5>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">Certificate_of_Organization_Certified.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Wyoming Secretary of State • Official Seal</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">IRS_Form_147C_EIN_Confirmation.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Internal Revenue Service • Verified Tax ID</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #F8FBFE; border: 1px solid #E6EFF5; border-radius: 8px;">
-                  <div>
-                    <strong style="font-size: 0.8125rem; color: #0F2936;">Operating_Agreement_Multi_Member.pdf</strong>
-                    <div style="font-size: 0.6875rem; color: #64748B;">Executed Statutory Agreement • Banking Clause Included</div>
-                  </div>
-                  <span style="font-size: 0.75rem; font-weight: 700; color: #2995C3;">Downloaded ✓</span>
-                </div>
-              </div>
-            </div>
-
-            <div style="text-align: right;">
-              <button type="button" class="btn btn-outline pill-btn" onclick="closePortalModal()">Exit Live Demo</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  <a href="https://wa.me/923001234567?text=Hello%2C%20I%20have%20a%20compliance%20inquiry."
+    class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.3z"/>
+    </svg>
+  </a>
 </body>
 </html>
