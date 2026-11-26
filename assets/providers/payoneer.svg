@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 44" width="185" height="44" role="img" aria-label="Payoneer">
+  <circle cx="22" cy="22" r="11" fill="none" stroke="#2995C3" stroke-width="3.5"/>
+  <circle cx="22" cy="22" r="4.5" fill="#1F7091"/>
+  <text x="42" y="28" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#0F2936" letter-spacing="-0.02em">Payoneer</text>
+</svg>
