@@ -8041,3 +8041,45 @@ html.js-reveal-ready .reveal-on-scroll.is-visible {
     transform: none !important;
   }
 }
+
+/* === EDITORIAL ANTI-AI CLEANUP === */
+/* Clean Editorial Section Kicker (No repetitive boxed pill clutter) */
+.section-eyebrow {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: #1F7091 !important;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Strict Brand Palette on Ribbons, Pills & Badges */
+.popular-ribbon {
+  background: #1F7091 !important;
+  color: #FFFFFF !important;
+}
+
+.featured-package {
+  border: 2px solid #1F7091 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 12px 32px rgba(31, 112, 145, 0.1) !important;
+}
+
+.hero-eyebrow {
+  background: #EBF5FA !important;
+  border: 1px solid #D7E7F0 !important;
+  color: #1F7091 !important;
+}
+
+.market-card-badge,
+.guide-tag,
+.top-bar-badge {
+  background: #EBF5FA !important;
+  color: #1F7091 !important;
+  border: 1px solid #D7E7F0 !important;
+}
