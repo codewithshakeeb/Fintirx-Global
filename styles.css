@@ -8247,3 +8247,50 @@ html.js-reveal-ready .reveal-on-scroll.is-visible {
     text-align: left;
   }
 }
+
+/* === AUDIT REPORT FIXES === */
+/* Semantic button dropdown toggle */
+button.nav-link.dropdown-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Prevent Hero card frame from stretching taller than its image (fixes white bottom gap) */
+.hero-image-grid-3 {
+  align-items: start !important;
+}
+
+/* Consistent pill styling for WhatsApp CTAs across all subpages */
+.btn-whatsapp {
+  background-color: #1F7091 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #1F7091 !important;
+  min-height: 48px;
+  padding: 0 26px;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+  background-color: #2995C3 !important;
+  border-color: #2995C3 !important;
+  color: #FFFFFF !important;
+}
+
+/* Floating WhatsApp footer clearance & smooth hide */
+.site-footer {
+  padding-bottom: 48px !important;
+}
+
+.floating-whatsapp-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.floating-whatsapp-btn.hidden-near-footer {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}

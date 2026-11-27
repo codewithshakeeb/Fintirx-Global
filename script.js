@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initConsultationForm();
   initSmoothScroll();
   initScrollReveals();
+  initContactPrefillAndDock();
 });
 
 /* ==========================================================================
@@ -411,6 +412,22 @@ function initPricingSwitcher() {
     set('previewFeatStarter', map.l1, true);
     set('previewFeatStandard', map.l2, true);
     set('previewFeatComplete', map.l3, true);
+
+    const c1 = document.querySelector('#cardPreviewStarter a.btn');
+    const c2 = document.querySelector('#cardPreviewStandard a.btn');
+    const c3 = document.querySelector('#cardPreviewComplete a.btn');
+    if (c1) {
+      c1.textContent = isUS ? 'Choose Starter' : 'Choose Essential';
+      c1.href = isUS ? 'contact.html?plan=us-starter' : 'contact.html?plan=uk-essential';
+    }
+    if (c2) {
+      c2.textContent = 'Choose Plus';
+      c2.href = isUS ? 'contact.html?plan=us-plus' : 'contact.html?plan=uk-plus';
+    }
+    if (c3) {
+      c3.textContent = 'Choose Complete';
+      c3.href = isUS ? 'contact.html?plan=us-complete' : 'contact.html?plan=uk-complete';
+    }
   }
 
   function updateFullPricingCards(isUS) {
@@ -431,6 +448,21 @@ function initPricingSwitcher() {
     const featComplete = document.getElementById('tierFeatComplete');
 
     if (!valStarter || !valStandard || !valComplete) return;
+    const p1 = document.querySelector('#pricingCardStarter a.btn');
+    const p2 = document.querySelector('#pricingCardStandard a.btn');
+    const p3 = document.querySelector('#pricingCardComplete a.btn');
+    if (p1) {
+      p1.textContent = isUS ? 'Choose Starter' : 'Choose Essential';
+      p1.href = isUS ? 'contact.html?plan=us-starter' : 'contact.html?plan=uk-essential';
+    }
+    if (p2) {
+      p2.textContent = 'Choose Plus (Most Popular)';
+      p2.href = isUS ? 'contact.html?plan=us-plus' : 'contact.html?plan=uk-plus';
+    }
+    if (p3) {
+      p3.textContent = 'Choose Complete';
+      p3.href = isUS ? 'contact.html?plan=us-complete' : 'contact.html?plan=uk-complete';
+    }
 
     if (isUS) {
       if (nameStarter) nameStarter.textContent = 'Starter';
@@ -816,4 +848,67 @@ function initScrollReveals() {
       }
     });
   }, 900);
+}
+
+/* ==========================================================================
+   14. Contact ?plan= / ?service= Prefill & Footer WhatsApp Dock
+   ========================================================================== */
+function initContactPrefillAndDock() {
+  // 1. Prefill /contact dropdown & message from URLSearchParams
+  const params = new URLSearchParams(window.location.search);
+  const plan = (params.get('plan') || '').toLowerCase();
+  const service = (params.get('service') || '').toLowerCase();
+  const subject = (params.get('subject') || '').toLowerCase();
+
+  const selectEl = document.getElementById('serviceInterest') || document.querySelector('select[name="serviceInterest"]');
+  const msgEl = document.getElementById('message') || document.querySelector('textarea[name="message"]');
+
+  if (selectEl) {
+    if (plan.startsWith('uk')) {
+      selectEl.value = 'UK formation';
+    } else if (plan.startsWith('us') || ['starter', 'plus', 'complete'].includes(plan)) {
+      selectEl.value = 'USA formation';
+    } else if (plan === 'essential') {
+      selectEl.value = 'UK formation';
+    } else if (service === 'formation') {
+      selectEl.value = 'USA formation';
+    } else if (service === 'ein-itin') {
+      selectEl.value = 'EIN or ITIN';
+    } else if (service === 'compliance') {
+      selectEl.value = 'Tax and compliance';
+    } else if (service === 'banking') {
+      selectEl.value = 'Banking support';
+    } else if (service === 'trademark') {
+      selectEl.value = 'Trademark registration';
+    } else if (subject === 'dual-entity') {
+      selectEl.value = 'Dual US and UK bundle';
+    } else if (service) {
+      selectEl.value = 'Other';
+    }
+  }
+
+  if (msgEl && !msgEl.value.trim()) {
+    if (plan) {
+      msgEl.value = `Interested in package: ${plan.toUpperCase()}. Please send an itemized quote.`;
+    } else if (service) {
+      msgEl.value = `Interested in service: ${service}. Please send an itemized quote.`;
+    } else if (subject === 'dual-entity') {
+      msgEl.value = 'Interested in Dual US LLC + UK LTD registration. Please send an itemized quote.';
+    }
+  }
+
+  // 2. Dock/hide floating WhatsApp button when #footer is in view so it never overlaps footer text
+  const waBtn = document.querySelector('.floating-whatsapp-btn');
+  const footer = document.getElementById('footer');
+  if (waBtn && footer && 'IntersectionObserver' in window) {
+    const footerObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          waBtn.classList.toggle('hidden-near-footer', entry.isIntersecting);
+        });
+      },
+      { threshold: 0.05 }
+    );
+    footerObs.observe(footer);
+  }
 }
