@@ -23,6 +23,54 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Fintrix Global",
+        "url": "https://fintirx-global.vercel.app/",
+        "logo": "https://fintirx-global.vercel.app/logo.jpg",
+        "email": "support@fintrixglobal.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Karachi",
+          "addressCountry": "PK"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you guarantee a bank or payment account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We prepare applications and supporting documents, but each provider decides whether to approve an account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can someone who is not a US resident form an LLC?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In most states, yes. International founders can form a US LLC remotely without US residency or an SSN."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does registration and EIN processing take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UK LTD incorporation typically completes in 1 to 2 working days. US LLC state approval takes 1 to 5 business days depending on the state, while non-US EIN issuance via IRS Form SS-4 typically takes 3 to 6 weeks."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -65,15 +113,41 @@
             <button type="button" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
               Company Formation <span class="dropdown-caret">&#9662;</span>
             </button>
-            <div class="dropdown-menu">
-              <a href="usa-formation.html" class="dropdown-link">
-                <strong>USA Formation</strong>
-                <span>US LLC &amp; C-Corp registration in WY, DE, NM, FL</span>
-              </a>
-              <a href="uk-formation.html" class="dropdown-link">
-                <strong>UK Formation</strong>
-                <span>UK Private LTD incorporation &amp; director ID checks</span>
-              </a>
+            <div class="dropdown-menu mega-menu" id="formation-mega-menu">
+              <div class="mega-menu-links">
+                <a href="usa-formation.html" class="dropdown-link">
+                  <strong>USA Formation</strong>
+                  <span>US LLC &amp; Corp in WY, DE, NM, FL</span>
+                </a>
+                <a href="uk-formation.html" class="dropdown-link">
+                  <strong>UK Formation</strong>
+                  <span>UK Private LTD &amp; director ID checks</span>
+                </a>
+                <a href="ein-itin.html" class="dropdown-link">
+                  <strong>EIN &amp; ITIN</strong>
+                  <span>IRS tax IDs without SSN</span>
+                </a>
+                <a href="annual-tax-compliance.html" class="dropdown-link">
+                  <strong>Tax &amp; Compliance</strong>
+                  <span>Annual reports &amp; Form 5472</span>
+                </a>
+                <a href="banking-payment-support.html" class="dropdown-link">
+                  <strong>Banking Support</strong>
+                  <span>Application doc prep</span>
+                </a>
+                <a href="vat-eori.html" class="dropdown-link">
+                  <strong>VAT &amp; EORI</strong>
+                  <span>UK HMRC &amp; customs numbers</span>
+                </a>
+              </div>
+              <div class="mega-menu-promo">
+                <div>
+                  <span class="mega-menu-promo-kicker">Not sure where to start?</span>
+                  <h4>Find your US or UK plan in 2 questions.</h4>
+                  <p>Match your target market and support level to an itemized package.</p>
+                </div>
+                <a href="index.html#planMatcher" class="btn btn-primary" style="min-height: 40px; border-radius: 9999px; font-size: 0.8125rem;">Find My Plan &rarr;</a>
+              </div>
             </div>
           </li>
           <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
@@ -157,6 +231,8 @@
               Chat on WhatsApp
             </a>
           </div>
+
+          <p class="hero-price-anchor">US LLC from $199 + state fees &middot; UK LTD from &pound;149 + Companies House fee &middot; Zero hidden renewal traps</p>
 
           <div class="hero-trust-chips">
             <span class="trust-chip">
@@ -679,6 +755,29 @@
       </div>
     </section>
 
+    <!-- Transparent Fee & Accuracy Pledge -->
+    <section class="pledge-banner-section" id="feePledge">
+      <div class="container">
+        <div class="pledge-card">
+          <div class="pledge-left">
+            <svg class="pledge-seal" viewBox="0 0 68 68" fill="none" aria-hidden="true">
+              <circle cx="34" cy="34" r="31" fill="#FFFFFF" stroke="#1F7091" stroke-width="2.5"/>
+              <circle cx="34" cy="34" r="24" stroke="#2995C3" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <path d="M24 34.5L31 41.5L45 27.5" stroke="#1F7091" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <span class="section-eyebrow" style="margin-bottom: 6px;">TRANSPARENT FEE PLEDGE</span>
+              <h2 style="font-size: 1.625rem; font-weight: 800; color: #0F2936; margin: 0 0 6px 0;">Itemized Government Fees. Zero Hidden Markups.</h2>
+              <p style="font-size: 0.9375rem; color: #4A6572; margin: 0; line-height: 1.55;">
+                Every written quote separates our flat service fee from exact state or Companies House fees—billed at cost. Review clear pre-filing cancellation terms before you pay.
+              </p>
+            </div>
+          </div>
+          <a href="refund-cancellation-policy.html" class="btn btn-secondary">Read Refund Policy &rarr;</a>
+        </div>
+      </div>
+    </section>
+
     <!-- 8. Unified Packages & Pricing Section + 2-Question Plan Matcher -->
     <section class="packages-section" id="packagesPreview" style="background: #F4F9FC; border-top: 1px solid #D7E7F0; border-bottom: 1px solid #D7E7F0;">
       <div class="container">
@@ -761,6 +860,36 @@
               <li><strong>Priority support desk:</strong> Direct liaison &amp; amendments</li>
             </ul>
             <a href="contact.html?plan=complete" class="btn btn-secondary btn-block">Choose Complete</a>
+          </div>
+        </div>
+
+        <!-- Expandable Feature Comparison Matrix -->
+        <div class="text-center" style="margin-bottom: 24px;">
+          <button type="button" class="btn btn-secondary" id="btnCompareAllFeatures" aria-expanded="false" aria-controls="compareMatrixCollapse">
+            Compare All Features &darr;
+          </button>
+        </div>
+
+        <div class="compare-matrix-collapse" id="compareMatrixCollapse">
+          <div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 16px; margin-bottom: 24px;">
+            <table style="width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+              <thead>
+                <tr style="background: #EBF5FA; border-bottom: 2px solid #D7E7F0; color: #0F2936;">
+                  <th style="padding: 14px 18px; width: 40%;">Inclusion</th>
+                  <th style="padding: 14px 18px; text-align: center;">Starter / Essential</th>
+                  <th style="padding: 14px 18px; text-align: center; color: #1F7091;">Plus (Popular)</th>
+                  <th style="padding: 14px 18px; text-align: center;">Complete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #EBF5FA;"><td style="padding: 12px 18px; font-weight: 600;">State / Companies House Filing</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td></tr>
+                <tr style="border-bottom: 1px solid #EBF5FA;"><td style="padding: 12px 18px; font-weight: 600;">Digital Certificates &amp; Governing Docs</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td></tr>
+                <tr style="border-bottom: 1px solid #EBF5FA;"><td style="padding: 12px 18px; font-weight: 600;">Registered Agent / UK Office (1st Year)</td><td style="padding: 12px 18px; text-align: center; color: #4A6572;">UK Only</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td></tr>
+                <tr style="border-bottom: 1px solid #EBF5FA;"><td style="padding: 12px 18px; font-weight: 600;">IRS EIN Preparation (No SSN Needed)</td><td style="padding: 12px 18px; text-align: center; color: #94A3B8;">Add-on</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes (US)</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes (US)</td></tr>
+                <tr style="border-bottom: 1px solid #EBF5FA;"><td style="padding: 12px 18px; font-weight: 600;">Bank &amp; Payment Prep Pack (No Guarantee)</td><td style="padding: 12px 18px; text-align: center; color: #94A3B8;">No</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes (UK)</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td></tr>
+                <tr><td style="padding: 12px 18px; font-weight: 600;">VAT/EORI or Priority Amendments</td><td style="padding: 12px 18px; text-align: center; color: #94A3B8;">No</td><td style="padding: 12px 18px; text-align: center; color: #94A3B8;">No</td><td style="padding: 12px 18px; text-align: center; color: #1F7091; font-weight: 700;">Yes</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -879,9 +1008,49 @@
               <p>A US LLC usually needs a registered agent, a state annual report or fee, and federal tax filings (including information returns for foreign-owned LLCs). A UK LTD needs a confirmation statement, annual accounts, and a Corporation Tax return, plus VAT returns if registered.</p>
             </div>
           </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How long does EIN issuance take without an SSN?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For non-US founders without a Social Security Number, IRS Form SS-4 processing via fax/mail typically takes 3 to 6 weeks depending on IRS backlog.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Are government filing fees included in package prices?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No—they are shown separately so you know the exact cost. State fees (for example $50 in New Mexico or $102 in Wyoming) and Companies House fees are billed at cost on your written quote.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What is your refund and cancellation policy?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If you cancel before we submit your filing to a government registry, we refund your payment minus a $50 USD administrative processing fee. Once government fees are paid or filings are submitted, statutory fees are non-refundable.</p>
+            </div>
+          </div>
+          <div class="faq-item faq-extra">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I register both a US LLC and a UK LTD?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Many international e-commerce and SaaS founders register both to serve US and UK/European markets separately. Request a combined quote on our contact page.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="text-center" style="margin-top: 28px;">
+        <div class="text-center" style="margin-top: 22px;">
+          <button type="button" class="btn btn-secondary" id="btnLoadMoreFaqs" aria-expanded="false">Load More FAQs &rarr;</button>
+        </div>
+
+        <div class="text-center" style="margin-top: 24px;">
           <a href="https://wa.me/923001234567?text=Hello%2C%20I%20have%20a%20question%20about%20company%20formation."
             target="_blank" rel="noopener noreferrer" class="service-clean-link">Ask on WhatsApp &rarr;</a>
         </div>
@@ -985,6 +1154,23 @@
     </div>
   </main>
 
+  <!-- Monthly Compliance Newsletter Strip -->
+  <section class="newsletter-strip" id="newsletterStrip" aria-label="Compliance Reminders Newsletter">
+    <div class="container">
+      <div class="newsletter-card">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #0F2936; margin: 0 0 4px 0;">Monthly US &amp; UK Compliance Deadline Reminders</h3>
+          <p style="font-size: 0.9rem; color: #4A6572; margin: 0;">One concise monthly note covering state annual reports, Form 5472, and Companies House dates. Zero spam.</p>
+        </div>
+        <form class="newsletter-form-inline" id="newsletterForm" novalidate>
+          <input type="email" id="newsletterEmail" required placeholder="Enter your email address" aria-label="Email address for compliance reminders">
+          <button type="submit" class="btn btn-primary" style="min-height: 44px; border-radius: 9999px;">Subscribe &rarr;</button>
+        </form>
+        <p id="newsletterFeedback" style="width: 100%; margin: 4px 0 0 0; font-size: 0.85rem; color: #1F7091; display: none; font-weight: 600;"></p>
+      </div>
+    </div>
+  </section>
+
   <!-- Multi-Column Footer -->
   <footer class="site-footer" id="footer" style="background: #0F2936; color: #D7E7F0; padding: 64px 0 32px 0;">
     <div class="container">
@@ -1076,6 +1262,13 @@
     <span class="floating-whatsapp-tooltip">Chat with us on WhatsApp</span>
   </a>
 
+  <!-- Subtle Essential Cookie Notice -->
+  <div class="cookie-pill-notice" id="cookiePillNotice" role="region" aria-label="Cookie Notice">
+    <span>We use essential cookies to keep your browsing smooth.</span>
+    <button type="button" class="cookie-ok-btn" id="cookieOkBtn">OK</button>
+  </div>
+
+  <script src="site-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

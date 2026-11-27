@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initScrollReveals();
   initContactPrefillAndDock();
+  initMasterUxControls();
 });
 
 /* ==========================================================================
@@ -911,4 +912,80 @@ function initContactPrefillAndDock() {
     );
     footerObs.observe(footer);
   }
+}
+
+/* ==========================================================================
+   15. Master UX Controls (Compare Matrix, Load More FAQs, Newsletter, Cookie)
+   ========================================================================== */
+function initMasterUxControls() {
+  // 1. Expandable Compare All Features Matrix
+  const compareBtn = document.getElementById('btnCompareAllFeatures');
+  const comparePanel = document.getElementById('compareMatrixCollapse');
+  if (compareBtn && comparePanel) {
+    compareBtn.addEventListener('click', () => {
+      const open = comparePanel.classList.toggle('open');
+      compareBtn.setAttribute('aria-expanded', String(open));
+      compareBtn.innerHTML = open ? 'Hide Full Comparison &uarr;' : 'Compare All Features &darr;';
+    });
+  }
+
+  // 2. Load More FAQs toggle
+  const loadFaqBtn = document.getElementById('btnLoadMoreFaqs');
+  const faqAccordion = document.getElementById('homeFaqAccordion');
+  if (loadFaqBtn && faqAccordion) {
+    loadFaqBtn.addEventListener('click', () => {
+      const showingAll = faqAccordion.classList.toggle('show-all-faqs');
+      loadFaqBtn.setAttribute('aria-expanded', String(showingAll));
+      loadFaqBtn.innerHTML = showingAll ? 'Show Fewer FAQs &uarr;' : 'Load More FAQs &rarr;';
+    });
+  }
+
+  // 3. Monthly Compliance Newsletter form
+  const nlForm = document.getElementById('newsletterForm');
+  const nlEmail = document.getElementById('newsletterEmail');
+  const nlFeedback = document.getElementById('newsletterFeedback');
+  if (nlForm && nlEmail && nlFeedback) {
+    nlForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = nlEmail.value.trim();
+      if (!val || !val.includes('@')) {
+        nlEmail.style.borderColor = '#DC2626';
+        nlFeedback.style.color = '#DC2626';
+        nlFeedback.textContent = 'Please enter a valid email address.';
+        nlFeedback.style.display = 'block';
+        return;
+      }
+      nlEmail.style.borderColor = '#D7E7F0';
+      nlFeedback.style.color = '#1F7091';
+      nlFeedback.textContent = 'Subscribed. We will send one monthly US & UK compliance calendar reminder.';
+      nlFeedback.style.display = 'block';
+      nlForm.reset();
+    });
+  }
+
+  // 4. Essential Cookie Pill (localStorage)
+  const cookiePill = document.getElementById('cookiePillNotice');
+  const cookieOk = document.getElementById('cookieOkBtn');
+  if (cookiePill && cookieOk) {
+    try {
+      if (localStorage.getItem('fintrix_cookie_ok') === '1') {
+        cookiePill.classList.add('hidden');
+      }
+    } catch (_) {}
+    cookieOk.addEventListener('click', () => {
+      cookiePill.classList.add('hidden');
+      try {
+        localStorage.setItem('fintrix_cookie_ok', '1');
+      } catch (_) {}
+    });
+  }
+
+  // 5. Close mega-menu on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.dropdown-toggle[aria-expanded="true"]').forEach((t) => {
+        t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
 }

@@ -8294,3 +8294,225 @@ button.nav-link.dropdown-toggle {
   pointer-events: none;
   transform: translateY(12px);
 }
+
+/* === MASTER UX UPGRADES (BLUE THEME) === */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap');
+
+.mono-meta,
+.package-price-wrap .price-val,
+.step-number-pill,
+.journey-acc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 2-Column Mega-Menu with Plan Finder Promo Card */
+.dropdown-menu.mega-menu {
+  width: 640px !important;
+  max-width: 92vw;
+  padding: 18px !important;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.mega-menu-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.mega-menu-links .dropdown-link {
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.mega-menu-links .dropdown-link:hover {
+  background: #F4F9FC;
+}
+
+.mega-menu-promo {
+  background: #F4F9FC;
+  border: 1px solid #D7E7F0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mega-menu-promo-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1F7091;
+}
+
+.mega-menu-promo h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F2936;
+  margin: 4px 0 6px 0;
+  line-height: 1.35;
+}
+
+.mega-menu-promo p {
+  font-size: 0.8125rem;
+  color: #4A6572;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Hero Price Anchor */
+.hero-price-anchor {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.84375rem;
+  color: #4A6572;
+  margin: 0 auto 24px auto;
+}
+
+/* Transparent Fee & Accuracy Pledge Band */
+.pledge-banner-section {
+  padding: 56px 0;
+  background: #FFFFFF;
+}
+
+.pledge-card {
+  background: #EBF5FA;
+  border: 1px solid #D7E7F0;
+  border-radius: 20px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.pledge-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: 1 1 520px;
+}
+
+.pledge-seal {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+}
+
+/* Expandable Feature Matrix */
+.compare-matrix-collapse {
+  display: none;
+  margin-top: 24px;
+}
+
+.compare-matrix-collapse.open {
+  display: block;
+}
+
+/* Load More FAQs */
+.faq-item.faq-extra {
+  display: none;
+}
+
+.faq-accordion-clean.show-all-faqs .faq-item.faq-extra {
+  display: block;
+}
+
+/* Monthly Compliance Newsletter Strip */
+.newsletter-strip {
+  padding: 48px 0;
+  background: #F4F9FC;
+  border-top: 1px solid #D7E7F0;
+}
+
+.newsletter-card {
+  background: #FFFFFF;
+  border: 1px solid #D7E7F0;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.newsletter-form-inline input {
+  min-height: 44px;
+  min-width: 240px;
+  padding: 0 14px;
+  border: 1px solid #D7E7F0;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+}
+
+/* Bottom-Left Cookie Pill */
+.cookie-pill-notice {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #0F2936;
+  color: #D7E7F0;
+  border: 1px solid rgba(215, 231, 240, 0.2);
+  border-radius: 9999px;
+  padding: 8px 10px 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  box-shadow: 0 10px 28px rgba(15, 41, 54, 0.25);
+  z-index: 998;
+  max-width: calc(100vw - 96px);
+}
+
+.cookie-pill-notice.hidden {
+  display: none;
+}
+
+.cookie-ok-btn {
+  background: #1F7091;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.cookie-ok-btn:hover {
+  background: #2995C3;
+}
+
+@media (max-width: 768px) {
+  .pledge-card,
+  .newsletter-card {
+    padding: 24px 20px;
+  }
+  .newsletter-form-inline {
+    width: 100%;
+  }
+  .newsletter-form-inline input {
+    width: 100%;
+    min-width: 0;
+  }
+  .cookie-pill-notice {
+    bottom: 14px;
+    left: 14px;
+    font-size: 0.75rem;
+  }
+}
