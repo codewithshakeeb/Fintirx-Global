@@ -9255,7 +9255,7 @@ button.nav-link.dropdown-toggle {
   line-height: 1.25;
 }
 
-.review-author span {
+.review-author > div span {
   display: block;
   font-size: 0.75rem;
   color: #4A6572;
