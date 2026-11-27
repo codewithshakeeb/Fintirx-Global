@@ -8138,3 +8138,19 @@ html.js-reveal-ready .reveal-on-scroll.is-visible {
     display: inline-flex !important;
   }
 }
+
+/* === BANK LOGO POLISH === */
+.provider-logo-tile {
+  background: #FFFFFF !important;
+  border: 1px solid #D7E7F0 !important;
+  padding: 16px 18px !important;
+  height: 76px !important;
+}
+
+.provider-logo-img {
+  max-height: 32px !important;
+  max-width: 136px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
