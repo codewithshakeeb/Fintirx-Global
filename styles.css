@@ -8811,3 +8811,22 @@ button.nav-link.dropdown-toggle {
     transform: none !important;
   }
 }
+
+/* === FIX BACK CARD GAP ON STICKY STACK === */
+.feature-tabs-sticky {
+  top: 74px !important;
+  padding: 12px 0 !important;
+  margin-bottom: 18px !important;
+}
+
+.stack-feature-card {
+  top: 152px !important;
+  min-height: 440px !important;
+  transform: none !important;
+}
+
+.stack-feature-card.is-stacked-behind {
+  transform: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
