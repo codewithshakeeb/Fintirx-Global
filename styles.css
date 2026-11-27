@@ -8830,3 +8830,105 @@ button.nav-link.dropdown-toggle {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* === DOOLA-STYLE BOTTOM-ANCHORED HERO SHOWCASE === */
+.hero-section {
+  background: linear-gradient(180deg, #EBF5FA 0%, #D9ECF6 100%) !important;
+  padding: 72px 0 0 0 !important;
+  overflow: hidden !important;
+  border-bottom: 1px solid #C5DFEC !important;
+}
+
+.hero-trust-chips {
+  margin-bottom: 44px !important;
+}
+
+.hero-visual-bottom {
+  margin-top: 8px !important;
+  padding: 0 12px;
+}
+
+.hero-image-grid-3 {
+  display: grid !important;
+  grid-template-columns: 0.92fr 1.16fr 0.92fr !important;
+  gap: 20px !important;
+  align-items: end !important;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.hero-card-frame {
+  background: #FFFFFF !important;
+  border: 1px solid #D7E7F0 !important;
+  border-bottom: none !important;
+  border-radius: 22px 22px 0 0 !important;
+  box-shadow: 0 -6px 32px rgba(15, 41, 54, 0.11) !important;
+  overflow: hidden !important;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.hero-card-frame:nth-child(1) {
+  transform: rotate(-2.5deg) translateY(24px);
+  z-index: 2;
+}
+
+.hero-card-frame:nth-child(2) {
+  transform: translateY(8px);
+  z-index: 3;
+  box-shadow: 0 -10px 40px rgba(15, 41, 54, 0.15) !important;
+}
+
+.hero-card-frame:nth-child(3) {
+  transform: rotate(2.5deg) translateY(24px);
+  z-index: 2;
+}
+
+.hero-card-frame:nth-child(1):hover {
+  transform: rotate(-1deg) translateY(12px);
+}
+
+.hero-card-frame:nth-child(2):hover {
+  transform: translateY(0px);
+}
+
+.hero-card-frame:nth-child(3):hover {
+  transform: rotate(1deg) translateY(12px);
+}
+
+.hero-clean-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 360px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+}
+
+/* Crisp white contrast on next section */
+.choose-market-section {
+  background: #FFFFFF !important;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 56px 0 48px 0 !important;
+  }
+  .hero-image-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .hero-card-frame {
+    border-bottom: 1px solid #D7E7F0 !important;
+    border-radius: 16px !important;
+    transform: none !important;
+  }
+  .hero-card-frame:hover {
+    transform: none !important;
+  }
+  .hero-clean-img {
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+}
