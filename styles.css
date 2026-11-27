@@ -8598,3 +8598,161 @@ button.nav-link.dropdown-toggle {
 .footer-bottom-strip {
   padding-bottom: 84px !important;
 }
+
+/* === PRICING CARD UI & BASELINE ALIGNMENT FIX === */
+.packages-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+  margin-top: 24px !important;
+  margin-bottom: 40px !important;
+}
+
+.package-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D7E7F0 !important;
+  border-radius: 20px !important;
+  padding: 36px 28px 28px 28px !important;
+  box-shadow: 0 4px 16px rgba(15, 41, 54, 0.04) !important;
+}
+
+.package-card.featured-package {
+  border: 2px solid #1F7091 !important;
+  box-shadow: 0 12px 32px rgba(31, 112, 145, 0.12) !important;
+}
+
+/* Floating Pill Badge (Does NOT push Plus title down) */
+.popular-ribbon {
+  position: absolute !important;
+  top: -14px !important;
+  left: 28px !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #1F7091 !important;
+  color: #FFFFFF !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding: 5px 14px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 12px rgba(31, 112, 145, 0.25) !important;
+}
+
+.package-header {
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid #EBF5FA !important;
+}
+
+.package-tier-name {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  color: #0F2936 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.package-target {
+  font-size: 0.9rem !important;
+  color: #4A6572 !important;
+  line-height: 1.5 !important;
+  min-height: 44px !important;
+  margin: 0 0 18px 0 !important;
+}
+
+.package-price-wrap {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 4px !important;
+  margin-bottom: 6px !important;
+}
+
+.package-price-wrap .currency {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #0F2936 !important;
+}
+
+.package-price-wrap .price-val {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  color: #0F2936 !important;
+}
+
+.package-price-wrap .period {
+  font-size: 0.875rem !important;
+  color: #4A6572 !important;
+  font-weight: 500 !important;
+}
+
+.fee-note {
+  font-size: 0.8125rem !important;
+  color: #1F7091 !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.package-features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 28px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 11px !important;
+  flex: 1 1 auto !important;
+}
+
+.package-features li {
+  position: relative !important;
+  padding-left: 22px !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: #0F2936 !important;
+  opacity: 1 !important;
+}
+
+.package-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1F7091;
+  font-weight: 800;
+}
+
+.package-features li.feat-excluded {
+  color: #94A3B8 !important;
+  text-decoration: line-through !important;
+  opacity: 0.78 !important;
+}
+
+.package-features li.feat-excluded::before {
+  content: "×";
+  color: #94A3B8;
+  font-weight: 700;
+}
+
+/* Pin all CTA buttons to exact same bottom baseline */
+.package-card > a.btn {
+  margin-top: auto !important;
+  min-height: 46px !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 1024px) {
+  .packages-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .package-target {
+    min-height: 0 !important;
+  }
+}
