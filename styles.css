@@ -8756,3 +8756,58 @@ button.nav-link.dropdown-toggle {
     min-height: 0 !important;
   }
 }
+
+/* === DOOLA-STYLE SCROLL STACK DECK === */
+.feature-switcher-section {
+  overflow: visible !important;
+}
+
+.feature-tabs-sticky {
+  position: sticky;
+  top: 74px;
+  z-index: 80;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 12px 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(215, 231, 240, 0.7);
+}
+
+.feature-tabs-sticky .feature-tabs-bar {
+  margin-bottom: 0 !important;
+}
+
+.feature-stack-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.stack-feature-card {
+  position: sticky;
+  top: calc(154px + (var(--card-idx, 0) * 10px));
+  z-index: calc(10 + var(--card-idx, 0));
+  transform-origin: center top;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.32s ease;
+  scroll-margin-top: 160px !important;
+}
+
+.stack-feature-card.is-stacked-behind {
+  transform: scale(0.975);
+  box-shadow: 0 6px 18px rgba(15, 41, 54, 0.04);
+}
+
+@media (max-width: 1024px) {
+  .feature-tabs-sticky {
+    position: static;
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  .stack-feature-card {
+    position: static !important;
+    transform: none !important;
+  }
+}

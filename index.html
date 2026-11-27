@@ -22,7 +22,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261128">
+  <link rel="stylesheet" href="styles.css?v=20261129">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -459,61 +459,216 @@
           <span class="section-eyebrow">ONE UNIFIED WORKFLOW</span>
           <h2 class="section-title">Everything Your US or UK Entity Needs in One Place</h2>
           <p class="section-subtitle">
-            Switch between core operational pillars to see what Fintrix Global prepares and manages for your business.
+            Scroll through or select any pillar below to explore what Fintrix Global prepares and manages for your business.
           </p>
         </div>
 
-        <div class="feature-tabs-bar" role="tablist" aria-label="Fintrix Global Core Features">
-          <button type="button" class="feature-tab-pill active" role="tab" aria-selected="true" data-feature-tab="formation">Company Formation</button>
-          <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="agent">Registered Agent &amp; Address</button>
-          <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="tax">EIN, ITIN &amp; Tax Filings</button>
-          <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="banking">Banking &amp; Payment Prep</button>
-          <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="compliance">Annual Compliance</button>
+        <div class="feature-tabs-sticky" id="featureTabsSticky">
+          <div class="feature-tabs-bar" role="tablist" aria-label="Fintrix Global Core Features">
+            <button type="button" class="feature-tab-pill active" role="tab" aria-selected="true" data-feature-tab="formation" data-target-suite="suite-formation">Company Formation</button>
+            <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="agent" data-target-suite="suite-agent">Registered Agent &amp; Address</button>
+            <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="tax" data-target-suite="suite-tax">EIN, ITIN &amp; Tax Filings</button>
+            <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="banking" data-target-suite="suite-banking">Banking &amp; Payment Prep</button>
+            <button type="button" class="feature-tab-pill" role="tab" aria-selected="false" data-feature-tab="compliance" data-target-suite="suite-compliance">Annual Compliance</button>
+          </div>
         </div>
 
-        <div class="feature-split-card" id="featureSplitCard">
-          <!-- Left: Clean UI Preview Card -->
-          <div class="feature-ui-preview" id="featureUiPreview">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;" id="featurePreviewTitle">Entity Formation Docket</span>
-              <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;" id="featurePreviewBadge">State &amp; UK Filings</span>
-            </div>
-            <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;" id="featurePreviewRows">
-              <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-                <span style="color: #4A6572;">Name Availability Check</span>
-                <strong style="color: #1F7091;">Included</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-                <span style="color: #4A6572;">Articles / IN01 Filing</span>
-                <strong style="color: #1F7091;">Prepared &amp; Lodged</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-                <span style="color: #4A6572;">Operating Agreement / Articles</span>
-                <strong style="color: #1F7091;">Digital Delivery</strong>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-                <span style="color: #4A6572;">Government Fee Transparency</span>
-                <strong style="color: #0F2936;">Billed at Cost</strong>
-              </div>
-            </div>
-          </div>
+        <div class="feature-stack-deck" id="featureStackDeck">
 
-          <!-- Right: Content & Checkmarks -->
-          <div>
-            <h3 id="featureContentTitle" style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">
-              Form Your US LLC or UK LTD Without Administrative Errors
-            </h3>
-            <p id="featureContentDesc" style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">
-              We guide you on jurisdiction choice, verify company name availability, and file directly with US Secretaries of State or UK Companies House.
-            </p>
-            <ul class="feature-checklist" id="featureChecklist">
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>US LLC or C-Corp formation in Wyoming, Delaware, New Mexico, or Florida</span></li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>UK Private Limited Company (LTD) incorporation with director ID guidance</span></li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Standard Operating Agreement or Articles of Association templates</span></li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>100% digital ownership and delivery of official stamped certificates</span></li>
-            </ul>
-            <a href="services.html#company-formation" id="featureCtaLink" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">Explore Formation Services &rarr;</a>
-          </div>
+          <article class="feature-split-card stack-feature-card" id="suite-formation" data-suite-card="formation" style="--card-idx: 0; background: #FFFFFF;">
+            <div class="feature-ui-preview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;">Entity Formation Docket</span>
+                <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">State & UK Filings</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Name Availability Check</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Included</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Articles / IN01 Filing</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Prepared & Lodged</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Operating Agreement / Articles</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Digital Delivery</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Government Fee Transparency</span>
+                  <strong style="color: #0F2936; white-space: nowrap;">Billed at Cost</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Form Your US LLC or UK LTD Without Administrative Errors</h3>
+              <p style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">We guide you on jurisdiction choice, verify company name availability, and file directly with US Secretaries of State or UK Companies House.</p>
+              <ul class="feature-checklist">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>US LLC or C-Corp formation in Wyoming, Delaware, New Mexico, or Florida</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>UK Private Limited Company (LTD) incorporation with director ID guidance</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Standard Operating Agreement or Articles of Association templates</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>100% digital ownership and delivery of official stamped certificates</span></li>
+              </ul>
+              <a href="services.html#company-formation" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">Explore Formation Services &rarr;</a>
+            </div>
+          </article>
+
+          <article class="feature-split-card stack-feature-card" id="suite-agent" data-suite-card="agent" style="--card-idx: 1; background: #F4F9FC;">
+            <div class="feature-ui-preview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;">Registered Office & Mailroom</span>
+                <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Privacy Shield</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">In-State Registered Agent</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Physical Street Address</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">UK Registered Office</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">London Commercial Suite</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Official Mail Intake</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Scanned to PDF</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Home Address Exposure</span>
+                  <strong style="color: #0F2936; white-space: nowrap;">Protected from Public Record</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Protect Your Privacy with Commercial Registered Representation</h3>
+              <p style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">Every US LLC and UK LTD needs an official in-jurisdiction address to receive government and legal notices.</p>
+              <ul class="feature-checklist">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Physical in-state Registered Agent across Wyoming, Delaware, NM, and Florida</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Official UK Registered Office for Companies House and HMRC correspondence</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Daily mail scanning with prompt digital notifications</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Clear annual renewal terms stated upfront before you pay</span></li>
+              </ul>
+              <a href="usa-formation.html" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">View Address &amp; Agent Details &rarr;</a>
+            </div>
+          </article>
+
+          <article class="feature-split-card stack-feature-card" id="suite-tax" data-suite-card="tax" style="--card-idx: 2; background: #FFFFFF;">
+            <div class="feature-ui-preview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;">Tax ID & Federal Filings</span>
+                <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">IRS & HMRC Prep</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">IRS EIN Application (SS-4)</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">No SSN Required</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">ITIN Individual Tax ID</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Eligibility & Doc Review</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">UK VAT & EORI Registration</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">HMRC Coordination</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Foreign-Owned LLC Returns</span>
+                  <strong style="color: #0F2936; white-space: nowrap;">Form 5472 & 1120 Prep</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Obtain Tax Identification Numbers &amp; Stay Ahead of Filings</h3>
+              <p style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">We prepare EIN, ITIN, UK VAT, and EORI applications and coordinate federal and statutory reporting.</p>
+              <ul class="feature-checklist">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>IRS EIN application preparation for non-US founders without an SSN (3&ndash;6 wks)</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>ITIN document review and Certified Acceptance Agent coordination where needed</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>UK VAT and EORI registration preparation for UK/EU commerce</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>USA Sales Tax state nexus review and registration support</span></li>
+              </ul>
+              <a href="ein-itin.html" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">Explore Tax ID Support &rarr;</a>
+            </div>
+          </article>
+
+          <article class="feature-split-card stack-feature-card" id="suite-banking" data-suite-card="banking" style="--card-idx: 3; background: #F4F9FC;">
+            <div class="feature-ui-preview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;">Banking Readiness Checklist</span>
+                <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Document Pack</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Formation Document Pack</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Verified & Compiled</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Commercial Address Proof</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Prepared</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Business Activity Summary</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Structured for Review</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Provider Approval Decision</span>
+                  <strong style="color: #0F2936; white-space: nowrap;">Determined by Provider</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Prepare Clean Bank &amp; Payment Account Applications</h3>
+              <p style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">We help eligible clients compile formation packs and commercial summaries for Mercury, Relay, Stripe, Wise, Payoneer, and PayPal. No approval is guaranteed.</p>
+              <ul class="feature-checklist">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Complete corporate formation and tax ID document bundle</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Clear business activity and customer-market summary preparation</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Step-by-step application guidance and follow-up question support</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Independent assistance only &mdash; we are not affiliated with any provider</span></li>
+              </ul>
+              <a href="banking-payment-support.html" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">Read Banking Support Scope &rarr;</a>
+            </div>
+          </article>
+
+          <article class="feature-split-card stack-feature-card" id="suite-compliance" data-suite-card="compliance" style="--card-idx: 4; background: #FFFFFF;">
+            <div class="feature-ui-preview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <span style="font-weight: 800; font-size: 0.9375rem; color: #0F2936;">Annual Compliance Calendar</span>
+                <span style="background: #EBF5FA; color: #1F7091; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Good Standing</span>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid #D7E7F0; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+                
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">US State Annual Report</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Tracked & Reminded</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">UK Confirmation Statement</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Companies House Filing</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Registered Agent Renewal</span>
+                  <strong style="color: #1F7091; white-space: nowrap;">Advance Notification</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.875rem; gap: 10px;">
+                  <span style="color: #4A6572;">Statutory Accounts / CT600</span>
+                  <strong style="color: #0F2936; white-space: nowrap;">Coordinated Support</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 style="font-size: 1.75rem; font-weight: 800; color: #0F2936; margin-bottom: 12px;">Keep Annual Reports, Taxes &amp; Renewals on Schedule</h3>
+              <p style="font-size: 1rem; color: #4A6572; line-height: 1.6; margin-bottom: 20px;">Late filings lead to statutory penalties or entity dissolution. We track every due date and help you stay in good standing.</p>
+              <ul class="feature-checklist">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Automated reminders ahead of state annual report and franchise tax dates</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>UK annual confirmation statement and statutory accounts coordination</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Foreign-owned US LLC Form 5472 / 1120 preparation support</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Transparent yearly renewal breakdown itemized before you commit</span></li>
+              </ul>
+              <a href="annual-tax-compliance.html" class="btn btn-primary" style="border-radius: 9999px; padding: 12px 24px;">Explore Annual Compliance &rarr;</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1269,6 +1424,6 @@
   </div>
 
   <script src="site-config.js?v=20261127"></script>
-  <script src="script.js?v=20261127"></script>
+  <script src="script.js?v=20261129"></script>
 </body>
 </html>

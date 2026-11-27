@@ -173,159 +173,77 @@ function initJourneyConsole() {
    ========================================================================== */
 function initFeatureSwitcher() {
   const tabs = document.querySelectorAll('[data-feature-tab]');
-  const card = document.getElementById('featureSplitCard');
-  if (!tabs.length || !card) return;
+  const cards = Array.from(document.querySelectorAll('.stack-feature-card'));
+  if (!tabs.length || !cards.length) return;
 
-  const featureData = {
-    formation: {
-      previewTitle: 'Entity Formation Docket',
-      previewBadge: 'State & UK Filings',
-      rows: [
-        ['Name Availability Check', 'Included', '#1F7091'],
-        ['Articles / IN01 Filing', 'Prepared & Lodged', '#1F7091'],
-        ['Operating Agreement / Articles', 'Digital Delivery', '#1F7091'],
-        ['Government Fee Transparency', 'Billed at Cost', '#0F2936']
-      ],
-      title: 'Form Your US LLC or UK LTD Without Administrative Errors',
-      desc: 'We guide you on jurisdiction choice, verify company name availability, and file directly with US Secretaries of State or UK Companies House.',
-      bullets: [
-        'US LLC or C-Corp formation in Wyoming, Delaware, New Mexico, or Florida',
-        'UK Private Limited Company (LTD) incorporation with director ID guidance',
-        'Standard Operating Agreement or Articles of Association templates',
-        '100% digital ownership and delivery of official stamped certificates'
-      ],
-      ctaText: 'Explore Formation Services →',
-      ctaHref: 'services.html#company-formation'
-    },
-    agent: {
-      previewTitle: 'Registered Office & Mailroom',
-      previewBadge: 'Privacy Shield',
-      rows: [
-        ['In-State Registered Agent', 'Physical Street Address', '#1F7091'],
-        ['UK Registered Office', 'London Commercial Suite', '#1F7091'],
-        ['Official Mail Intake', 'Scanned to PDF', '#1F7091'],
-        ['Home Address Exposure', 'Protected from Public Record', '#0F2936']
-      ],
-      title: 'Protect Your Privacy with Commercial Registered Representation',
-      desc: 'Every US LLC and UK LTD needs an official in-jurisdiction address to receive government and legal notices.',
-      bullets: [
-        'Physical in-state Registered Agent across Wyoming, Delaware, NM, and Florida',
-        'Official UK Registered Office for Companies House and HMRC correspondence',
-        'Daily mail scanning with prompt digital notifications',
-        'Clear annual renewal terms stated upfront before you pay'
-      ],
-      ctaText: 'View Address & Agent Details →',
-      ctaHref: 'usa-formation.html'
-    },
-    tax: {
-      previewTitle: 'Tax ID & Federal Filings',
-      previewBadge: 'IRS & HMRC Prep',
-      rows: [
-        ['IRS EIN Application (SS-4)', 'No SSN Required', '#1F7091'],
-        ['ITIN Individual Tax ID', 'Eligibility & Doc Review', '#1F7091'],
-        ['UK VAT & EORI Registration', 'HMRC Coordination', '#1F7091'],
-        ['Foreign-Owned LLC Returns', 'Form 5472 & 1120 Prep', '#0F2936']
-      ],
-      title: 'Obtain Tax Identification Numbers & Stay Ahead of Filings',
-      desc: 'We prepare EIN, ITIN, UK VAT, and EORI applications and coordinate federal and statutory reporting.',
-      bullets: [
-        'IRS EIN application preparation for non-US founders without an SSN',
-        'ITIN document review and Certified Acceptance Agent coordination where needed',
-        'UK VAT and EORI registration preparation for UK/EU commerce',
-        'USA Sales Tax state nexus review and registration support'
-      ],
-      ctaText: 'Explore Tax ID Support →',
-      ctaHref: 'services.html#ein-itin'
-    },
-    banking: {
-      previewTitle: 'Banking Readiness Checklist',
-      previewBadge: 'Document Pack',
-      rows: [
-        ['Formation Document Pack', 'Verified & Compiled', '#1F7091'],
-        ['Commercial Address Proof', 'Prepared', '#1F7091'],
-        ['Business Activity Summary', 'Structured for Review', '#1F7091'],
-        ['Provider Approval Decision', 'Determined by Provider', '#0F2936']
-      ],
-      title: 'Prepare Clean Bank & Payment Account Applications',
-      desc: 'We help eligible clients compile formation packs and commercial summaries for Mercury, Relay, Stripe, Wise, Payoneer, and PayPal. No approval is guaranteed.',
-      bullets: [
-        'Complete corporate formation and tax ID document bundle',
-        'Clear business activity and customer-market summary preparation',
-        'Step-by-step application guidance and follow-up question support',
-        'Independent assistance only — we are not affiliated with any provider'
-      ],
-      ctaText: 'Read Banking Support Scope →',
-      ctaHref: 'services.html#banking-payment-support'
-    },
-    compliance: {
-      previewTitle: 'Annual Compliance Calendar',
-      previewBadge: 'Good Standing',
-      rows: [
-        ['US State Annual Report', 'Tracked & Reminded', '#1F7091'],
-        ['UK Confirmation Statement', 'Companies House Filing', '#1F7091'],
-        ['Registered Agent Renewal', 'Advance Notification', '#1F7091'],
-        ['Statutory Accounts / CT600', 'Coordinated Support', '#0F2936']
-      ],
-      title: 'Keep Annual Reports, Taxes & Renewals on Schedule',
-      desc: 'Late filings lead to statutory penalties or entity dissolution. We track every due date and help you stay in good standing.',
-      bullets: [
-        'Automated reminders ahead of state annual report and franchise tax dates',
-        'UK annual confirmation statement and statutory accounts coordination',
-        'Foreign-owned US LLC Form 5472 / 1120 preparation support',
-        'Transparent yearly renewal breakdown itemized before you commit'
-      ],
-      ctaText: 'Explore Annual Compliance →',
-      ctaHref: 'services.html#annual-tax-compliance'
-    }
+  // Store natural document top offset of each card before sticky pinning offsets it
+  const setActiveTab = (tabKey) => {
+    tabs.forEach((t) => {
+      const active = t.getAttribute('data-feature-tab') === tabKey;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
   };
 
-  const previewTitle = document.getElementById('featurePreviewTitle');
-  const previewBadge = document.getElementById('featurePreviewBadge');
-  const previewRows = document.getElementById('featurePreviewRows');
-  const contentTitle = document.getElementById('featureContentTitle');
-  const contentDesc = document.getElementById('featureContentDesc');
-  const checklist = document.getElementById('featureChecklist');
-  const ctaLink = document.getElementById('featureCtaLink');
+  // Bidirectional scroll sync (works scrolling down AND scrolling back up 5->4->3->2->1)
+  const syncOnScroll = () => {
+    const triggerY = 230; // sticky anchor zone below header + sticky tab bar
+    let activeIdx = 0;
 
-  const checkSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+    cards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top <= triggerY) {
+        activeIdx = i;
+      }
+    });
 
+    cards.forEach((card, i) => {
+      card.classList.toggle('is-stacked-behind', i < activeIdx);
+    });
+
+    const activeKey = cards[activeIdx].getAttribute('data-suite-card');
+    if (activeKey) setActiveTab(activeKey);
+  };
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        syncOnScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Click any pill tab -> smooth scroll to that card's exact position
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const key = tab.getAttribute('data-feature-tab');
-      const data = featureData[key];
-      if (!data) return;
+      const targetId = tab.getAttribute('data-target-suite');
+      const targetCard = targetId ? document.getElementById(targetId) : null;
+      if (!targetCard) return;
 
-      tabs.forEach((t) => {
-        const active = t === tab;
-        t.classList.toggle('active', active);
-        t.setAttribute('aria-selected', String(active));
-      });
+      const idx = cards.indexOf(targetCard);
+      setActiveTab(tab.getAttribute('data-feature-tab'));
 
-      card.classList.add('transitioning');
-      setTimeout(() => {
-        if (previewTitle) previewTitle.textContent = data.previewTitle;
-        if (previewBadge) previewBadge.textContent = data.previewBadge;
-        if (previewRows) {
-          previewRows.innerHTML = data.rows.map(([label, val, color]) => `
-            <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-              <span style="color: #4A6572;">${label}</span>
-              <strong style="color: ${color};">${val}</strong>
-            </div>
-          `).join('');
+      // Temporarily unstick to read true layout top, or calculate from previous cards
+      const deck = document.getElementById('featureStackDeck');
+      if (deck && window.innerWidth > 1024) {
+        let topOffset = deck.getBoundingClientRect().top + window.pageYOffset;
+        for (let i = 0; i < idx; i++) {
+          topOffset += cards[i].offsetHeight + 32;
         }
-        if (contentTitle) contentTitle.textContent = data.title;
-        if (contentDesc) contentDesc.textContent = data.desc;
-        if (checklist) {
-          checklist.innerHTML = data.bullets.map((b) => `<li>${checkSvg}<span>${b}</span></li>`).join('');
-        }
-        if (ctaLink) {
-          ctaLink.textContent = data.ctaText;
-          ctaLink.setAttribute('href', data.ctaHref);
-        }
-        card.classList.remove('transitioning');
-      }, 150);
+        window.scrollTo({
+          top: topOffset - 165,
+          behavior: 'smooth'
+        });
+      } else {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
+
+  syncOnScroll();
 }
 
 /* ==========================================================================
