@@ -9068,3 +9068,244 @@ button.nav-link.dropdown-toggle {
     padding-bottom: 20px !important;
   }
 }
+
+/* === DOOLA-STYLE FOUNDER REVIEWS SHOWCASE === */
+.reviews-showcase-section {
+  background: #FFFFFF;
+  padding: 88px 0;
+  border-top: 1px solid #D7E7F0;
+}
+
+.reviews-showcase-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.reviews-hero-title {
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #0F2936;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.reviews-intro-sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #4A6572;
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+.reviews-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  max-width: 400px;
+}
+
+.reviews-stat-item strong {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0F2936;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.reviews-stat-item span {
+  display: block;
+  font-size: 0.875rem;
+  color: #4A6572;
+}
+
+.reviews-marquee-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  height: 540px;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.reviews-marquee-wrap::before,
+.reviews-marquee-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 76px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.reviews-marquee-wrap::before {
+  top: 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.reviews-marquee-wrap::after {
+  bottom: 0;
+  background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.reviews-col-track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  will-change: transform;
+}
+
+.reviews-track-up {
+  animation: reviewsScrollUp 34s linear infinite;
+}
+
+.reviews-track-down {
+  animation: reviewsScrollDown 38s linear infinite;
+}
+
+.reviews-marquee-wrap:hover .reviews-col-track {
+  animation-play-state: paused;
+}
+
+@keyframes reviewsScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes reviewsScrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.review-card-clean {
+  background: #F4F9FC;
+  border: 1px solid #D7E7F0;
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-stars {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.review-stars span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #00B67A;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.review-quote {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #0F2936;
+  margin: 0;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #EBF5FA;
+  border: 1px solid #C5DFEC;
+  color: #1F7091;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.review-author strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0F2936;
+  line-height: 1.25;
+}
+
+.review-author span {
+  display: block;
+  font-size: 0.75rem;
+  color: #4A6572;
+}
+
+@media (max-width: 1024px) {
+  .reviews-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .reviews-intro-sub {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-showcase-section {
+    padding: 64px 0;
+  }
+  .reviews-marquee-wrap {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+  .reviews-marquee-wrap::before,
+  .reviews-marquee-wrap::after {
+    display: none;
+  }
+  .reviews-col-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .review-dup {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-col-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .reviews-marquee-wrap {
+    height: auto;
+    overflow: visible;
+  }
+  .reviews-marquee-wrap::before,
+  .reviews-marquee-wrap::after,
+  .review-dup {
+    display: none !important;
+  }
+}
