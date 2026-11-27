@@ -8516,3 +8516,85 @@ button.nav-link.dropdown-toggle {
     font-size: 0.75rem;
   }
 }
+
+/* === LIVE QA REGRESSION FIXES === */
+/* 1. Constrain #feePledge SVG seal explicitly */
+.pledge-seal {
+  width: 72px !important;
+  height: 72px !important;
+  max-width: 72px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+/* 2. #cookiePillNotice clean fixed bottom-left pill */
+#cookiePillNotice {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  z-index: 900 !important;
+  background: #FFFFFF !important;
+  color: #0F2936 !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 9999px !important;
+  padding: 10px 16px !important;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: auto !important;
+  max-width: calc(100vw - 96px) !important;
+}
+
+#cookiePillNotice.hidden {
+  display: none !important;
+}
+
+/* 3. Collapse Homepage FAQs & Compare Matrix by default */
+.faq-answer {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  padding: 0 24px !important;
+  transition: max-height 0.28s ease, padding 0.28s ease !important;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 460px !important;
+  padding: 16px 24px 24px 24px !important;
+}
+
+.faq-item.faq-extra {
+  display: none !important;
+}
+
+.faq-accordion-clean.show-all-faqs .faq-item.faq-extra {
+  display: block !important;
+}
+
+.compare-matrix-collapse {
+  display: none !important;
+}
+
+.compare-matrix-collapse.open {
+  display: block !important;
+}
+
+/* 4. 2-Column Mega-Menu on Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .dropdown-menu.mega-menu {
+    display: grid !important;
+    grid-template-columns: 1.45fr 1fr !important;
+    width: 680px !important;
+    gap: 16px !important;
+  }
+  .mega-menu-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
+/* 5. Footer bottom clearance for Floating WhatsApp */
+.footer-bottom-strip {
+  padding-bottom: 84px !important;
+}

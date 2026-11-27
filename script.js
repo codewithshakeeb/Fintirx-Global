@@ -924,6 +924,7 @@ function initMasterUxControls() {
   if (compareBtn && comparePanel) {
     compareBtn.addEventListener('click', () => {
       const open = comparePanel.classList.toggle('open');
+      comparePanel.hidden = !open;
       compareBtn.setAttribute('aria-expanded', String(open));
       compareBtn.innerHTML = open ? 'Hide Full Comparison &uarr;' : 'Compare All Features &darr;';
     });
